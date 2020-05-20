@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		198CA5B0247558F200E4495A /* StepTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CA5AF247558F200E4495A /* StepTracker.swift */; };
 		737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B724754D0D001CC344 /* AppDelegate.swift */; };
 		737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B924754D0D001CC344 /* SceneDelegate.swift */; };
 		737B73BC24754D0D001CC344 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73BB24754D0D001CC344 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		198CA5AF247558F200E4495A /* StepTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTracker.swift; sourceTree = "<group>"; };
 		737B73B424754D0D001CC344 /* OneMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73B724754D0D001CC344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737B73B924754D0D001CC344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				737B73C024754D0D001CC344 /* Assets.xcassets */,
 				737B73C224754D0D001CC344 /* LaunchScreen.storyboard */,
 				737B73C524754D0D001CC344 /* Info.plist */,
+				198CA5AF247558F200E4495A /* StepTracker.swift */,
 			);
 			path = OneMotion;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198CA5B0247558F200E4495A /* StepTracker.swift in Sources */,
 				737B73BC24754D0D001CC344 /* ViewController.swift in Sources */,
 				737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */,
 				737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */,
