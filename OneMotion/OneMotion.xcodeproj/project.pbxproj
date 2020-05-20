@@ -15,7 +15,7 @@
 		737B73C424754D0D001CC344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737B73C224754D0D001CC344 /* LaunchScreen.storyboard */; };
 		737B73CF24754D0E001CC344 /* OneMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73CE24754D0E001CC344 /* OneMotionTests.swift */; };
 		737B73DA24754D0E001CC344 /* OneMotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73D924754D0E001CC344 /* OneMotionUITests.swift */; };
-		73BCC69924755F7D00206BAF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69824755F7D00206BAF /* HomeViewController.swift */; };
+		73BCC69B2475640900206BAF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69A2475640900206BAF /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		737B73D524754D0E001CC344 /* OneMotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneMotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73D924754D0E001CC344 /* OneMotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMotionUITests.swift; sourceTree = "<group>"; };
 		737B73DB24754D0E001CC344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73BCC69824755F7D00206BAF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ../../../../../Desktop/OneMotion/OneMotion/HomeViewController.swift; sourceTree = "<group>"; };
+		73BCC69A2475640900206BAF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = "../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/HomeViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +103,7 @@
 			children = (
 				737B73B724754D0D001CC344 /* AppDelegate.swift */,
 				737B73B924754D0D001CC344 /* SceneDelegate.swift */,
-				73BCC69824755F7D00206BAF /* HomeViewController.swift */,
+				73BCC69A2475640900206BAF /* HomeViewController.swift */,
 				198CA5AF247558F200E4495A /* StepTracker.swift */,
 				737B73BD24754D0D001CC344 /* Main.storyboard */,
 				737B73C024754D0D001CC344 /* Assets.xcassets */,
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73BCC69924755F7D00206BAF /* HomeViewController.swift in Sources */,
+				73BCC69B2475640900206BAF /* HomeViewController.swift in Sources */,
 				198CA5B0247558F200E4495A /* StepTracker.swift in Sources */,
 				737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */,
 				737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */,
