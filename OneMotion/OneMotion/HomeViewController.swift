@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         //Calling the Home Page Button Display function
-        startButton.layer.cornerRadius = startButton.frame.width / 2
+        startButton.layer.cornerRadius = startButton.frame.width / 2            //StartButton is slightly off towards the right
         HPButton(button: viewProfileButton)
         HPButton(button: addWorkoutButton)
         HPButton(button: createChallengeButton)
