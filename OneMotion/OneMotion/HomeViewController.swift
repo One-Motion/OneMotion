@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var createChallengeButton: UIButton!
     @IBOutlet weak var viewProgressButton: UIButton!
     @IBOutlet weak var myDayButton: UIButton!
+    @IBOutlet weak var stepTrackerButton: UIButton! //added this for the step track screen - GS
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class HomeViewController: UIViewController {
         HPButton(button: createChallengeButton)
         HPButton(button: viewProgressButton)
         HPButton(button: myDayButton)
+        HPButton(button: stepTrackerButton) //added this for the step track screen - GS
         
     }
     

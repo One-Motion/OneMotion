@@ -65,6 +65,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drB-yS-btn" userLabel="Step Tracker Button">
+                                <rect key="frame" x="0.0" y="735" width="414" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Step Tracker">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -98,6 +106,7 @@
                         <outlet property="createChallengeButton" destination="WnR-5B-VBG" id="GCk-ok-Uvv"/>
                         <outlet property="myDayButton" destination="roY-mY-9UK" id="1cX-ad-NM3"/>
                         <outlet property="startButton" destination="GOO-uK-amU" id="DL6-Bx-U6x"/>
+                        <outlet property="stepTrackerButton" destination="drB-yS-btn" id="Qc8-ZL-O2c"/>
                         <outlet property="viewProfileButton" destination="yzq-iV-pzC" id="jAS-dS-wvP"/>
                         <outlet property="viewProgressButton" destination="ZeH-g8-VqP" id="qzG-pt-yyZ"/>
                     </connections>
@@ -121,8 +130,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcT-2y-EKO">
+                                <rect key="frame" x="191" y="620" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="boop"/>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwT-x3-W4Z">
-                                <rect key="frame" x="102" y="434" width="101" height="67"/>
+                                <rect key="frame" x="159" y="713" width="101" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -130,14 +144,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcT-2y-EKO">
-                                <rect key="frame" x="191" y="620" width="36" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="boop"/>
-                                <connections>
-                                    <segue destination="onF-1S-J6D" kind="show" id="m23-L4-Hwi"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="pDv-4P-yuv"/>
@@ -166,22 +172,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ULr-YT-H2Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1786" y="597"/>
-        </scene>
-        <!--boop-->
-        <scene sceneID="zRG-9G-LJ7">
-            <objects>
-                <viewController id="onF-1S-J6D" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="zTh-iM-UwW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="soV-Or-XC2"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="boop" id="7cL-bm-17X"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eUS-0s-T1j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2535" y="175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cdl-yO-EJC">
