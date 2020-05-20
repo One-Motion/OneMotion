@@ -15,30 +15,88 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOO-uK-amU">
-                                <rect key="frame" x="157" y="170" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzq-iV-pzC">
-                                <rect key="frame" x="159" y="454" width="96" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzq-iV-pzC">
+                                <rect key="frame" x="0.0" y="438" width="414" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="View Profile">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNl-x5-OOl">
+                                <rect key="frame" x="0.0" y="492" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Add Workout">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnR-5B-VBG">
+                                <rect key="frame" x="0.0" y="546" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Create Challenge">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeH-g8-VqP">
+                                <rect key="frame" x="0.0" y="600" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="View Progress">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roY-mY-9UK">
+                                <rect key="frame" x="0.0" y="654" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="My Day">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GOO-uK-amU">
+                                <rect key="frame" x="107" y="138" width="200" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="c2N-Lg-rIt"/>
+                                    <constraint firstAttribute="height" constant="200" id="caG-BW-dKy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZeH-g8-VqP" firstAttribute="top" secondItem="WnR-5B-VBG" secondAttribute="bottom" constant="20" id="271-7A-6Lr"/>
+                            <constraint firstItem="UNl-x5-OOl" firstAttribute="top" secondItem="yzq-iV-pzC" secondAttribute="bottom" constant="20" id="2Cl-CP-een"/>
+                            <constraint firstItem="GOO-uK-amU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="32u-HP-H4u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WnR-5B-VBG" secondAttribute="trailing" id="79P-Em-mjc"/>
+                            <constraint firstItem="roY-mY-9UK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="BxE-As-c3s"/>
+                            <constraint firstItem="WnR-5B-VBG" firstAttribute="top" secondItem="UNl-x5-OOl" secondAttribute="bottom" constant="20" id="MEU-V4-Wum"/>
+                            <constraint firstItem="WnR-5B-VBG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NrI-B7-AZh"/>
+                            <constraint firstItem="roY-mY-9UK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PqK-tX-Zbd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="roY-mY-9UK" secondAttribute="trailing" id="Tye-I5-A5o"/>
+                            <constraint firstItem="ZeH-g8-VqP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UTD-D7-E2k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZeH-g8-VqP" secondAttribute="trailing" id="epb-4l-MrS"/>
+                            <constraint firstItem="yzq-iV-pzC" firstAttribute="top" secondItem="GOO-uK-amU" secondAttribute="bottom" constant="100" id="jKk-UK-SeR"/>
+                            <constraint firstItem="ZeH-g8-VqP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="juD-F8-uiy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UNl-x5-OOl" secondAttribute="trailing" id="kS5-PX-xIy"/>
+                            <constraint firstItem="UNl-x5-OOl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lHs-Za-YMh"/>
+                            <constraint firstItem="WnR-5B-VBG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="liD-8f-Srq"/>
+                            <constraint firstItem="roY-mY-9UK" firstAttribute="top" secondItem="ZeH-g8-VqP" secondAttribute="bottom" constant="20" id="noE-kO-adT"/>
+                            <constraint firstItem="yzq-iV-pzC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pKV-LW-XeH"/>
+                            <constraint firstItem="GOO-uK-amU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="qAC-cD-hgS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yzq-iV-pzC" secondAttribute="trailing" id="uQU-bc-fWy"/>
+                            <constraint firstItem="yzq-iV-pzC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vVd-z8-E2K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="wS8-Cb-XgW"/>
                     <connections>
+                        <outlet property="addWorkoutButton" destination="UNl-x5-OOl" id="fqe-aT-Xgb"/>
+                        <outlet property="createChallengeButton" destination="WnR-5B-VBG" id="GCk-ok-Uvv"/>
+                        <outlet property="myDayButton" destination="roY-mY-9UK" id="1cX-ad-NM3"/>
                         <outlet property="startButton" destination="GOO-uK-amU" id="DL6-Bx-U6x"/>
                         <outlet property="viewProfileButton" destination="yzq-iV-pzC" id="jAS-dS-wvP"/>
+                        <outlet property="viewProgressButton" destination="ZeH-g8-VqP" id="qzG-pt-yyZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
