@@ -10,7 +10,6 @@
 		198CA5B0247558F200E4495A /* StepTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CA5AF247558F200E4495A /* StepTracker.swift */; };
 		737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B724754D0D001CC344 /* AppDelegate.swift */; };
 		737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B924754D0D001CC344 /* SceneDelegate.swift */; };
-		737B73BC24754D0D001CC344 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73BB24754D0D001CC344 /* HomeViewController.swift */; };
 		737B73BF24754D0D001CC344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737B73BD24754D0D001CC344 /* Main.storyboard */; };
 		737B73C124754D0D001CC344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737B73C024754D0D001CC344 /* Assets.xcassets */; };
 		737B73C424754D0D001CC344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737B73C224754D0D001CC344 /* LaunchScreen.storyboard */; };
@@ -41,7 +40,6 @@
 		737B73B424754D0D001CC344 /* OneMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73B724754D0D001CC344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737B73B924754D0D001CC344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		737B73BB24754D0D001CC344 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		737B73BE24754D0D001CC344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737B73C024754D0D001CC344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737B73C324754D0D001CC344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			children = (
 				737B73B724754D0D001CC344 /* AppDelegate.swift */,
 				737B73B924754D0D001CC344 /* SceneDelegate.swift */,
-				737B73BB24754D0D001CC344 /* HomeViewController.swift */,
 				73BCC69824755F7D00206BAF /* HomeViewController.swift */,
 				198CA5AF247558F200E4495A /* StepTracker.swift */,
 				737B73BD24754D0D001CC344 /* Main.storyboard */,
@@ -267,7 +264,6 @@
 			files = (
 				73BCC69924755F7D00206BAF /* HomeViewController.swift in Sources */,
 				198CA5B0247558F200E4495A /* StepTracker.swift in Sources */,
-				737B73BC24754D0D001CC344 /* HomeViewController.swift in Sources */,
 				737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */,
 				737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */,
 			);
