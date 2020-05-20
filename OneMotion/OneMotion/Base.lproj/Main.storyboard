@@ -65,6 +65,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AcT-2y-EKO">
+                                <rect key="frame" x="191" y="620" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="boop"/>
+                                <connections>
+                                    <segue destination="onF-1S-J6D" kind="show" id="m23-L4-Hwi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="pDv-4P-yuv"/>
@@ -77,6 +85,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIg-qa-q6U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1818.840579710145" y="137.94642857142856"/>
+        </scene>
+        <!--boop-->
+        <scene sceneID="zRG-9G-LJ7">
+            <objects>
+                <viewController id="onF-1S-J6D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zTh-iM-UwW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="soV-Or-XC2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="boop" id="7cL-bm-17X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eUS-0s-T1j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="175"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cdl-yO-EJC">
