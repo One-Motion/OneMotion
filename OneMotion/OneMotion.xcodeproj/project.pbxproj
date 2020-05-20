@@ -16,6 +16,7 @@
 		737B73CF24754D0E001CC344 /* OneMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73CE24754D0E001CC344 /* OneMotionTests.swift */; };
 		737B73DA24754D0E001CC344 /* OneMotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73D924754D0E001CC344 /* OneMotionUITests.swift */; };
 		73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69C2475647B00206BAF /* HomeViewController.swift */; };
+		73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69E2475652A00206BAF /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		737B73D924754D0E001CC344 /* OneMotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMotionUITests.swift; sourceTree = "<group>"; };
 		737B73DB24754D0E001CC344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73BCC69C2475647B00206BAF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		73BCC69E2475652A00206BAF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				737B73B724754D0D001CC344 /* AppDelegate.swift */,
 				737B73B924754D0D001CC344 /* SceneDelegate.swift */,
 				73BCC69C2475647B00206BAF /* HomeViewController.swift */,
+				73BCC69E2475652A00206BAF /* ProfileViewController.swift */,
 				198CA5AF247558F200E4495A /* StepTracker.swift */,
 				737B73BD24754D0D001CC344 /* Main.storyboard */,
 				737B73C024754D0D001CC344 /* Assets.xcassets */,
@@ -264,6 +267,7 @@
 			files = (
 				73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */,
 				198CA5B0247558F200E4495A /* StepTracker.swift in Sources */,
+				73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */,
 				737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */,
 				737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */,
 			);
