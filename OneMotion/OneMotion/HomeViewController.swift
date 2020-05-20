@@ -23,11 +23,11 @@ class HomeViewController: UIViewController {
 
         //Calling the Home Page Button Display function
         startButton.layer.cornerRadius = startButton.frame.width / 2
-//        HPButton(button: viewProfileButton)
-//        HPButton(button: addWorkoutButton)
-//        HPButton(button: createChallengeButton)
-//        HPButton(button: viewProgressButton)
-//        HPButton(button: myDayButton)
+        HPButton(button: viewProfileButton)
+        HPButton(button: addWorkoutButton)
+        HPButton(button: createChallengeButton)
+        HPButton(button: viewProgressButton)
+        HPButton(button: myDayButton)
         
     }
     
