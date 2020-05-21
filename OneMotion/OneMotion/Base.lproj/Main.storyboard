@@ -121,7 +121,7 @@
         <!--Step Tracker-->
         <scene sceneID="xeo-5F-joL">
             <objects>
-                <viewController id="YLU-K4-xZ2" customClass="StepTracker" customModule="OneMotion" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YLU-K4-xZ2" customClass="StepTrackerViewController" customModule="OneMotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pc5-3A-vf3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,11 +203,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Step Tracker" id="3Xd-yI-7Rf"/>
                     <connections>
-                        <outlet property="avgPaceLabel" destination="yZN-vL-npJ" id="QUh-ex-izx"/>
-                        <outlet property="distanceLabel" destination="yG0-vA-8Qo" id="Cif-Zs-PcV"/>
-                        <outlet property="paceLabel" destination="ppG-1v-8jA" id="XXT-gg-zHt"/>
-                        <outlet property="statusTitle" destination="2XU-Kz-7d5" id="cMg-iv-bLc"/>
-                        <outlet property="stepsLabel" destination="GLc-iC-slF" id="nfB-Ee-HAx"/>
+                        <outlet property="avgPaceLabel" destination="yZN-vL-npJ" id="GEC-Gm-iVd"/>
+                        <outlet property="distanceLabel" destination="yG0-vA-8Qo" id="Rz7-nl-bH0"/>
+                        <outlet property="paceLabel" destination="ppG-1v-8jA" id="0Fs-JN-7Hm"/>
+                        <outlet property="statusTitle" destination="2XU-Kz-7d5" id="KNX-YE-efe"/>
+                        <outlet property="stepsLabel" destination="GLc-iC-slF" id="T67-Ja-SYp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIg-qa-q6U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
