@@ -14,10 +14,11 @@ class StepTracker: UIViewController {
     
     //declaring and linking the buttons from the main storyboard
     @IBOutlet weak var statusTitle: UILabel!
-    //@IBOutlet weak var stepsLabel: UILabel!
-    @IBOutlet weak var distanceLabel: UILabel!
-    
     @IBOutlet weak var stepsLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var paceLabel: UILabel!
+    @IBOutlet weak var avgPaceLabel: UILabel!
+    
     //changes the colours of the start button when clicked
     let stopColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
     let startColor = UIColor(red: 0.0, green: 0.75, blue: 0.0, alpha: 1.0)
