@@ -11,6 +11,12 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate {
     
+    
+    
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var ProfileData: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
