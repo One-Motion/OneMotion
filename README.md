@@ -12,10 +12,10 @@ authenticity of results. The more you take care of yourself, the better you feel
 that with your friends is always a bonus.
 
 ## Developers:
-- Jason Vainikolo
-- Ehsaas Grover
-- Mridula Manderwad
-- Grace Subianto
+- Jason Vainikolo (Vainikolo)
+- Ehsaas Grover (ehsaasgrover)
+- Mridula Manderwad (mmridulzz)
+- Grace Subianto (gracesubianto)
 
 ## App Development Documentation:
 Documented on team [Trello Board](https://trello.com/b/qtVn1tO8/2020s1e10onemotion)
