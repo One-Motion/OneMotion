@@ -226,7 +226,7 @@
             </objects>
             <point key="canvasLocation" x="1816" y="536"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Profile-->
         <scene sceneID="FQ2-hj-BCZ">
             <objects>
                 <viewController id="eIO-Sd-WgO" customClass="ProfileViewController" customModule="OneMotion" customModuleProvider="target" sceneMemberID="viewController">
@@ -321,7 +321,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wlv-gR-63G"/>
                     </view>
-                    <navigationItem key="navigationItem" id="63Y-ai-6Lt"/>
+                    <navigationItem key="navigationItem" title="Profile" largeTitleDisplayMode="always" id="63Y-ai-6Lt"/>
                     <connections>
                         <outlet property="ProfileData" destination="k3m-Oh-5IG" id="ZML-6S-9si"/>
                         <outlet property="profilePicture" destination="hdk-gC-fEw" id="q0I-tZ-RXw"/>
@@ -411,6 +411,9 @@
                                 <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveProfileButton:" destination="BiN-ei-bEb" eventType="touchUpInside" id="lJO-Md-mJP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -453,7 +456,7 @@
                         <outlet property="height" destination="XtI-2O-eKh" id="KVl-50-BeM"/>
                         <outlet property="lastName" destination="KOx-Fr-hcg" id="okg-ga-mGU"/>
                         <outlet property="profilePhoto" destination="mpf-Gd-1Zc" id="91k-ov-fqi"/>
-                        <outlet property="saveButton" destination="c3O-b0-9cw" id="4eW-Z5-vtd"/>
+                        <outlet property="saveButton" destination="c3O-b0-9cw" id="Aj7-n1-UNZ"/>
                         <outlet property="weight" destination="yaL-Oj-yT7" id="BEb-rK-QVR"/>
                     </connections>
                 </viewController>
