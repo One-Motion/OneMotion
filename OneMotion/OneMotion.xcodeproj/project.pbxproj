@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		198B206D2476345300D6BDC8 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206C2476345300D6BDC8 /* WorkoutViewController.swift */; };
+		198B206F24763A9600D6BDC8 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */; };
 		198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CA5AF247558F200E4495A /* StepTrackerViewController.swift */; };
 		737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B724754D0D001CC344 /* AppDelegate.swift */; };
 		737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B924754D0D001CC344 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		198B206C2476345300D6BDC8 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		198CA5AF247558F200E4495A /* StepTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTrackerViewController.swift; sourceTree = "<group>"; };
 		737B73B424754D0D001CC344 /* OneMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73B724754D0D001CC344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				73BCC6A024756F0600206BAF /* EditProfileViewController.swift */,
 				198CA5AF247558F200E4495A /* StepTrackerViewController.swift */,
 				198B206C2476345300D6BDC8 /* WorkoutViewController.swift */,
+				198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */,
 				737B73BD24754D0D001CC344 /* Main.storyboard */,
 				737B73C024754D0D001CC344 /* Assets.xcassets */,
 				737B73C224754D0D001CC344 /* LaunchScreen.storyboard */,
@@ -305,6 +308,7 @@
 				73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */,
 				B54EDD772476293200DAD0C1 /* RunDataViewController.swift in Sources */,
 				B54EDD732476291600DAD0C1 /* FormatDisplay.swift in Sources */,
+				198B206F24763A9600D6BDC8 /* ChallengeViewController.swift in Sources */,
 				B54EDD7B2476297600DAD0C1 /* LocationManager.swift in Sources */,
 				737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */,
 				198B206D2476345300D6BDC8 /* WorkoutViewController.swift in Sources */,
