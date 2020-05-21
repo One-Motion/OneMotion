@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  myDay
+//  OneMotion
 //
 //  Created by Ehsaas Grover on 21/05/20.
 //  Copyright © 2020 Ehsaas Grover. All rights reserved.

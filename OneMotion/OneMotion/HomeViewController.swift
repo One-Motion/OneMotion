@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  OneMotion
 //
 //  Created by Jason Vainikolo on 12/05/20.

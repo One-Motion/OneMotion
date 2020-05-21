@@ -1,5 +1,5 @@
 //
-//  StepTracker.swift
+//  StepTrackerViewController.swift
 //  OneMotion
 //
 //  Created by Grace Subianto on 21/05/20.

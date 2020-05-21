@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
-//  Workout
+//  WorkoutViewController.swift
+//  OneMotion
 //
-//  Created by Grace Subianto on 19/05/20.
+//  Created by Mridula Manderwad on 19/05/20.
 //  Copyright © 2020 Grace Subianto. All rights reserved.
 //
 
