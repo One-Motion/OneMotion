@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  myRun
+//  RunViewController.swift
+//  OneMotion
 //
 //  Created by Ehsaas Grover on 18/05/20.
 //  Copyright © 2020 Ehsaas Grover. All rights reserved.
