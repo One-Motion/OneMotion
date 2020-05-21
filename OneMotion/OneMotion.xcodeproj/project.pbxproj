@@ -18,7 +18,7 @@
 		73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69C2475647B00206BAF /* HomeViewController.swift */; };
 		73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69E2475652A00206BAF /* ProfileViewController.swift */; };
 		73BCC6A124756F0600206BAF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC6A024756F0600206BAF /* EditProfileViewController.swift */; };
-		B54EDD71247628B600DAD0C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD70247628B600DAD0C1 /* ViewController.swift */; };
+		B54EDD71247628B600DAD0C1 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD70247628B600DAD0C1 /* RunViewController.swift */; };
 		B54EDD732476291600DAD0C1 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD722476291600DAD0C1 /* FormatDisplay.swift */; };
 		B54EDD752476292900DAD0C1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD742476292900DAD0C1 /* CoreDataStack.swift */; };
 		B54EDD772476293200DAD0C1 /* RunDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD762476293200DAD0C1 /* RunDataViewController.swift */; };
@@ -63,7 +63,7 @@
 		73BCC69C2475647B00206BAF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73BCC69E2475652A00206BAF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		73BCC6A024756F0600206BAF /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		B54EDD70247628B600DAD0C1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../Uni/2020/Sem 1 2020/Team Project/myRun/myRun/ViewController.swift"; sourceTree = "<group>"; };
+		B54EDD70247628B600DAD0C1 /* RunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunViewController.swift; path = "../../../Uni/2020/Sem 1 2020/Team Project/myRun/myRun/RunViewController.swift"; sourceTree = "<group>"; };
 		B54EDD722476291600DAD0C1 /* FormatDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
 		B54EDD742476292900DAD0C1 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B54EDD762476293200DAD0C1 /* RunDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunDataViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 				B54EDD742476292900DAD0C1 /* CoreDataStack.swift */,
 				B54EDD762476293200DAD0C1 /* RunDataViewController.swift */,
 				73BCC69C2475647B00206BAF /* HomeViewController.swift */,
-				B54EDD70247628B600DAD0C1 /* ViewController.swift */,
+				B54EDD70247628B600DAD0C1 /* RunViewController.swift */,
 				73BCC69E2475652A00206BAF /* ProfileViewController.swift */,
 				73BCC6A024756F0600206BAF /* EditProfileViewController.swift */,
 				198CA5AF247558F200E4495A /* StepTrackerViewController.swift */,
@@ -299,7 +299,7 @@
 				B54EDD752476292900DAD0C1 /* CoreDataStack.swift in Sources */,
 				B54EDD8024762A1000DAD0C1 /* myRun.xcdatamodeld in Sources */,
 				73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */,
-				B54EDD71247628B600DAD0C1 /* ViewController.swift in Sources */,
+				B54EDD71247628B600DAD0C1 /* RunViewController.swift in Sources */,
 				B54EDD772476293200DAD0C1 /* RunDataViewController.swift in Sources */,
 				B54EDD732476291600DAD0C1 /* FormatDisplay.swift in Sources */,
 				B54EDD7B2476297600DAD0C1 /* LocationManager.swift in Sources */,
