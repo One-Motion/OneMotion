@@ -65,7 +65,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="c4l-T4-cs4" kind="show" id="KOR-dn-cip"/>
+                                    <segue destination="c4l-T4-cs4" kind="show" id="nrK-iv-Bzf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drB-yS-btn" userLabel="Step Tracker Button">
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIg-qa-q6U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815.9420289855075" y="425.89285714285711"/>
+            <point key="canvasLocation" x="1816" y="536"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="FQ2-hj-BCZ">
