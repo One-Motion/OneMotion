@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    // Hello
+    
     //Declared Buttons from the main storyboard
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var viewProfileButton: UIButton!
