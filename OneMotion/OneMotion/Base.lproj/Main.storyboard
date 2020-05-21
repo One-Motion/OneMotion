@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yGj-6w-JwV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yGj-6w-JwV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,6 +64,9 @@
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="c4l-T4-cs4" kind="show" id="KOR-dn-cip"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="drB-yS-btn" userLabel="Step Tracker Button">
                                 <rect key="frame" x="0.0" y="735" width="414" height="30"/>
@@ -248,5 +251,168 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="w1g-2E-n18">
+            <objects>
+                <viewController id="c4l-T4-cs4" customClass="ViewController" customModule="myRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yD5-xL-tqU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnM-qc-CBs">
+                                <rect key="frame" x="150" y="135.5" width="114" height="38.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2di-XQ-Nb5" userLabel="Stop Button">
+                                <rect key="frame" x="90" y="436" width="234.5" height="226.5"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="titleShadowOffset" width="71" height="0.0"/>
+                                <state key="normal" image="stop.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="200"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopTapped:" destination="c4l-T4-cs4" eventType="touchUpInside" id="8YB-o1-Ebm"/>
+                                    <segue destination="KNT-RP-aEh" kind="show" id="sWh-1H-4uD"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="aye-bL-Nmb">
+                                <rect key="frame" x="20" y="236" width="162" height="148.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4t-b4-sbS">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TT-3O-pK0">
+                                        <rect key="frame" x="0.0" y="59.5" width="62" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Pace:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0I1-Q7-DTe">
+                                        <rect key="frame" x="0.0" y="119" width="162" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foC-qJ-AjC" userLabel="Play Button">
+                                <rect key="frame" x="90" y="436" width="234.5" height="226.5"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="titleShadowOffset" width="71" height="0.0"/>
+                                <state key="normal" image="play.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="200"/>
+                                </state>
+                                <connections>
+                                    <action selector="playTapped:" destination="c4l-T4-cs4" eventType="touchUpInside" id="xq3-sX-GZt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2di-XQ-Nb5" firstAttribute="centerX" secondItem="yD5-xL-tqU" secondAttribute="centerX" id="0mA-Eu-BbZ"/>
+                            <constraint firstItem="gnM-qc-CBs" firstAttribute="centerX" secondItem="yD5-xL-tqU" secondAttribute="centerX" id="FDg-Iq-gVx"/>
+                            <constraint firstItem="aye-bL-Nmb" firstAttribute="leading" secondItem="oOu-zq-0fN" secondAttribute="leading" constant="20" id="WBL-0w-aVQ"/>
+                            <constraint firstItem="foC-qJ-AjC" firstAttribute="centerX" secondItem="yD5-xL-tqU" secondAttribute="centerX" id="ZOh-F2-6kI"/>
+                            <constraint firstItem="aye-bL-Nmb" firstAttribute="top" secondItem="gnM-qc-CBs" secondAttribute="bottom" constant="62" id="dO3-fq-Qtp"/>
+                            <constraint firstItem="2di-XQ-Nb5" firstAttribute="top" secondItem="aye-bL-Nmb" secondAttribute="bottom" constant="51.5" id="nwZ-xP-bpx"/>
+                            <constraint firstItem="gnM-qc-CBs" firstAttribute="centerY" secondItem="yD5-xL-tqU" secondAttribute="centerY" constant="-293.5" id="pSJ-iw-AS9"/>
+                            <constraint firstItem="foC-qJ-AjC" firstAttribute="top" secondItem="aye-bL-Nmb" secondAttribute="bottom" constant="51.5" id="tER-LG-nXZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oOu-zq-0fN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dnc-vf-tBQ"/>
+                    <connections>
+                        <outlet property="dataStackView" destination="aye-bL-Nmb" id="I0J-Gy-kUS"/>
+                        <outlet property="distanceLabel" destination="N4t-b4-sbS" id="FNK-Pa-IXU"/>
+                        <outlet property="paceLabel" destination="0I1-Q7-DTe" id="rrz-gN-BgQ"/>
+                        <outlet property="playButton" destination="foC-qJ-AjC" id="04c-Zv-Ihv"/>
+                        <outlet property="stopButton" destination="2di-XQ-Nb5" id="wbZ-SG-bOx"/>
+                        <outlet property="timeLabel" destination="9TT-3O-pK0" id="dTe-RO-VED"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7VN-QY-nvH" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2693" y="154"/>
+        </scene>
+        <!--RunDataViewController-->
+        <scene sceneID="sG1-We-CVY">
+            <objects>
+                <viewController id="KNT-RP-aEh" userLabel="RunDataViewController" customClass="RunDataViewController" customModule="myRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MXD-nS-de6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Run" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8K-qj-E4x">
+                                <rect key="frame" x="150" y="135.5" width="114" height="38.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-KC-Qpg">
+                                <rect key="frame" x="0.0" y="204" width="414" height="383"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Cgk-n1-vQA">
+                                <rect key="frame" x="20" y="608" width="175" height="201"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoM-5U-U2h">
+                                        <rect key="frame" x="0.0" y="0.0" width="113.5" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBu-kC-pgc">
+                                        <rect key="frame" x="0.0" y="56.5" width="67" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Pace:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-dT-OWB">
+                                        <rect key="frame" x="0.0" y="113" width="175" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0a-fC-fGg">
+                                        <rect key="frame" x="0.0" y="169.5" width="64.5" height="31.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="B8K-qj-E4x" firstAttribute="centerY" secondItem="MXD-nS-de6" secondAttribute="centerY" constant="-293.5" id="EE1-VQ-0dX"/>
+                            <constraint firstItem="Xhh-X3-gfP" firstAttribute="bottom" secondItem="Cgk-n1-vQA" secondAttribute="bottom" constant="53" id="onI-L7-9WZ"/>
+                            <constraint firstItem="B8K-qj-E4x" firstAttribute="centerX" secondItem="MXD-nS-de6" secondAttribute="centerX" id="q7n-Aq-o37"/>
+                            <constraint firstItem="Cgk-n1-vQA" firstAttribute="leading" secondItem="Xhh-X3-gfP" secondAttribute="leading" constant="20" id="uDd-QT-4tD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xhh-X3-gfP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="U3l-h2-fpm"/>
+                    <connections>
+                        <outlet property="dataStackView" destination="Cgk-n1-vQA" id="A7b-X2-nQx"/>
+                        <outlet property="dateLabel" destination="B0a-fC-fGg" id="awX-nh-KVc"/>
+                        <outlet property="distanceLabel" destination="WoM-5U-U2h" id="ZoQ-yk-yvu"/>
+                        <outlet property="mapView" destination="cUP-KC-Qpg" id="UCR-UD-bZP"/>
+                        <outlet property="paceLabel" destination="UcD-dT-OWB" id="N3k-dd-5yg"/>
+                        <outlet property="timeLabel" destination="FBu-kC-pgc" id="0fh-LU-uCg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WJn-4y-Voo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3488" y="153"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="play.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="stop.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
 </document>
