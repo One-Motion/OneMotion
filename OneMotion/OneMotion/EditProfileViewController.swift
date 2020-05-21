@@ -28,6 +28,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     var Weight = ""
     var Height = ""
     var Email = ""
+//    self.saveButton.isEnabled = false
+    
     
     @IBAction func changePhotoButton(_ sender: Any) {
         
@@ -39,43 +41,61 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func saveProfileButton(_ sender: Any) {
-            let fName = firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            let lName = lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            var DofB = DOB.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            var Weight = weight.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            var Height = height.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-            var Email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        let fName = firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let lName = lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        var DofB = DOB.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        var Weight = weight.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        var Height = height.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        var Email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        UserDefaults.standard.set(firstName.text, forKey: "firstName")
+        UserDefaults.standard.set(lastName.text, forKey: "lastName")
+        UserDefaults.standard.set(DOB.text, forKey: "DOB")
+        UserDefaults.standard.set(weight.text, forKey: "weight")
+        UserDefaults.standard.set(height.text, forKey: "height")
+        UserDefaults.standard.set(email.text, forKey: "email")
+        
             let ProfilePhoto = profilePhoto.animationImages
             
             if (fName?.isEmpty)! {
                 print("First Name is Empty")
+                saveButton.isEnabled = false
                 return;
             }
             
             if (lName?.isEmpty)! {
                 print("Last Name is Empty")
+                saveButton.isEnabled = false
                 return;
             }
             
             if (DofB?.isEmpty)! {
                 DofB = nil
+                saveButton.isEnabled = false
                 return;
             }
             
             if (Weight?.isEmpty)! {
                 Weight = nil
+                saveButton.isEnabled = false
                 return;
             }
             
             if (Height?.isEmpty)! {
                 Height = nil
+                saveButton.isEnabled = false
                 return;
             }
             
             if (Email?.isEmpty)! {
                 print("Email is Empty")
+                saveButton.isEnabled = false
                 return;
             }
+            else {
+                self.saveButton.isEnabled = true
+        }
             
             var stmt: OpaquePointer?
             
@@ -119,6 +139,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 print("Profile Saved Successfully")
             }
             
+                print("button was pressed")
         }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -138,7 +159,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //                height.delegate = self
 //                email.delegate = self
         
-        saveButton.layer.cornerRadius = 10.0
+//        saveButton.layer.cornerRadius÷ = 10.0
 
 
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
@@ -217,16 +238,24 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     
-    @IBAction func saveTapped(_ sender: Any) {
-        self.fNameText = firstName.text!
-        self.lNameText = lastName.text!
-        self.DofB = DOB.text!
-        self.Weight = weight.text!
-        self.Height = height.text!
-        self.Email = email.text!
-        
-        performSegue(withIdentifier: "saveProfile", sender: self)
-    }
+//    @IBAction func saveTapped(_ sender: Any) {
+//        self.fNameText = firstName.text!
+//        self.lNameText = lastName.text!
+//        self.DofB = DOB.text!
+//        self.Weight = weight.text!
+//        self.Height = height.text!
+//        self.Email = email.text!
+//
+//        UserDefaults.standard.set(fNameText, forKey: "firstName")
+//        UserDefaults.standard.set(lNameText, forKey: "lastName")
+//        UserDefaults.standard.set(DofB, forKey: "DOB")
+//        UserDefaults.standard.set(Weight, forKey: "weight")
+//        UserDefaults.standard.set(Height, forKey: "height")
+//        UserDefaults.standard.set(Email, forKey: "email")
+//
+
+////        performSegue(withIdentifier: "saveProfile", sender: self)
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ProfileViewController
