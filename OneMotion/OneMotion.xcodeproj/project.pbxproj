@@ -18,6 +18,14 @@
 		73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69C2475647B00206BAF /* HomeViewController.swift */; };
 		73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69E2475652A00206BAF /* ProfileViewController.swift */; };
 		73BCC6A124756F0600206BAF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC6A024756F0600206BAF /* EditProfileViewController.swift */; };
+		B54EDD71247628B600DAD0C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD70247628B600DAD0C1 /* ViewController.swift */; };
+		B54EDD732476291600DAD0C1 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD722476291600DAD0C1 /* FormatDisplay.swift */; };
+		B54EDD752476292900DAD0C1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD742476292900DAD0C1 /* CoreDataStack.swift */; };
+		B54EDD772476293200DAD0C1 /* RunDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD762476293200DAD0C1 /* RunDataViewController.swift */; };
+		B54EDD792476296F00DAD0C1 /* UnitConverterPace.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD782476296F00DAD0C1 /* UnitConverterPace.swift */; };
+		B54EDD7B2476297600DAD0C1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD7A2476297600DAD0C1 /* LocationManager.swift */; };
+		B54EDD7D2476297E00DAD0C1 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD7C2476297E00DAD0C1 /* StoryboardSupport.swift */; };
+		B54EDD8024762A1000DAD0C1 /* myRun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +63,14 @@
 		73BCC69C2475647B00206BAF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73BCC69E2475652A00206BAF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		73BCC6A024756F0600206BAF /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		B54EDD70247628B600DAD0C1 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../Uni/2020/Sem 1 2020/Team Project/myRun/myRun/ViewController.swift"; sourceTree = "<group>"; };
+		B54EDD722476291600DAD0C1 /* FormatDisplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
+		B54EDD742476292900DAD0C1 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B54EDD762476293200DAD0C1 /* RunDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunDataViewController.swift; sourceTree = "<group>"; };
+		B54EDD782476296F00DAD0C1 /* UnitConverterPace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitConverterPace.swift; sourceTree = "<group>"; };
+		B54EDD7A2476297600DAD0C1 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B54EDD7C2476297E00DAD0C1 /* StoryboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
+		B54EDD7F24762A1000DAD0C1 /* myRun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myRun.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +123,11 @@
 			children = (
 				737B73B724754D0D001CC344 /* AppDelegate.swift */,
 				737B73B924754D0D001CC344 /* SceneDelegate.swift */,
+				B54EDD722476291600DAD0C1 /* FormatDisplay.swift */,
+				B54EDD742476292900DAD0C1 /* CoreDataStack.swift */,
+				B54EDD762476293200DAD0C1 /* RunDataViewController.swift */,
 				73BCC69C2475647B00206BAF /* HomeViewController.swift */,
+				B54EDD70247628B600DAD0C1 /* ViewController.swift */,
 				73BCC69E2475652A00206BAF /* ProfileViewController.swift */,
 				73BCC6A024756F0600206BAF /* EditProfileViewController.swift */,
 				198CA5AF247558F200E4495A /* StepTrackerViewController.swift */,
@@ -115,6 +135,10 @@
 				737B73C024754D0D001CC344 /* Assets.xcassets */,
 				737B73C224754D0D001CC344 /* LaunchScreen.storyboard */,
 				737B73C524754D0D001CC344 /* Info.plist */,
+				B54EDD7A2476297600DAD0C1 /* LocationManager.swift */,
+				B54EDD7C2476297E00DAD0C1 /* StoryboardSupport.swift */,
+				B54EDD782476296F00DAD0C1 /* UnitConverterPace.swift */,
+				B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */,
 			);
 			path = OneMotion;
 			sourceTree = "<group>";
@@ -269,11 +293,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */,
+				B54EDD7D2476297E00DAD0C1 /* StoryboardSupport.swift in Sources */,
 				198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */,
 				73BCC6A124756F0600206BAF /* EditProfileViewController.swift in Sources */,
+				B54EDD752476292900DAD0C1 /* CoreDataStack.swift in Sources */,
+				B54EDD8024762A1000DAD0C1 /* myRun.xcdatamodeld in Sources */,
 				73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */,
+				B54EDD71247628B600DAD0C1 /* ViewController.swift in Sources */,
+				B54EDD772476293200DAD0C1 /* RunDataViewController.swift in Sources */,
+				B54EDD732476291600DAD0C1 /* FormatDisplay.swift in Sources */,
+				B54EDD7B2476297600DAD0C1 /* LocationManager.swift in Sources */,
 				737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */,
 				737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */,
+				B54EDD792476296F00DAD0C1 /* UnitConverterPace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,6 +630,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B54EDD7F24762A1000DAD0C1 /* myRun.xcdatamodel */,
+			);
+			currentVersion = B54EDD7F24762A1000DAD0C1 /* myRun.xcdatamodel */;
+			path = myRun.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 737B73AC24754D0D001CC344 /* Project object */;
 }
