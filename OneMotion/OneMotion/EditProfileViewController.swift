@@ -55,6 +55,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         UserDefaults.standard.set(weight.text, forKey: "weight")
         UserDefaults.standard.set(height.text, forKey: "height")
         UserDefaults.standard.set(email.text, forKey: "email")
+        UserDefaults.standard.synchronize()
         
             let ProfilePhoto = profilePhoto.animationImages
             
@@ -139,13 +140,15 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 print("Profile Saved Successfully")
             }
             
+        
                 print("button was pressed")
         }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        profilePhoto.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         
+        let profilePicture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        profilePhoto.image = profilePicture
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -159,7 +162,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //                height.delegate = self
 //                email.delegate = self
         
-//        saveButton.layer.cornerRadius÷ = 10.0
+        saveButton.layer.cornerRadius = 10.0
 
 
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
@@ -235,27 +238,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         weight.resignFirstResponder()
         height.resignFirstResponder()
+        firstName.resignFirstResponder()
+        lastName.resignFirstResponder()
+        DOB.resignFirstResponder()
+        email.resignFirstResponder()
     }
-    
-    
-//    @IBAction func saveTapped(_ sender: Any) {
-//        self.fNameText = firstName.text!
-//        self.lNameText = lastName.text!
-//        self.DofB = DOB.text!
-//        self.Weight = weight.text!
-//        self.Height = height.text!
-//        self.Email = email.text!
-//
-//        UserDefaults.standard.set(fNameText, forKey: "firstName")
-//        UserDefaults.standard.set(lNameText, forKey: "lastName")
-//        UserDefaults.standard.set(DofB, forKey: "DOB")
-//        UserDefaults.standard.set(Weight, forKey: "weight")
-//        UserDefaults.standard.set(Height, forKey: "height")
-//        UserDefaults.standard.set(Email, forKey: "email")
-//
-
-////        performSegue(withIdentifier: "saveProfile", sender: self)
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ProfileViewController
