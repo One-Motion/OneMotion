@@ -17,5 +17,5 @@ that with your friends is always a bonus.
 - Mridula Manderwad
 - Grace Subianto
 
-## App Devleopment Documentation:
+## App Development Documentation:
 Documented on team [Trello Board](https://trello.com/b/qtVn1tO8/2020s1e10onemotion)
