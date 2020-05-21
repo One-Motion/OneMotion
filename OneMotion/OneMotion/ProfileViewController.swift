@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var ProfileData: UITextView!
-    
+    var finalProfileData: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

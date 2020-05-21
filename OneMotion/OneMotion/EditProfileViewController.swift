@@ -18,6 +18,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var height: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var db: OpaquePointer?
     var ProfileList = [Profile]()
@@ -44,7 +45,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             var Weight = weight.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             var Height = height.text?.trimmingCharacters(in: .whitespacesAndNewlines)
             var Email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-    //        let ProfilePhoto = profilePhoto.animationImages
+            let ProfilePhoto = profilePhoto.animationImages
             
             if (fName?.isEmpty)! {
                 print("First Name is Empty")
@@ -137,7 +138,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //                height.delegate = self
 //                email.delegate = self
         
-//        saveButton.layer.cornerRadius = 10.0
+        saveButton.layer.cornerRadius = 10.0
 
 
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
