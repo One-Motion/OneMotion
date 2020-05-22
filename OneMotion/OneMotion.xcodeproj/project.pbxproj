@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19292D9B2477A4650025D2BA /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19292D9A2477A4650025D2BA /* ProgressViewController.swift */; };
 		1938F7D124776EE200D79A02 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1938F7D024776EE200D79A02 /* GoalsViewController.swift */; };
 		198B206D2476345300D6BDC8 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206C2476345300D6BDC8 /* WorkoutViewController.swift */; };
 		198B206F24763A9600D6BDC8 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */; };
 		198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CA5AF247558F200E4495A /* StepTrackerViewController.swift */; };
+		19B8FA0F2477B19B005C80A0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8FA0E2477B19B005C80A0 /* File.swift */; };
 		737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B724754D0D001CC344 /* AppDelegate.swift */; };
 		737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B924754D0D001CC344 /* SceneDelegate.swift */; };
 		737B73BF24754D0D001CC344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737B73BD24754D0D001CC344 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 		B54EDD8024762A1000DAD0C1 /* myRun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */; };
 		B54EDD8224762DF200DAD0C1 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD8124762DF200DAD0C1 /* RunViewController.swift */; };
 		B5992AA3247648E600904878 /* MyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5992AA2247648E600904878 /* MyDayViewController.swift */; };
+		B5B62903247798030016EC05 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62902247798030016EC05 /* FriendViewController.swift */; };
+		B5B62905247798220016EC05 /* FriendProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62904247798220016EC05 /* FriendProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19292D9A2477A4650025D2BA /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		1938F7D024776EE200D79A02 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		198B206C2476345300D6BDC8 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		198CA5AF247558F200E4495A /* StepTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTrackerViewController.swift; sourceTree = "<group>"; };
+		19B8FA0E2477B19B005C80A0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		737B73B424754D0D001CC344 /* OneMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73B724754D0D001CC344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737B73B924754D0D001CC344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +85,8 @@
 		B54EDD7F24762A1000DAD0C1 /* myRun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myRun.xcdatamodel; sourceTree = "<group>"; };
 		B54EDD8124762DF200DAD0C1 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
 		B5992AA2247648E600904878 /* MyDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDayViewController.swift; sourceTree = "<group>"; };
+		B5B62902247798030016EC05 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		B5B62904247798220016EC05 /* FriendProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,10 @@
 				B54EDD782476296F00DAD0C1 /* UnitConverterPace.swift */,
 				B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */,
 				1938F7D024776EE200D79A02 /* GoalsViewController.swift */,
+				B5B62902247798030016EC05 /* FriendViewController.swift */,
+				B5B62904247798220016EC05 /* FriendProfileController.swift */,
+				19292D9A2477A4650025D2BA /* ProgressViewController.swift */,
+				19B8FA0E2477B19B005C80A0 /* File.swift */,
 			);
 			path = OneMotion;
 			sourceTree = "<group>";
@@ -307,9 +319,13 @@
 				73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */,
 				B5992AA3247648E600904878 /* MyDayViewController.swift in Sources */,
 				B54EDD7D2476297E00DAD0C1 /* StoryboardSupport.swift in Sources */,
+				19292D9B2477A4650025D2BA /* ProgressViewController.swift in Sources */,
+				B5B62903247798030016EC05 /* FriendViewController.swift in Sources */,
 				198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */,
+				B5B62905247798220016EC05 /* FriendProfileController.swift in Sources */,
 				73BCC6A124756F0600206BAF /* EditProfileViewController.swift in Sources */,
 				B54EDD8224762DF200DAD0C1 /* RunViewController.swift in Sources */,
+				19B8FA0F2477B19B005C80A0 /* File.swift in Sources */,
 				B54EDD752476292900DAD0C1 /* CoreDataStack.swift in Sources */,
 				B54EDD8024762A1000DAD0C1 /* myRun.xcdatamodeld in Sources */,
 				73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */,
@@ -494,17 +510,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OneMotion/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AUT.OneMotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -513,8 +532,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VDNBWAF3C2;
 				INFOPLIST_FILE = OneMotion/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -522,7 +542,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AUT.OneMotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
