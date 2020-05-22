@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     // Hello
     
     //Declared Buttons from the main storyboard
+    @IBOutlet weak var friendButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var viewProfileButton: UIButton!
     @IBOutlet weak var addWorkoutButton: UIButton!
