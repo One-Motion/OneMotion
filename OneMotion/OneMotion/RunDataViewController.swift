@@ -28,20 +28,20 @@ class RunDataViewController: UIViewController {
     }
     
     private func configureView() {
-      let distance = Measurement(value: run.distance, unit: UnitLength.meters)
-      let seconds = Int(run.duration)
-      let formattedDistance = FormatDisplay.distance(distance)
-      let formattedDate = FormatDisplay.date(run.timestamp)
-      let formattedTime = FormatDisplay.time(seconds)
-      let formattedPace = FormatDisplay.pace(distance: distance,
-                                             seconds: seconds,
-                                             outputUnit: UnitSpeed.minutesPerMile)
-
-      distanceLabel.text = "Distance:  \(formattedDistance)"
-      dateLabel.text = formattedDate
-      timeLabel.text = "Time:  \(formattedTime)"
-      paceLabel.text = "Pace:  \(formattedPace)"
-        loadMap()
+//      let distance = Measurement(value: run.distance, unit: UnitLength.meters)
+//      let seconds = Int(run.duration)
+//      let formattedDistance = FormatDisplay.distance(distance)
+//      let formattedDate = FormatDisplay.date(run.timestamp)
+//      let formattedTime = FormatDisplay.time(seconds)
+//      let formattedPace = FormatDisplay.pace(distance: distance,
+//                                             seconds: seconds,
+//                                             outputUnit: UnitSpeed.minutesPerMile)
+//
+//      distanceLabel.text = "Distance:  \(formattedDistance)"
+//      dateLabel.text = formattedDate
+//      timeLabel.text = "Time:  \(formattedTime)"
+//      paceLabel.text = "Pace:  \(formattedPace)"
+//        loadMap()
     }
     
     private func mapRegion() -> MKCoordinateRegion? {
