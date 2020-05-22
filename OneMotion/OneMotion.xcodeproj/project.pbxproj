@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1938F7D124776EE200D79A02 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1938F7D024776EE200D79A02 /* GoalsViewController.swift */; };
 		198B206D2476345300D6BDC8 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206C2476345300D6BDC8 /* WorkoutViewController.swift */; };
 		198B206F24763A9600D6BDC8 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */; };
 		198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CA5AF247558F200E4495A /* StepTrackerViewController.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1938F7D024776EE200D79A02 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		198B206C2476345300D6BDC8 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		198CA5AF247558F200E4495A /* StepTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTrackerViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				B54EDD7C2476297E00DAD0C1 /* StoryboardSupport.swift */,
 				B54EDD782476296F00DAD0C1 /* UnitConverterPace.swift */,
 				B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */,
+				1938F7D024776EE200D79A02 /* GoalsViewController.swift */,
 			);
 			path = OneMotion;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				198B206D2476345300D6BDC8 /* WorkoutViewController.swift in Sources */,
 				737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */,
 				B54EDD792476296F00DAD0C1 /* UnitConverterPace.swift in Sources */,
+				1938F7D124776EE200D79A02 /* GoalsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
