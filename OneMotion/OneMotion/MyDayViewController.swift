@@ -13,15 +13,17 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
 
     @IBOutlet weak var dateSelecter: UITextField!
+    @IBOutlet weak var mood: UITextField!
+    @IBOutlet weak var saveDetails: UIButton!
     @IBOutlet weak var breakfast: UITextField!
     @IBOutlet weak var lunch: UITextField!
     @IBOutlet weak var dinner: UITextField!
-    @IBOutlet weak var mood: UITextField!
     
-    let moods = ["Happy", "Neutral", "Sad", "Angry","Stressed","Anxious","Excited"]
+        let moods = ["Happy", "Neutral", "Sad", "Angry","Stressed","Anxious","Excited"]
         let pickerView = UIPickerView()
         let datePicker = UIDatePicker()
-        override func viewDidLoad() {
+        
+    override func viewDidLoad() {
             super.viewDidLoad()
             // Do any additional setup after loading the view.
             createDatePicker()
@@ -31,11 +33,10 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             mood.inputView = pickerView
             mood.textAlignment = .center
             
-            breakfast.delegate = self as? UITextFieldDelegate
-            lunch.delegate = self as? UITextFieldDelegate
-            dinner.delegate = self as? UITextFieldDelegate
-                   
-            
+        breakfast.delegate = self
+        lunch.delegate = self
+        dinner.delegate = self
+                            
         }
 
         public func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -95,15 +96,18 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             self.view.endEditing(true)
         }
         
-        
-        
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             breakfast.resignFirstResponder()
             lunch.resignFirstResponder()
             dinner.resignFirstResponder()
         }
         
+
         
+    @IBAction func saveButton(_ sender: Any) {
+        print("Saved")
+    }
+    
         
     }
 
