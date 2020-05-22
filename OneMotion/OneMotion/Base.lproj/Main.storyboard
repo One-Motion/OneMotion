@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yGj-6w-JwV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yGj-6w-JwV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -100,17 +100,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="Ffn-BZ-KSu" kind="show" id="Sb3-XL-vyH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-cw-qct" userLabel="Friends Button">
-                                <rect key="frame" x="20" y="105" width="100" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button" image="person.2.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="29"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zss-JE-gzB" kind="show" id="2h5-1i-WDB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -602,232 +591,6 @@
             </objects>
             <point key="canvasLocation" x="205.79710144927537" y="-1140.4017857142856"/>
         </scene>
-        <!--Friend Profile Controller-->
-        <scene sceneID="z4P-pK-XIv">
-            <objects>
-                <viewController id="oHf-ck-Tny" customClass="FriendProfileController" customModule="OneMotion" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tvp-Oz-O1V">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="friend001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gf7-Z1-mbn">
-                                <rect key="frame" x="154.5" y="248.5" width="105.5" height="29.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="zil-pZ-lXO">
-                                <rect key="frame" x="43" y="398" width="249" height="114"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth: 02/04/2000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4h5-Ee-7bc">
-                                        <rect key="frame" x="0.0" y="0.0" width="249" height="26"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height: 6'1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKo-1j-Ymx">
-                                        <rect key="frame" x="0.0" y="44" width="107.5" height="26"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight: 70kg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnJ-XU-RWa">
-                                        <rect key="frame" x="0.0" y="88" width="128.5" height="26"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgo-5I-p6x">
-                                <rect key="frame" x="142.5" y="792" width="129" height="35"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                <state key="normal" title="Remove Friend">
-                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Smith" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDR-wo-BEw">
-                                <rect key="frame" x="141" y="308.5" width="132.5" height="30.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1s0-wU-DwB">
-                                <rect key="frame" x="124" y="624" width="166" height="40"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                <state key="normal" title="Start Challenge"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y00-ii-8yp">
-                                <rect key="frame" x="136.5" y="108" width="141" height="136"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" image="person.crop.circle" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="120"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="Gf7-Z1-mbn" firstAttribute="centerX" secondItem="Tvp-Oz-O1V" secondAttribute="centerX" id="4oB-HT-DgD"/>
-                            <constraint firstItem="dDR-wo-BEw" firstAttribute="centerX" secondItem="Tvp-Oz-O1V" secondAttribute="centerX" id="F0y-WH-RIt"/>
-                            <constraint firstItem="zil-pZ-lXO" firstAttribute="top" secondItem="dDR-wo-BEw" secondAttribute="bottom" constant="59" id="FVV-wh-vwp"/>
-                            <constraint firstItem="y00-ii-8yp" firstAttribute="centerX" secondItem="Tvp-Oz-O1V" secondAttribute="centerX" id="Sx1-XK-nVm"/>
-                            <constraint firstItem="Gf7-Z1-mbn" firstAttribute="centerY" secondItem="Tvp-Oz-O1V" secondAttribute="centerY" constant="-185" id="WHK-Aw-EKo"/>
-                            <constraint firstItem="YY4-a4-eB5" firstAttribute="bottom" secondItem="hgo-5I-p6x" secondAttribute="bottom" constant="35" id="Xmd-J3-p5L"/>
-                            <constraint firstItem="hgo-5I-p6x" firstAttribute="centerX" secondItem="Tvp-Oz-O1V" secondAttribute="centerX" id="cbl-9c-Sri"/>
-                            <constraint firstItem="1s0-wU-DwB" firstAttribute="centerY" secondItem="Tvp-Oz-O1V" secondAttribute="centerY" constant="196" id="eIh-g4-Pv0"/>
-                            <constraint firstItem="1s0-wU-DwB" firstAttribute="centerX" secondItem="Tvp-Oz-O1V" secondAttribute="centerX" id="jvR-DO-wWo"/>
-                            <constraint firstItem="dDR-wo-BEw" firstAttribute="centerY" secondItem="Tvp-Oz-O1V" secondAttribute="centerY" constant="-124.5" id="mIe-Lh-VK6"/>
-                            <constraint firstItem="y00-ii-8yp" firstAttribute="centerY" secondItem="Tvp-Oz-O1V" secondAttribute="centerY" constant="-272" id="mN0-Bd-Dnm"/>
-                            <constraint firstItem="zil-pZ-lXO" firstAttribute="leading" secondItem="YY4-a4-eB5" secondAttribute="leading" constant="43" id="qIV-wQ-5fe"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="YY4-a4-eB5"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="C1l-NN-9ii">
-                        <barButtonItem key="rightBarButtonItem" image="chart.bar.fill" catalog="system" style="plain" id="ScJ-Eu-wHG">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WeK-dy-YXA">
-                                <rect key="frame" x="315" y="9.5" width="79" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" image="chart.bar.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="23"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="challengeButton" destination="1s0-wU-DwB" id="JhU-61-jlz"/>
-                        <outlet property="removeButton" destination="hgo-5I-p6x" id="NnT-Cu-y0E"/>
-                        <outlet property="statsButton" destination="WeK-dy-YXA" id="RtZ-8z-p82"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Gu-63-uEL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1131.8840579710145" y="-1804.0178571428571"/>
-        </scene>
-        <!--Friend View Controller Scene-->
-        <scene sceneID="Bx4-mk-MRP">
-            <objects>
-                <viewController id="zss-JE-gzB" userLabel="Friend View Controller Scene" customClass="FriendViewController" customModule="OneMotion" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JVo-dR-KNm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxQ-lZ-cfU">
-                                <rect key="frame" x="157" y="135" width="100" height="35"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFH-jX-t6R">
-                                <rect key="frame" x="20" y="215" width="62" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="person.crop.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="36"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="friend001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x8-FV-n1U">
-                                <rect key="frame" x="100" y="231" width="73" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0m-QW-i9x">
-                                <rect key="frame" x="363" y="231" width="15" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.right" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
-                                </state>
-                                <connections>
-                                    <segue destination="oHf-ck-Tny" kind="show" id="CiO-8H-T5g"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7n-AS-j9b">
-                                <rect key="frame" x="20" y="276" width="62" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="person.crop.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="36"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="friend002" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gw5-rC-a8s">
-                                <rect key="frame" x="100" y="292" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCE-Lo-8sT">
-                                <rect key="frame" x="363" y="292" width="15" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.right" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VW5-Tr-Wu3">
-                                <rect key="frame" x="20" y="337" width="62" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="person.crop.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="36"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="friend003" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d29-uY-Qsh">
-                                <rect key="frame" x="100" y="353" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3cV-gx-62b">
-                                <rect key="frame" x="363" y="353" width="15" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="chevron.right" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjZ-fh-kvl">
-                                <rect key="frame" x="327" y="812" width="51" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <state key="normal" image="person.3.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="ZxQ-lZ-cfU" firstAttribute="centerY" secondItem="JVo-dR-KNm" secondAttribute="centerY" constant="-295.5" id="Veq-hS-xGS"/>
-                            <constraint firstItem="ZxQ-lZ-cfU" firstAttribute="centerX" secondItem="JVo-dR-KNm" secondAttribute="centerX" id="WYZ-rv-oo0"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="7og-Vw-YQa"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="C1n-T1-qO7">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="aX3-yW-DH6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zEY-rc-DPv">
-                                <rect key="frame" x="352.5" y="5" width="41.5" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="person.crop.circle.fill.badge.plus" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
-                                </state>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="addButton" destination="zEY-rc-DPv" id="EFs-kK-6dZ"/>
-                        <outlet property="friendProfile" destination="g0m-QW-i9x" id="iGm-0w-s7J"/>
-                        <outlet property="friendRequests" destination="tjZ-fh-kvl" id="YQB-ZS-OJs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TSF-l8-1Uz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1131.8840579710145" y="-1140.4017857142856"/>
-        </scene>
         <!--Run View Controller-->
         <scene sceneID="w1g-2E-n18">
             <objects>
@@ -914,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VN-QY-nvH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1977" y="-1140"/>
+            <point key="canvasLocation" x="1896" y="-1140"/>
         </scene>
         <!--RunDataViewController-->
         <scene sceneID="sG1-We-CVY">
@@ -1315,20 +1078,14 @@
             <point key="canvasLocation" x="1896" y="540"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Screen Shot 2020-05-13 at 1.52.56 AM" width="230" height="226"/>
-        <image name="calendar" catalog="system" width="64" height="52"/>
-        <image name="chart.bar.fill" catalog="system" width="64" height="44"/>
-        <image name="chevron.right" catalog="system" width="48" height="64"/>
-        <image name="person.2.fill" catalog="system" width="64" height="40"/>
-        <image name="person.3.fill" catalog="system" width="71" height="34"/>
-        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
-        <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="64" height="50"/>
-        <image name="play.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="stop.circle.fill" catalog="system" width="64" height="60"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="JQA-Xy-Bp0"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="Screen Shot 2020-05-13 at 1.52.56 AM" width="230" height="226"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
 </document>

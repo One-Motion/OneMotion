@@ -29,8 +29,6 @@
 		B54EDD7D2476297E00DAD0C1 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD7C2476297E00DAD0C1 /* StoryboardSupport.swift */; };
 		B54EDD8024762A1000DAD0C1 /* myRun.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */; };
 		B54EDD8224762DF200DAD0C1 /* RunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54EDD8124762DF200DAD0C1 /* RunViewController.swift */; };
-		B5886369247789A800C3F5D6 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5886368247789A800C3F5D6 /* FriendViewController.swift */; };
-		B588636B2477907100C3F5D6 /* FriendProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B588636A2477907100C3F5D6 /* FriendProfileController.swift */; };
 		B5992AA3247648E600904878 /* MyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5992AA2247648E600904878 /* MyDayViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,8 +78,6 @@
 		B54EDD7C2476297E00DAD0C1 /* StoryboardSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
 		B54EDD7F24762A1000DAD0C1 /* myRun.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myRun.xcdatamodel; sourceTree = "<group>"; };
 		B54EDD8124762DF200DAD0C1 /* RunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewController.swift; sourceTree = "<group>"; };
-		B5886368247789A800C3F5D6 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
-		B588636A2477907100C3F5D6 /* FriendProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileController.swift; sourceTree = "<group>"; };
 		B5992AA2247648E600904878 /* MyDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,8 +151,6 @@
 				B54EDD782476296F00DAD0C1 /* UnitConverterPace.swift */,
 				B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */,
 				1938F7D024776EE200D79A02 /* GoalsViewController.swift */,
-				B5886368247789A800C3F5D6 /* FriendViewController.swift */,
-				B588636A2477907100C3F5D6 /* FriendProfileController.swift */,
 			);
 			path = OneMotion;
 			sourceTree = "<group>";
@@ -313,9 +307,7 @@
 				73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */,
 				B5992AA3247648E600904878 /* MyDayViewController.swift in Sources */,
 				B54EDD7D2476297E00DAD0C1 /* StoryboardSupport.swift in Sources */,
-				B5886369247789A800C3F5D6 /* FriendViewController.swift in Sources */,
 				198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */,
-				B588636B2477907100C3F5D6 /* FriendProfileController.swift in Sources */,
 				73BCC6A124756F0600206BAF /* EditProfileViewController.swift in Sources */,
 				B54EDD8224762DF200DAD0C1 /* RunViewController.swift in Sources */,
 				B54EDD752476292900DAD0C1 /* CoreDataStack.swift in Sources */,
