@@ -9,7 +9,10 @@
 import UIKit
 
 class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    
        
+    var delegate: WorkoutProtocol? = nil
     @IBOutlet weak var repNumber: UITextField!
     
     @IBOutlet weak var setNumber: UITextField!
@@ -103,11 +106,14 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         timetaken.resignFirstResponder()
     }
     
-    
-    @IBAction func saveWorkout(_ sender: Any) {
-        //this button would save the workout details into the database
+
+    @IBAction func Save(_ sender: Any) {
+        print("done")
+        self.dismiss(animated: true, completion: nil)
+        self.delegate?.getData(data: titleText.text!)
+        
     }
-    
+    @IBOutlet weak var titleText: UITextField!
 }
 
 
