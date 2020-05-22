@@ -68,8 +68,6 @@ extension UITableView {
   }
 }
 
-//keep going lol
-
 /// Use in view controllers:
 ///
 /// 1) Have view controller conform to SegueHandlerType

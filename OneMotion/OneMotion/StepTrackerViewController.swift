@@ -8,34 +8,38 @@
 
 import UIKit
 import CoreMotion
- 
+
 class StepTrackerViewController: UIViewController {
     
+    //labels
     //connections to the UI buttons
     @IBOutlet weak var statusTitle: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var stepsLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var avgPaceLabel: UILabel!
     
+    @IBOutlet weak var startButton: UIButton!
+    
     //colour values for the activateButton
     let stopColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
     let startColor = UIColor(red: 0.0, green: 0.75, blue: 0.0, alpha: 1.0)
     
+    //variables
     //step tracker data variables
-    var numberOfSteps:Int! = nil
-    var distance:Double! = nil
-    var averagePace:Double! = nil
-    var pace:Double! = nil
-     
+    var numberOfSteps:Int! = 2
+    var distance:Double! = 2.4
+    var averagePace:Double! = 4.5
+    var pace:Double! = 3.7
     //pedometer object
     var pedometer = CMPedometer()
-     
     //timers for the step tracker
     var timer = Timer()
     var timerInterval = 1.0
     var timeElapsed:TimeInterval = 1.0
-     
+    
+    //button
     //connection to the activate button on the UI
     @IBAction func activateButton(_ sender: UIButton)
     {
@@ -46,29 +50,13 @@ class StepTrackerViewController: UIViewController {
             //starts the timer
             startTimer()
             
-            //gets step tracker data as it is turned on
-            pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
-                if let pedData = pedometerData
-                {
-                    self.numberOfSteps = Int(truncating: pedData.numberOfSteps)
-                    if let distance = pedData.distance
-                    {
-                        self.distance = Double(truncating: distance)
-                    }
-                    if let currentPace = pedData.currentPace
-                    {
-                        self.pace = Double(truncating: currentPace)
-                    }
-                    if let averageActivePace = pedData.averageActivePace
-                    {
-                        self.averagePace = Double(truncating: averageActivePace)
-                    }
-                }
-                else
-                {
-                    self.numberOfSteps = nil
-                }
-            })
+            if timerInterval >= 1.0
+            {
+                self.numberOfSteps += 2
+                self.distance += 3.0
+                self.pace += 8.0
+                self.averagePace += 2.0
+            }
             
             //when the step tracker is turned on
             //status is updated
@@ -85,7 +73,7 @@ class StepTrackerViewController: UIViewController {
             //the timer is stopped
             stopTimer()
             //status is updated
-            statusTitle.text = "Pedometer Off: " + timeIntervalFormat(interval: timeElapsed)
+            statusTitle.text = "Pedometer Off"
             //activate button shows Start option and changes to green
             sender.backgroundColor = startColor
             sender.setTitle("Start", for: .normal)
@@ -115,18 +103,17 @@ class StepTrackerViewController: UIViewController {
     func displayPedometerData()
     {
         timeElapsed += 1.0
-        statusTitle.text = "Time: " + timeIntervalFormat(interval: timeElapsed)
+        timerLabel.text = "Timer: " + timeIntervalFormat(interval: timeElapsed)
         
-        //step count
         if let numberOfSteps = self.numberOfSteps
         {
             stepsLabel.text = String(format:"Steps: %i",numberOfSteps)
         }
-         
+        
         //distance
         if let distance = self.distance
         {
-            distanceLabel.text = String(format:"Distance: %02.02f meters,\n %02.02f mi",distance,miles(meters: distance))
+            distanceLabel.text = String(format:"Distance: %02.02f meters \n %02.02f mi",distance,miles(meters: distance))
         }
         else
         {
@@ -142,7 +129,7 @@ class StepTrackerViewController: UIViewController {
         else
         {
             paceLabel.text = "Pace: N/A "
-            paceLabel.text =  paceString(title: "Avg Pace", pace: computedAvgPace())
+            paceLabel.text =  paceString(title: "Pace", pace: computedAvgPace())
         }
         
         //average pace
@@ -155,7 +142,7 @@ class StepTrackerViewController: UIViewController {
             avgPaceLabel.text =  paceString(title: "Avg Pace", pace: computedAvgPace())
         }
     }
-     
+    
     //converts seconds to hh:mm:ss as a string
     func timeIntervalFormat(interval:TimeInterval)-> String
     {
@@ -179,7 +166,7 @@ class StepTrackerViewController: UIViewController {
         let seconds = Int(minPerMile * 60) % 60
         return String(format: "%@: %02.2f m/s \n\t\t %02i:%02i min/mi",title,pace,minutes,seconds)
     }
-     
+    
     func computedAvgPace()-> Double
     {
         if let distance = self.distance
@@ -192,22 +179,18 @@ class StepTrackerViewController: UIViewController {
             return 0.0
         }
     }
-     
+    
     func miles(meters:Double)-> Double
     {
         let mile = 0.000621371192
         return meters * mile
     }
- 
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        startButton.layer.cornerRadius = 10
+        
     }
- 
-//    override func didReceiveMemoryWarning()
-//    {
-//        super.didReceiveMemoryWarning()
-//    }
-//
- 
+    
 }

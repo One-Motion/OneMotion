@@ -21,7 +21,6 @@ class RunDataViewController: UIViewController {
     
     var run: Run!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()

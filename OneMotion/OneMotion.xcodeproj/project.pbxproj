@@ -150,6 +150,10 @@
 				198B206C2476345300D6BDC8 /* WorkoutViewController.swift */,
 				B5992AA2247648E600904878 /* MyDayViewController.swift */,
 				198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */,
+				1938F7D024776EE200D79A02 /* GoalsViewController.swift */,
+				B5B62902247798030016EC05 /* FriendViewController.swift */,
+				B5B62904247798220016EC05 /* FriendProfileController.swift */,
+				19292D9A2477A4650025D2BA /* ProgressViewController.swift */,
 				737B73BD24754D0D001CC344 /* Main.storyboard */,
 				737B73C024754D0D001CC344 /* Assets.xcassets */,
 				737B73C224754D0D001CC344 /* LaunchScreen.storyboard */,
@@ -158,10 +162,6 @@
 				B54EDD7C2476297E00DAD0C1 /* StoryboardSupport.swift */,
 				B54EDD782476296F00DAD0C1 /* UnitConverterPace.swift */,
 				B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */,
-				1938F7D024776EE200D79A02 /* GoalsViewController.swift */,
-				B5B62902247798030016EC05 /* FriendViewController.swift */,
-				B5B62904247798220016EC05 /* FriendProfileController.swift */,
-				19292D9A2477A4650025D2BA /* ProgressViewController.swift */,
 				19B8FA0E2477B19B005C80A0 /* File.swift */,
 			);
 			path = OneMotion;
