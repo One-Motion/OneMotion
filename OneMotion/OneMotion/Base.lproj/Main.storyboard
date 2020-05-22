@@ -239,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DIg-qa-q6U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3333" y="540"/>
+            <point key="canvasLocation" x="3048" y="538"/>
         </scene>
         <!--View Progress-->
         <scene sceneID="Ar5-Bm-JfW">
@@ -262,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjH-bE-oLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="540"/>
+            <point key="canvasLocation" x="197" y="540"/>
         </scene>
         <!--Profile-->
         <scene sceneID="FQ2-hj-BCZ">
@@ -298,25 +298,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Birth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUw-TY-ChB">
-                                <rect key="frame" x="20" y="468" width="96.5" height="19.5"/>
+                                <rect key="frame" x="20" y="470" width="96.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ns8-WR-n8c">
-                                <rect key="frame" x="20" y="507.5" width="55.5" height="19.5"/>
+                                <rect key="frame" x="20" y="509.5" width="55.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YH-hq-xhB">
-                                <rect key="frame" x="20" y="547" width="53" height="19.5"/>
+                                <rect key="frame" x="20" y="549" width="53" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiQ-Gs-Za3">
-                                <rect key="frame" x="20" y="586.5" width="47.5" height="19.5"/>
+                                <rect key="frame" x="20" y="588.5" width="47.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -341,7 +341,7 @@
                             <constraint firstItem="EJw-2v-Nee" firstAttribute="top" secondItem="k3m-Oh-5IG" secondAttribute="bottom" constant="80" id="355-EH-IGE"/>
                             <constraint firstItem="FjZ-19-Ufg" firstAttribute="top" secondItem="wlv-gR-63G" secondAttribute="top" constant="301" id="F5D-CT-wIe"/>
                             <constraint firstItem="k3m-Oh-5IG" firstAttribute="top" secondItem="prs-n2-UWL" secondAttribute="top" constant="382" id="IbI-Kd-zeM"/>
-                            <constraint firstItem="xUw-TY-ChB" firstAttribute="top" secondItem="vkY-Pn-cEf" secondAttribute="bottom" constant="20" id="JMl-7m-7Eq"/>
+                            <constraint firstItem="xUw-TY-ChB" firstAttribute="top" secondItem="vkY-Pn-cEf" secondAttribute="bottom" constant="22" id="JMl-7m-7Eq"/>
                             <constraint firstItem="2YH-hq-xhB" firstAttribute="top" secondItem="Ns8-WR-n8c" secondAttribute="bottom" constant="20" id="OFe-j9-xH7"/>
                             <constraint firstItem="k3m-Oh-5IG" firstAttribute="centerX" secondItem="hdk-gC-fEw" secondAttribute="centerX" id="Q67-Pn-gYH"/>
                             <constraint firstItem="k3m-Oh-5IG" firstAttribute="leading" secondItem="wlv-gR-63G" secondAttribute="leading" id="Qg2-zD-XD7"/>
@@ -439,7 +439,7 @@
                                     <constraint firstAttribute="height" constant="34" id="ApM-eg-ub8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3O-b0-9cw">
                                 <rect key="frame" x="107" y="720" width="200" height="30"/>
@@ -451,7 +451,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="saveProfileButton:" destination="BiN-ei-bEb" eventType="touchUpInside" id="lJO-Md-mJP"/>
+                                    <action selector="saveProfileButton:" destination="BiN-ei-bEb" eventType="touchUpInside" id="BuB-u6-8y6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -495,7 +495,7 @@
                         <outlet property="height" destination="XtI-2O-eKh" id="KVl-50-BeM"/>
                         <outlet property="lastName" destination="KOx-Fr-hcg" id="okg-ga-mGU"/>
                         <outlet property="profilePhoto" destination="mpf-Gd-1Zc" id="91k-ov-fqi"/>
-                        <outlet property="saveButton" destination="c3O-b0-9cw" id="Aj7-n1-UNZ"/>
+                        <outlet property="saveButton" destination="c3O-b0-9cw" id="b6Q-q7-gW0"/>
                         <outlet property="weight" destination="yaL-Oj-yT7" id="BEb-rK-QVR"/>
                     </connections>
                 </viewController>
@@ -519,7 +519,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNi-C8-4oT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-341" y="-311"/>
+            <point key="canvasLocation" x="196" y="-311"/>
         </scene>
         <!--Goals-->
         <scene sceneID="a9d-QF-8l5">
@@ -589,7 +589,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nqj-Hw-xap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205.79710144927537" y="-1140.4017857142856"/>
+            <point key="canvasLocation" x="4006" y="538"/>
         </scene>
         <!--Run View Controller-->
         <scene sceneID="w1g-2E-n18">
@@ -677,7 +677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7VN-QY-nvH" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1896" y="-1140"/>
+            <point key="canvasLocation" x="2106" y="-1140"/>
         </scene>
         <!--RunDataViewController-->
         <scene sceneID="sG1-We-CVY">
@@ -748,7 +748,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJn-4y-Voo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767" y="-1140"/>
+            <point key="canvasLocation" x="3048" y="-1140"/>
         </scene>
         <!--Add Workout-->
         <scene sceneID="WAf-jK-ngr">
@@ -1075,7 +1075,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4YG-lk-q8b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1896" y="540"/>
+            <point key="canvasLocation" x="2106" y="539"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
