@@ -110,8 +110,8 @@ class RunViewController : UIViewController {
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertController.addAction(UIAlertAction(title: "Save", style: .default) { _ in
           self.stopRun()
-          self.saveRun()
-          self.performSegue(withIdentifier: .details, sender: nil)
+//          self.saveRun()
+//          self.performSegue(withIdentifier: .details, sender: nil)
         })
         alertController.addAction(UIAlertAction(title: "Discard", style: .destructive) { _ in
           self.stopRun()
@@ -124,19 +124,19 @@ class RunViewController : UIViewController {
     
 }
 
-extension RunViewController: SegueHandlerType {
-  enum SegueIdentifier: String {
-    case details = "RunDataViewController"
-  }
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    switch segueIdentifier(for: segue) {
-    case .details:
-      let destination = segue.destination as! RunDataViewController
-      destination.run = run
-    }
-  }
-}
+//extension RunViewController: SegueHandlerType {
+//  enum SegueIdentifier: String {
+//    case details = "RunDataViewController"
+//  }
+//  
+//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    switch segueIdentifier(for: segue) {
+//    case .details:
+//      let destination = segue.destination as! RunDataViewController
+//      destination.run = run
+//    }
+//  }
+//}
 
 
 extension RunViewController: CLLocationManagerDelegate {
