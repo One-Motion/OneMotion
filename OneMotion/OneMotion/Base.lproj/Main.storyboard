@@ -870,11 +870,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ax-mN-s2P">
-                                <rect key="frame" x="190" y="778" width="34" height="30"/>
+                                <rect key="frame" x="183" y="776" width="52" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="Save:" destination="XhB-LH-WX7" eventType="touchUpInside" id="32M-7J-1TS"/>
+                                    <segue destination="cyV-hv-3NS" kind="show" id="kFv-WB-S51"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1349,6 +1351,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="26e-JV-pFs"/>
         <segue reference="7qf-1h-akI"/>
+        <segue reference="kFv-WB-S51"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Screen Shot 2020-05-13 at 1.52.56 AM" width="230" height="226"/>
