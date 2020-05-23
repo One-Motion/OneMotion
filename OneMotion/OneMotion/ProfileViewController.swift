@@ -50,10 +50,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UIImagePicke
                 self.profileData.text = message
             }
         }
-        
-//        let profilePic = userDefaults.object(forKey: "profilePhoto") as! NSData
-//            profilePicture.image = UIImage(data: profilePic as Data)
-        
     }
     
     override func viewDidLoad() {

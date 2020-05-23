@@ -157,6 +157,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 10.0
         
+        
+        let profilePic = UserDefaults.standard.object(forKey: "profilePhoto") as? NSData
+        profilePhoto.image = UIImage(data: profilePic! as Data)
+        
 //For Database Purposes
 //                firstName.delegate = self
 //                lastName.delegate = self
