@@ -107,10 +107,6 @@ class RunDataViewController: UIViewController {
     }
 
 
-
-
-
-
 }
 
 extension RunDataViewController: MKMapViewDelegate {

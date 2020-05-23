@@ -78,8 +78,6 @@ class RunViewController : UIViewController {
         locationManager.distanceFilter = 10
         locationManager.startUpdatingLocation()
     }
-    
-    
    
     private func saveRun() {
       let newRun = Run(context: CoreDataStack.context)
