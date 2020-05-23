@@ -47,7 +47,25 @@ class StepTrackerViewController: UIViewController {
             pedometer = CMPedometer()
             //starts the timer
             startTimer()
-            
+        //real code
+//            pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
+//                if let pedData = pedometerData{
+//                    self.numberOfSteps = Int(pedData.numberOfSteps)
+//                    //self.stepsLabel.text = "Steps:\(pedData.numberOfSteps)"
+//                    if let distance = pedData.distance{
+//                        self.distance = Double(distance)
+//                    }
+//                    if let averageActivePace = pedData.averageActivePace {
+//                        self.averagePace = Double(averageActivePace)
+//                    }
+//                    if let currentPace = pedData.currentPace {
+//                        self.pace = Double(currentPace)
+//                    }
+//                } else {
+//                    self.numberOfSteps = nil
+//                }
+//            })
+            //test code
             if timerInterval >= 1.0
             {
                 self.numberOfSteps += 2
