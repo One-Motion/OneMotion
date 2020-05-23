@@ -58,14 +58,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let userDefaults = UserDefaults()
         userDefaults.set(profileInfo(), forKey: "profileInfo")
         
-        
-        let fName = firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let lName = lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var DofB = DOB.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Weight = weight.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Height = height.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var imageData = profilePhoto.image!.jpegData(compressionQuality: 1)
+        //For database
+//        let fName = firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let lName = lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        var DofB = DOB.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        var Weight = weight.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        var Height = height.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        var Email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let imageData = profilePhoto.image!.jpegData(compressionQuality: 1)
         
         UserDefaults.standard.set(imageData, forKey: "profilePic")
         UserDefaults.standard.set(firstName.text, forKey: "firstName")
@@ -78,9 +78,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         print("Data Saved")
         
-            let ProfilePhoto = profilePhoto.animationImages
-            
-//For Database Purposes
+        //For Database Purposes
+//            let ProfilePhoto = profilePhoto.animationImages
 //            if (fName?.isEmpty)! {
 //                print("First Name is Empty")
 //                saveButton.isEnabled = false
@@ -168,6 +167,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         let profilePicture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         profilePhoto.image = profilePicture
+        
+        let imageData: NSData? = profilePhoto.image!.pngData()! as NSData
+        UserDefaults.standard.set(imageData, forKey: "profilePhoto")
+        
         self.dismiss(animated: true, completion: nil)
     }
     
