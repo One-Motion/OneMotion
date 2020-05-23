@@ -20,83 +20,91 @@ class StepTrackerViewController: UIViewController {
     @IBOutlet weak var avgPaceLabel: UILabel!
     @IBOutlet weak var startButton: UIButton! //declaration of start button for layout
     
-    //colour values for the activateButton
-    let stopColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-    let startColor = UIColor(red: 0.0, green: 0.75, blue: 0.0, alpha: 1.0)
+    //constant colour values for the activateButton after activation
+    let stopColor = UIColor(red: 204/255, green: 0/255, blue: 0/255, alpha: 1.0)
+    let startColor = UIColor(red: 0/255, green: 153/255, blue: 0/255, alpha: 1.0)
     
-    //variables
-    //step tracker data variables
-    var numberOfSteps:Int! = 2
-    var distance:Double! = 2.4
-    var averagePace:Double! = 4.5
-    var pace:Double! = 3.7
-    //pedometer object
+    //initialisation of step tracker data variables
+    //    var numberOfSteps:Int! = nil
+    //    var distance:Double! = nil
+    //    var pace:Double! = nil
+    //    var averagePace:Double! = nil
+    
+    //code for demo - initialisation of step tracker data variables
+    var numberOfSteps:Int! = 0
+    var distance:Double! = 0.0
+    var pace:Double! = 0.0
+    var averagePace:Double! = 0.0
+    var demoSteps:Int! = 0
+    
+    //initialisation of pedometer object
     var pedometer = CMPedometer()
-    //timers for the step tracker
+    
+    //initialisation of timers for the step tracker
     var timer = Timer()
     var timerInterval = 1.0
     var timeElapsed:TimeInterval = 1.0
     
-    //button
-    //connection to the activate button on the UI
+    //connection of the activate button to the storyboard UI
     @IBAction func activateButton(_ sender: UIButton)
     {
+        //when the step tracker is turned on
         if sender.titleLabel?.text == "Start"
         {
             //calls pedometer object
             pedometer = CMPedometer()
-            //starts the timer
+            //the timer starting functoin is called
             startTimer()
-        //real code
-//            pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
-//                if let pedData = pedometerData{
-//                    self.numberOfSteps = Int(pedData.numberOfSteps)
-//                    //self.stepsLabel.text = "Steps:\(pedData.numberOfSteps)"
-//                    if let distance = pedData.distance{
-//                        self.distance = Double(distance)
-//                    }
-//                    if let averageActivePace = pedData.averageActivePace {
-//                        self.averagePace = Double(averageActivePace)
-//                    }
-//                    if let currentPace = pedData.currentPace {
-//                        self.pace = Double(currentPace)
-//                    }
-//                } else {
-//                    self.numberOfSteps = nil
-//                }
-//            })
-            //test code
-            if timerInterval >= 1.0
-            {
-                self.numberOfSteps += 2
-                self.distance += 3.0
-                self.pace += 8.0
-                self.averagePace += 2.0
-            }
-            
-            //when the step tracker is turned on
-            //status is updated
-            statusTitle.text = "Pedometer On"
+            //status label is updated to show the pedometer is on
+            statusTitle.text = "Step Tracker Is On"
             //activate button shows Stop option and changes to red
             sender.setTitle("Stop", for: .normal)
             sender.backgroundColor = stopColor
+            
+            //retrieves updated data from pedomter object when tracker is running
+//                        pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
+//                            if let pedData = pedometerData{
+//                                self.numberOfSteps = Int(pedData.numberOfSteps)
+//
+//                                if let distance = pedData.distance{
+//                                    self.distance = Double(distance)
+//                                }
+//                                if let averageActivePace = pedData.averageActivePace {
+//                                    self.averagePace = Double(averageActivePace)
+//                                }
+//                                if let currentPace = pedData.currentPace {
+//                                    self.pace = Double(currentPace)
+//                                }
+//                            } else {
+//                                self.numberOfSteps = nil
+//                            }
+//                        })
+            
+            //code for demo - set variables to show information is passing through classes correctly
+            //this is due to Xcode being unable to simulate individual step movement
+            if timerInterval >= 1.0
+            {
+                self.numberOfSteps = 2
+                self.distance = 1.3
+                self.pace = 0.2
+                self.averagePace = 0.1
+            }
         }
-        else
+        else //when the step tracker is turned off
         {
-            //when the step tracker is turned off
             //step tracker stops collecting data
             pedometer.stopUpdates()
-            //the timer is stopped
+            //the timer stopping functoin is called
             stopTimer()
-            //status is updated
-            statusTitle.text = "Pedometer Off"
+            //status label is updated to show the tracker is off
+            statusTitle.text = "Step Tracker Is Off"
             //activate button shows Start option and changes to green
             sender.backgroundColor = startColor
             sender.setTitle("Start", for: .normal)
         }
     }
     
-    //timer functions
+    //timer function starts timing from when the user clicks the activation button
     func startTimer()
     {
         if timer.isValid
@@ -105,38 +113,48 @@ class StepTrackerViewController: UIViewController {
         }
         timer = Timer.scheduledTimer(timeInterval: timerInterval,target: self,selector: #selector(timerAction(timer:)) ,userInfo: nil,repeats: true)
     }
+    
+    //timer function stops timing from when the user clicks the stop button
     func stopTimer()
     {
         timer.invalidate()
         displayPedometerData()
     }
+    
+    //while the timer is running the displayPedometerData functio is called to change the label data values
     @objc func timerAction(timer:Timer)
     {
         displayPedometerData()
     }
     
-    // displays the updated data on the UI
+    //displays the updated data on the storyboard interface
     func displayPedometerData()
     {
         timeElapsed += 1.0
         timerLabel.text = "Timer: " + timeIntervalFormat(interval: timeElapsed)
         
+        
+        //displays the number of steps the user has taken
+        self.numberOfSteps += 1 //code for demo
         if let numberOfSteps = self.numberOfSteps
         {
             stepsLabel.text = String(format:"Steps: %i",numberOfSteps)
         }
         
-        //distance
+        //displays the distance the user has travelled
+        self.distance += 0.12 //code for demo
         if let distance = self.distance
         {
             distanceLabel.text = String(format:"Distance: %02.02f meters \n %02.02f mi",distance,miles(meters: distance))
         }
         else
         {
-            distanceLabel.text = "Distance: N/A"
+            distanceLabel.text = "Distance: Unavailable"
         }
         
-        //pace
+        
+        //displays the users pace
+        self.pace += 0.04 //code for demo
         if let pace = self.pace
         {
             print(pace)
@@ -144,22 +162,24 @@ class StepTrackerViewController: UIViewController {
         }
         else
         {
-            paceLabel.text = "Pace: N/A "
-            paceLabel.text =  paceString(title: "Pace", pace: computedAvgPace())
+            paceLabel.text = "Pace: Unavailable "
+            paceLabel.text =  paceString(title: "Pace", pace: calculateAveragePace())
         }
         
-        //average pace
+        
+        //displays the users average pace
+        self.averagePace += 0.03 //code for demo
         if let averagePace = self.averagePace
         {
             avgPaceLabel.text = paceString(title: "Avg Pace", pace: averagePace)
         }
         else
         {
-            avgPaceLabel.text =  paceString(title: "Avg Pace", pace: computedAvgPace())
+            avgPaceLabel.text =  paceString(title: "Avg Pace", pace: calculateAveragePace())
         }
     }
     
-    //converts seconds to hh:mm:ss as a string
+    //converts the seconds of the timer into hh:mm:ss format as a string
     func timeIntervalFormat(interval:TimeInterval)-> String
     {
         var seconds = Int(interval + 0.5) //round up seconds
@@ -168,8 +188,8 @@ class StepTrackerViewController: UIViewController {
         seconds = seconds % 60
         return String(format:"%02i:%02i:%02i",hours,minutes,seconds)
     }
-    // convert a pace in meters per second to a string with
-    // the metric m/s and the Imperial minutes per mile
+    
+    //converts the pace of the user in meters per second to string formatting
     func paceString(title:String,pace:Double) -> String
     {
         var minPerMile = 0.0
@@ -183,7 +203,8 @@ class StepTrackerViewController: UIViewController {
         return String(format: "%@: %02.2f m/s \n\t\t %02i:%02i min/mi",title,pace,minutes,seconds)
     }
     
-    func computedAvgPace()-> Double
+    //calculates the avergae pace of the user
+    func calculateAveragePace()-> Double
     {
         if let distance = self.distance
         {
@@ -196,6 +217,7 @@ class StepTrackerViewController: UIViewController {
         }
     }
     
+    //converts miles to meters
     func miles(meters:Double)-> Double
     {
         let mile = 0.000621371192
@@ -205,7 +227,7 @@ class StepTrackerViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        startButton.layer.cornerRadius = 10
+        startButton.layer.cornerRadius = 10 //rounds the corners of the activate button
         
     }
     

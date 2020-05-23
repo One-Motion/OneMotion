@@ -8,16 +8,18 @@
 
 import UIKit
 
-class GoalsViewController: UIViewController{
-    
+class GoalsViewController: UIViewController
+{
+    //connections to the storyboard interface buttons
     @IBOutlet weak var workoutGoalsButton: UIButton!
     @IBOutlet weak var caloriesGoalButton: UIButton!
     @IBOutlet weak var runsGoalsButton: UIButton!
     @IBOutlet weak var stepsGoalsButton: UIButton!
     @IBOutlet weak var overviewButton: UIButton!
     
-    func GPButton(button: UIButton) {
-        
+    //edits the layout of the buttons on the storyboard interface when the simulator is running
+    func GPButton(button: UIButton)
+    {
         button.layer.masksToBounds = false
         button.layer.shadowRadius = 5
         button.layer.shadowOpacity = 0.5
@@ -27,9 +29,11 @@ class GoalsViewController: UIViewController{
         button.backgroundColor = UIColor.white
     }
     
-    override func viewDidLoad() {
+    //applies the layout to the storyboard buttons
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
+        
         GPButton(button: workoutGoalsButton)
         GPButton(button: caloriesGoalButton)
         GPButton(button: runsGoalsButton)
