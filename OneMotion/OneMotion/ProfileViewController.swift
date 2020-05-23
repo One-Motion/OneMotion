@@ -13,8 +13,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileData: UITextView!
     @IBOutlet weak var editButton: UIButton!
+    
     var finalProfileData: String!
-
+    var image = UIImage(contentsOfFile: "defaultProfilePhoto")
     var fName: String = UserDefaults.standard.string(forKey: "firstName") ?? " "
     var lName: String = UserDefaults.standard.string(forKey: "lastName") ?? " "
     var DofB: String = UserDefaults.standard.string(forKey: "DOB") ?? " "
@@ -29,11 +30,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 self.profileData.text = message
             }
         }
+        
+        let profilePic = userDefaults.object(forKey: "profilePhoto") as! NSData
+            profilePicture.image = UIImage(data: profilePic as Data)
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        profilePicture.image = image
         profileData.isEditable = false
         editButton.layer.cornerRadius = 10.0
         self.profileData.text = finalProfileData
