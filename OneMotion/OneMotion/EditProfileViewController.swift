@@ -4,7 +4,7 @@
 //
 //  Created by Jason Vainikolo on 20/05/20.
 //  Copyright © 2020 Jason Vainikolo. All rights reserved.
-//
+// new changes
 
 import UIKit
 import SQLite3
@@ -31,16 +31,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //    var Email = ""
 //    self.saveButton.isEnabled = false
     
-    
-    @IBAction func changePhotoButton(_ sender: Any) {
-        
-        let imagePicked = UIImagePickerController()
-        imagePicked.delegate = self
-        imagePicked.sourceType = .photoLibrary
-        
-        self.present(imagePicked, animated: true, completion: nil)
-    }
-    
     func profileInfo() -> String {
         
         let data1:String = firstName.text ?? ""
@@ -58,14 +48,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let userDefaults = UserDefaults()
         userDefaults.set(profileInfo(), forKey: "profileInfo")
         
-        
-        let fName = firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let lName = lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var DofB = DOB.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Weight = weight.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Height = height.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var imageData = profilePhoto.image!.jpegData(compressionQuality: 1)
+        //For database
+//        let fName = firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        let lName = lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        var DofB = DOB.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        var Weight = weight.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        var Height = height.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        var Email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let imageData = profilePhoto.image!.jpegData(compressionQuality: 1)
         
         UserDefaults.standard.set(imageData, forKey: "profilePic")
         UserDefaults.standard.set(firstName.text, forKey: "firstName")
@@ -78,9 +68,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         print("Data Saved")
         
-            let ProfilePhoto = profilePhoto.animationImages
-            
-//For Database Purposes
+        //For Database Purposes
+//            let ProfilePhoto = profilePhoto.animationImages
 //            if (fName?.isEmpty)! {
 //                print("First Name is Empty")
 //                saveButton.isEnabled = false
@@ -164,16 +153,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 print("button was pressed")
         }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        let profilePicture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        profilePhoto.image = profilePicture
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 10.0
+        
+        
+        let profilePic = UserDefaults.standard.object(forKey: "profilePhoto") as? NSData
+        profilePhoto.image = UIImage(data: profilePic! as Data)
         
 //For Database Purposes
 //                firstName.delegate = self
