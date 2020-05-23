@@ -4,11 +4,12 @@
 //
 //  Created by Grace Subianto on 21/05/20.
 //  Copyright © 2020 Jason Vainikolo. All rights reserved.
-// fix code
-
 
 import UIKit
 import CoreMotion
+
+//Some of the code for the Step Tracker is commented out due to Xcode lack of capability for step movement simulation.
+//They are instead replaced with code marked by "code for demo" to check that the values are passing through all classes as they should be. In Sprint 2 we will be testing the code on an actual device, and then the greyed out code will be used instead of the code for demo.
 
 class StepTrackerViewController: UIViewController {
     
@@ -32,6 +33,7 @@ class StepTrackerViewController: UIViewController {
     //    var averagePace:Double! = nil
     
     //code for demo - initialisation of step tracker data variables
+    //this is due to Xcode being unable to simulate individual step movement
     var numberOfSteps:Int! = 0
     var distance:Double! = 0.0
     var pace:Double! = 0.0
@@ -158,7 +160,7 @@ class StepTrackerViewController: UIViewController {
         self.pace += 0.04 //code for demo
         if let pace = self.pace
         {
-            print(pace)
+            //print(pace)
             paceLabel.text = paceString(title: "Pace", pace: pace)
         }
         else
