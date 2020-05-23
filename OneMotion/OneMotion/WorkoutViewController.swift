@@ -86,7 +86,7 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         datePicker.datePickerMode = .date
     }
   
-    
+    //Unit tested function
     @objc func donePressed(){
         
         //formatting
@@ -97,6 +97,7 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         date.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
+
     
     
     
