@@ -11,10 +11,8 @@ import UIKit
 class ChallengeViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
        
     @IBOutlet weak var repNumber: UITextField!
-    
     @IBOutlet weak var setNumber: UITextField!
     @IBOutlet weak var date: UITextField!
-    
     @IBOutlet weak var timetaken: UITextField!
     @IBOutlet weak var workout: UITextField!
     
@@ -41,7 +39,6 @@ class ChallengeViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
 
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return workouts.count

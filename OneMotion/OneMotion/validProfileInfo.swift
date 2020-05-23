@@ -4,7 +4,7 @@
 //
 //  Created by Jason Vainikolo on 23/05/20.
 //  Copyright © 2020 Jason Vainikolo. All rights reserved.
-//
+//changes
 
 import XCTest
 @testable import OneMotion
