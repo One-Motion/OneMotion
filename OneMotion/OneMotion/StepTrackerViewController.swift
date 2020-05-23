@@ -23,8 +23,8 @@ class StepTrackerViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton! //declaration of start button for layout
     
     //constant colour values for the activateButton after activation
-    let stopColor = UIColor(red: 204/255, green: 0/255, blue: 0/255, alpha: 1.0)
-    let startColor = UIColor(red: 0/255, green: 153/255, blue: 0/255, alpha: 1.0)
+    let STOP_COLOR = UIColor(red: 204/255, green: 0/255, blue: 0/255, alpha: 1.0)
+    let START_COLOR = UIColor(red: 0/255, green: 153/255, blue: 0/255, alpha: 1.0)
     
     //initialisation of step tracker data variables
     //    var numberOfSteps:Int! = nil
@@ -62,7 +62,7 @@ class StepTrackerViewController: UIViewController {
             statusTitle.text = "Step Tracker Is On"
             //activate button shows Stop option and changes to red
             sender.setTitle("Stop", for: .normal)
-            sender.backgroundColor = stopColor
+            sender.backgroundColor = STOP_COLOR
             
             //retrieves updated data from pedomter object when tracker is running
 //                        pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
@@ -87,7 +87,7 @@ class StepTrackerViewController: UIViewController {
             //this is due to Xcode being unable to simulate individual step movement
             if timerInterval >= 1.0
             {
-                self.numberOfSteps = 2
+                self.numberOfSteps = 0
                 self.distance = 1.3
                 self.pace = 0.2
                 self.averagePace = 0.1
@@ -102,7 +102,7 @@ class StepTrackerViewController: UIViewController {
             //status label is updated to show the tracker is off
             statusTitle.text = "Step Tracker Is Off"
             //activate button shows Start option and changes to green
-            sender.backgroundColor = startColor
+            sender.backgroundColor = START_COLOR
             sender.setTitle("Start", for: .normal)
         }
     }
@@ -139,16 +139,16 @@ class StepTrackerViewController: UIViewController {
         
         //displays the number of steps the user has taken
         self.numberOfSteps += 1 //code for demo
-        if let numberOfSteps = self.numberOfSteps
+        if let NUMBER_OF_STEPS = self.numberOfSteps
         {
-            stepsLabel.text = String(format:"Steps: %i",numberOfSteps)
+            stepsLabel.text = String(format:"Steps: %i",NUMBER_OF_STEPS)
         }
         
         //displays the distance the user has travelled
         self.distance += 0.12 //code for demo
-        if let distance = self.distance
+        if let DISTANCE = self.distance
         {
-            distanceLabel.text = String(format:"Distance: %02.02f meters \n %02.02f mi",distance,miles(meters: distance))
+            distanceLabel.text = String(format:"Distance: %02.02f meters \n %02.02f mi",DISTANCE,miles(meters: DISTANCE))
         }
         else
         {
@@ -158,10 +158,10 @@ class StepTrackerViewController: UIViewController {
         
         //displays the users pace
         self.pace += 0.04 //code for demo
-        if let pace = self.pace
+        if let PACE = self.pace
         {
             //print(pace)
-            paceLabel.text = paceString(title: "Pace", pace: pace)
+            paceLabel.text = paceString(title: "Pace", pace: PACE)
         }
         else
         {
@@ -172,9 +172,9 @@ class StepTrackerViewController: UIViewController {
         
         //displays the users average pace
         self.averagePace += 0.03 //code for demo
-        if let averagePace = self.averagePace
+        if let AVERAGE_PACE = self.averagePace
         {
-            avgPaceLabel.text = paceString(title: "Avg Pace", pace: averagePace)
+            avgPaceLabel.text = paceString(title: "Avg Pace", pace: AVERAGE_PACE)
         }
         else
         {
@@ -186,32 +186,32 @@ class StepTrackerViewController: UIViewController {
     func timeIntervalFormat(interval:TimeInterval)-> String
     {
         var seconds = Int(interval + 0.5) //round up seconds
-        let hours = seconds / 3600
-        let minutes = (seconds / 60) % 60
+        let HOURS = seconds / 3600
+        let MINUTES = (seconds / 60) % 60
         seconds = seconds % 60
-        return String(format:"%02i:%02i:%02i",hours,minutes,seconds)
+        return String(format:"%02i:%02i:%02i",HOURS,MINUTES,seconds)
     }
     
     //converts the pace of the user in meters per second to string formatting
     func paceString(title:String,pace:Double) -> String
     {
         var minPerMile = 0.0
-        let factor = 26.8224 //conversion factor
+        let FACTOR = 26.8224 //conversion factor
         if pace != 0
         {
-            minPerMile = factor / pace
+            minPerMile = FACTOR / pace
         }
-        let minutes = Int(minPerMile)
-        let seconds = Int(minPerMile * 60) % 60
-        return String(format: "%@: %02.2f m/s \n\t\t %02i:%02i min/mi",title,pace,minutes,seconds)
+        let MINUTES = Int(minPerMile)
+        let SECONDS = Int(minPerMile * 60) % 60
+        return String(format: "%@: %02.2f m/s \n\t\t %02i:%02i min/mi",title,pace,MINUTES,SECONDS)
     }
     
     //calculates the avergae pace of the user
     func calculateAveragePace()-> Double
     {
-        if let distance = self.distance
+        if let DISTANCE = self.distance
         {
-            pace = distance / timeElapsed
+            pace = DISTANCE / timeElapsed
             return pace
         }
         else
@@ -223,8 +223,8 @@ class StepTrackerViewController: UIViewController {
     //converts miles to meters
     func miles(meters:Double)-> Double
     {
-        let mile = 0.000621371192
-        return meters * mile
+        let MILE = 0.000621371192
+        return meters * MILE
     }
     
     override func viewDidLoad()
