@@ -29,6 +29,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 self.profileData.text = message
             }
         }
+        
+        if let pic = userDefaults.object(forKey: "profilePhoto") {
+            if let pict = pic as? UIImage {
+                self.profilePicture.image = pict
+            }
+        }
     }
     
     override func viewDidLoad() {
