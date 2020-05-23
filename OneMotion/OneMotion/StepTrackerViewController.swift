@@ -11,16 +11,14 @@ import CoreMotion
 
 class StepTrackerViewController: UIViewController {
     
-    //labels
-    //connections to the UI buttons
+    //connections to the storyboard interface buttons
     @IBOutlet weak var statusTitle: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var stepsLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var avgPaceLabel: UILabel!
-    
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var startButton: UIButton! //declaration of start button for layout
     
     //colour values for the activateButton
     let stopColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
@@ -124,7 +122,7 @@ class StepTrackerViewController: UIViewController {
         if let pace = self.pace
         {
             print(pace)
-            paceLabel.text = paceString(title: "Pace:", pace: pace)
+            paceLabel.text = paceString(title: "Pace", pace: pace)
         }
         else
         {
