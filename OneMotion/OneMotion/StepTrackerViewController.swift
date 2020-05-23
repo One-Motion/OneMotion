@@ -4,7 +4,8 @@
 //
 //  Created by Grace Subianto on 21/05/20.
 //  Copyright © 2020 Jason Vainikolo. All rights reserved.
-//
+// fix code
+
 
 import UIKit
 import CoreMotion
