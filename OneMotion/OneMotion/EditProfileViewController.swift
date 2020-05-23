@@ -31,16 +31,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //    var Email = ""
 //    self.saveButton.isEnabled = false
     
-    
-    @IBAction func changePhotoButton(_ sender: Any) {
-        
-        let imagePicked = UIImagePickerController()
-        imagePicked.delegate = self
-        imagePicked.sourceType = .photoLibrary
-        
-        self.present(imagePicked, animated: true, completion: nil)
-    }
-    
     func profileInfo() -> String {
         
         let data1:String = firstName.text ?? ""
@@ -162,17 +152,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //            }
                 print("button was pressed")
         }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        let profilePicture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        profilePhoto.image = profilePicture
-        
-        let imageData: NSData? = profilePhoto.image!.pngData()! as NSData
-        UserDefaults.standard.set(imageData, forKey: "profilePhoto")
-        
-        self.dismiss(animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
