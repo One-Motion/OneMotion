@@ -31,7 +31,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //    var Height = ""
 //    var Email = ""
 //    self.saveButton.isEnabled = false
-    
+
     
     /// The Action Button for editing the Profile photo
     @IBAction func changePhotoButton(_ sender: Any) {
@@ -43,11 +43,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.present(imagePicked, animated: true, completion: nil)
     }
     
-    
     /// Concatanates all the user input from the individual textFields
     /// - Returns: String of the concatanation
     func profileInfo() -> String {
-        let data1:String = firstName.text ?? ""
+        let data1:String = firstName.text ?? "" 
         let data2: String = lastName.text ?? ""
         let data3: String = DOB.text ?? ""
         let data4: String = weight.text ?? ""
@@ -63,7 +62,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func saveProfileButton(_ sender: Any) {
         let userDefaults = UserDefaults()
         userDefaults.set(profileInfo(), forKey: "profileInfo")
-        
         
         ///For Database Purposes
 //        let fName = firstName.text?.trimmingCharacters(in:                    .whitespacesAndNewlines)
@@ -170,7 +168,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //                print("Profile Saved Successfully")
 //            }
         }
-    
     
     /// creates a path for selecting a photo from the individuals library
     /// - Parameters:UIImagePickerController, Ararsy of UIImagePickerControllerInfoKey
