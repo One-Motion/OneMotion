@@ -11,6 +11,7 @@ import SQLite3
 
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
+    ///All the IBOutlets for the UITextFields, UIImageViews, and UIButtons
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var DOB: UITextField!
@@ -32,6 +33,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //    self.saveButton.isEnabled = false
     
     
+    /// The Action Button for editing the Profile photo
     @IBAction func changePhotoButton(_ sender: Any) {
         
         let imagePicked = UIImagePickerController()
@@ -41,8 +43,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.present(imagePicked, animated: true, completion: nil)
     }
     
+    
+    /// Concatanates all the user input from the individual textFields
+    /// - Returns: String of the concatanation
     func profileInfo() -> String {
-        
         let data1:String = firstName.text ?? ""
         let data2: String = lastName.text ?? ""
         let data3: String = DOB.text ?? ""
@@ -51,22 +55,26 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let data6: String = email.text ?? ""
         let data7: String = data1 + "\n\n" + data2 + "\n\n" + data3 + "\n\n" + data4 + "\n\n" + data5 + "\n\n" + data6
         
+        
         return data7
     }
     
+    /// Saves the state of Profile Information
     @IBAction func saveProfileButton(_ sender: Any) {
         let userDefaults = UserDefaults()
         userDefaults.set(profileInfo(), forKey: "profileInfo")
         
         
-        let fName = firstName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let lName = lastName.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var DofB = DOB.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Weight = weight.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Height = height.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        var Email = email.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        ///For Database Purposes
+//        let fName = firstName.text?.trimmingCharacters(in:                    .whitespacesAndNewlines)
+//        let lName = lastName.text?.trimmingCharacters(in:                     .whitespacesAndNewlines)
+//        var DofB = DOB.text?.trimmingCharacters(in:                           .whitespacesAndNewlines)
+//        var Weight = weight.text?.trimmingCharacters(in:                      .whitespacesAndNewlines)
+//        var Height = height.text?.trimmingCharacters(in:                      .whitespacesAndNewlines)
+//        var Email = email.text?.trimmingCharacters(in:                        .whitespacesAndNewlines)
         var imageData = profilePhoto.image!.jpegData(compressionQuality: 1)
         
+        //Storing all data into UserDefaults
         UserDefaults.standard.set(imageData, forKey: "profilePic")
         UserDefaults.standard.set(firstName.text, forKey: "firstName")
         UserDefaults.standard.set(lastName.text, forKey: "lastName")
@@ -76,11 +84,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         UserDefaults.standard.set(email.text, forKey: "email")
         UserDefaults.standard.synchronize()
         
+        //Testing the data is saved
         print("Data Saved")
         
-            let ProfilePhoto = profilePhoto.animationImages
-            
-//For Database Purposes
+        //For Database Purposes
+//            let ProfilePhoto = profilePhoto.animationImages
 //            if (fName?.isEmpty)! {
 //                print("First Name is Empty")
 //                saveButton.isEnabled = false
@@ -161,9 +169,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //            if sqlite3_step(stmt) != SQLITE_DONE {
 //                print("Profile Saved Successfully")
 //            }
-                print("button was pressed")
         }
     
+    
+    /// creates a path for selecting a photo from the individuals library
+    /// - Parameters:UIImagePickerController, Ararsy of UIImagePickerControllerInfoKey
+    ///   - picker: Built In UIImagePickerController
+    ///   - info: Array of UIImagePickerController of any type
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let profilePicture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
@@ -171,6 +183,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.dismiss(animated: true, completion: nil)
     }
     
+    /// Main Run function
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 10.0
@@ -253,6 +266,11 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //        }
 //    }
     
+    
+    /// Dismiss the keyboard when selecting away from the key board
+    /// - Parameters:Set<UITouch>, UIEvent
+    ///   - touches: A set of UITouch
+    ///   - event: calls an optional UIEvent
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         weight.resignFirstResponder()
         height.resignFirstResponder()
@@ -262,11 +280,17 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         email.resignFirstResponder()
     }
     
+    /// Prepares the Segue for calling features from previous view Controllers
+    /// - Parameters:UIStoryBoardSegue, Optionals of any
+    ///   - segue: The links between ViewControllers on the StoryBoard
+    ///   - sender:
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ProfileViewController
         vc.finalProfileData = profileInfo()
     }
 }
+
+
 extension UIViewController: UITextFieldDelegate {
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {

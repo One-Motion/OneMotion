@@ -10,11 +10,13 @@ import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDelegate {
     
+    ///IBOutlets in the current ViewController
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileData: UITextView!
     @IBOutlet weak var editButton: UIButton!
     var finalProfileData: String!
 
+    ///Gets all the Profile Information saved in the UserDefaults
     var fName: String = UserDefaults.standard.string(forKey: "firstName") ?? " "
     var lName: String = UserDefaults.standard.string(forKey: "lastName") ?? " "
     var DofB: String = UserDefaults.standard.string(forKey: "DOB") ?? " "
@@ -22,6 +24,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     var height: String = UserDefaults.standard.string(forKey: "height") ?? " "
     var email: String = UserDefaults.standard.string(forKey: "email") ?? " "
     
+    /// Refreshes the state of the current ViewController with possible updated text in the UserDefaults
+    /// - Parameter animated: takes a Boolean parameter
     override func viewWillAppear(_ animated: Bool) {
         let userDefaults = UserDefaults()
         if let data = userDefaults.object(forKey: "profileInfo") {
@@ -37,6 +41,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         }
     }
     
+    ///Main function for current viewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +49,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         editButton.layer.cornerRadius = 10.0
         self.profileData.text = finalProfileData
         
-//    profileData.text = fName + "\n\n" + lName + "\n\n" + DofB + "\n\n" + weight + "\n\n" + height + "\n\n" + email
     }
 }
 
