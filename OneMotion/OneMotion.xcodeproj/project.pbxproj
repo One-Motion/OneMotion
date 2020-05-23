@@ -13,6 +13,14 @@
 		198B206F24763A9600D6BDC8 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */; };
 		198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CA5AF247558F200E4495A /* StepTrackerViewController.swift */; };
 		19B8FA0F2477B19B005C80A0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B8FA0E2477B19B005C80A0 /* File.swift */; };
+		19BCCAE12479568C002D95E9 /* createDatePickerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCAD92479568C002D95E9 /* createDatePickerTest.swift */; };
+		19BCCAE22479568C002D95E9 /* viewWillAppearTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCADA2479568C002D95E9 /* viewWillAppearTest.swift */; };
+		19BCCAE32479568C002D95E9 /* startRunTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCADB2479568C002D95E9 /* startRunTest.swift */; };
+		19BCCAE42479568C002D95E9 /* paceStringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCADC2479568C002D95E9 /* paceStringTest.swift */; };
+		19BCCAE52479568C002D95E9 /* viewDidLoadTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCADD2479568C002D95E9 /* viewDidLoadTest.swift */; };
+		19BCCAE62479568C002D95E9 /* touchesBeganTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCADE2479568C002D95E9 /* touchesBeganTest.swift */; };
+		19BCCAE72479568C002D95E9 /* donePressedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCADF2479568C002D95E9 /* donePressedTest.swift */; };
+		19BCCAE82479568C002D95E9 /* mapRegionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCAE02479568C002D95E9 /* mapRegionTest.swift */; };
 		737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B724754D0D001CC344 /* AppDelegate.swift */; };
 		737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B924754D0D001CC344 /* SceneDelegate.swift */; };
 		737B73BF24754D0D001CC344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737B73BD24754D0D001CC344 /* Main.storyboard */; };
@@ -20,7 +28,6 @@
 		737B73C424754D0D001CC344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737B73C224754D0D001CC344 /* LaunchScreen.storyboard */; };
 		737B73CF24754D0E001CC344 /* OneMotionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73CE24754D0E001CC344 /* OneMotionTests.swift */; };
 		737B73DA24754D0E001CC344 /* OneMotionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73D924754D0E001CC344 /* OneMotionUITests.swift */; };
-		73B9606B2479133400ECCBF3 /* validProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B9606A2479133400ECCBF3 /* validProfileInfo.swift */; };
 		73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69C2475647B00206BAF /* HomeViewController.swift */; };
 		73BCC69F2475652A00206BAF /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC69E2475652A00206BAF /* ProfileViewController.swift */; };
 		73BCC6A124756F0600206BAF /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BCC6A024756F0600206BAF /* EditProfileViewController.swift */; };
@@ -61,6 +68,14 @@
 		198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		198CA5AF247558F200E4495A /* StepTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTrackerViewController.swift; sourceTree = "<group>"; };
 		19B8FA0E2477B19B005C80A0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		19BCCAD92479568C002D95E9 /* createDatePickerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createDatePickerTest.swift; sourceTree = "<group>"; };
+		19BCCADA2479568C002D95E9 /* viewWillAppearTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewWillAppearTest.swift; sourceTree = "<group>"; };
+		19BCCADB2479568C002D95E9 /* startRunTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = startRunTest.swift; sourceTree = "<group>"; };
+		19BCCADC2479568C002D95E9 /* paceStringTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paceStringTest.swift; sourceTree = "<group>"; };
+		19BCCADD2479568C002D95E9 /* viewDidLoadTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewDidLoadTest.swift; sourceTree = "<group>"; };
+		19BCCADE2479568C002D95E9 /* touchesBeganTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = touchesBeganTest.swift; sourceTree = "<group>"; };
+		19BCCADF2479568C002D95E9 /* donePressedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donePressedTest.swift; sourceTree = "<group>"; };
+		19BCCAE02479568C002D95E9 /* mapRegionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapRegionTest.swift; sourceTree = "<group>"; };
 		737B73B424754D0D001CC344 /* OneMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73B724754D0D001CC344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737B73B924754D0D001CC344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +89,6 @@
 		737B73D524754D0E001CC344 /* OneMotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneMotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73D924754D0E001CC344 /* OneMotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMotionUITests.swift; sourceTree = "<group>"; };
 		737B73DB24754D0E001CC344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73B9606A2479133400ECCBF3 /* validProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = validProfileInfo.swift; path = OneMotion/validProfileInfo.swift; sourceTree = SOURCE_ROOT; };
 		73BCC69C2475647B00206BAF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73BCC69E2475652A00206BAF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		73BCC6A024756F0600206BAF /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -172,7 +186,14 @@
 		737B73CD24754D0E001CC344 /* OneMotionTests */ = {
 			isa = PBXGroup;
 			children = (
-				73B9606A2479133400ECCBF3 /* validProfileInfo.swift */,
+				19BCCAD92479568C002D95E9 /* createDatePickerTest.swift */,
+				19BCCADF2479568C002D95E9 /* donePressedTest.swift */,
+				19BCCAE02479568C002D95E9 /* mapRegionTest.swift */,
+				19BCCADC2479568C002D95E9 /* paceStringTest.swift */,
+				19BCCADB2479568C002D95E9 /* startRunTest.swift */,
+				19BCCADE2479568C002D95E9 /* touchesBeganTest.swift */,
+				19BCCADD2479568C002D95E9 /* viewDidLoadTest.swift */,
+				19BCCADA2479568C002D95E9 /* viewWillAppearTest.swift */,
 				737B73CE24754D0E001CC344 /* OneMotionTests.swift */,
 				737B73D024754D0E001CC344 /* Info.plist */,
 			);
@@ -348,8 +369,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73B9606B2479133400ECCBF3 /* validProfileInfo.swift in Sources */,
+				19BCCAE52479568C002D95E9 /* viewDidLoadTest.swift in Sources */,
+				19BCCAE32479568C002D95E9 /* startRunTest.swift in Sources */,
+				19BCCAE22479568C002D95E9 /* viewWillAppearTest.swift in Sources */,
+				19BCCAE62479568C002D95E9 /* touchesBeganTest.swift in Sources */,
+				19BCCAE72479568C002D95E9 /* donePressedTest.swift in Sources */,
 				737B73CF24754D0E001CC344 /* OneMotionTests.swift in Sources */,
+				19BCCAE12479568C002D95E9 /* createDatePickerTest.swift in Sources */,
+				19BCCAE82479568C002D95E9 /* mapRegionTest.swift in Sources */,
+				19BCCAE42479568C002D95E9 /* paceStringTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
