@@ -11,8 +11,10 @@ import UIKit
 class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
     
-       
+    // this is a protocol set into place that allows the system to transfer data from one navigation controller to another
     var delegate: WorkoutProtocol? = nil
+    
+    //this is the set up of all the variables that the user would input into the text fields.
     @IBOutlet weak var repNumber: UITextField!
     
     @IBOutlet weak var setNumber: UITextField!
@@ -21,6 +23,7 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var timetaken: UITextField!
     @IBOutlet weak var workout: UITextField!
     
+    //creating a list of workouts that the user can select from
     let workouts = ["Sit-Up", "Push-Up", "Squats", "Pull-Ups"]
     let pickerView = UIPickerView()
     let datePicker = UIDatePicker()
@@ -49,17 +52,17 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return workouts.count
     }
-    
+    // this is the display for the user to select which workout they have completed.
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return workouts[row]
     }
-    
+    // this function hides the picker view when the user clicks outside of the picker view or the user selects whcich workout they have completed
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         workout.text = workouts[row]
         workout.resignFirstResponder()
     }
 
-
+    // this function creates and formatts the date picker which allows the user to select what date they have completed their workout
     func createDatePicker(){
         
         // allignment
@@ -86,7 +89,7 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         datePicker.datePickerMode = .date
     }
   
-    
+    // this function hides the date picker view whenthe user clicks the done button
     @objc func donePressed(){
         
         //formatting
@@ -99,14 +102,14 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     
-    
+    // this function hides the keyboard once the user clicks outside of the popup keyboard that they input their workout information in
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         repNumber.resignFirstResponder()
         setNumber.resignFirstResponder()
         timetaken.resignFirstResponder()
     }
     
-
+    // this button saves their workout information into the tableview and calls upon the get data function which is part of another function that allows the system to send text field user input from one navifation controller to another.
     @IBAction func Save(_ sender: Any) {
         print("done")
         self.dismiss(animated: true, completion: nil)
