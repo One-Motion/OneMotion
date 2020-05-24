@@ -9,10 +9,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    // Hello
     
-    //Declared Buttons from the main storyboard
+    ///Declared Buttons from the main storyboard
     @IBOutlet weak var friendButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var viewProfileButton: UIButton!
@@ -20,14 +18,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var createChallengeButton: UIButton!
     @IBOutlet weak var viewProgressButton: UIButton!
     @IBOutlet weak var myDayButton: UIButton!
-    @IBOutlet weak var stepTrackerButton: UIButton! //added this for the step track screen - GS
+    @IBOutlet weak var stepTrackerButton: UIButton! //added this for the step track
     @IBOutlet weak var goalButton:  UIButton! //added this for the goals screen - GS
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //Calling the Home Page Button Display function
-        startButton.layer.cornerRadius = startButton.frame.width / 2            //StartButton is slightly off towards the right
+        startButton.layer.cornerRadius = startButton.frame.width / 2            
         HPButton(button: viewProfileButton)
         HPButton(button: addWorkoutButton)
         HPButton(button: createChallengeButton)
