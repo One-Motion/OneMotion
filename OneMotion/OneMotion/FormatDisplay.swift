@@ -8,6 +8,8 @@
 
 import Foundation
 
+// This class formats the display of the distance, time, date and pace which is used in the RunDataViewController and the RunViewController
+
 struct FormatDisplay {
   static func distance(_ distance: Double) -> String {
     let distanceMeasurement = Measurement(value: distance, unit: UnitLength.meters)

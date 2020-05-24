@@ -25,7 +25,6 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
     override func viewDidLoad() {
             super.viewDidLoad()
-            // Do any additional setup after loading the view.
             createDatePicker()
             
             pickerView.delegate = self
@@ -39,11 +38,11 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                             
         }
 
+        // Setting up the picker view
         public func numberOfComponents(in pickerView: UIPickerView) -> Int {
             return 1
         }
         
-
         public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
             return moods.count
         }
@@ -57,37 +56,37 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             mood.resignFirstResponder()
         }
 
-
+        // Implementing the date picker
         func createDatePicker(){
             
-            // allignment
+            // Allignment
             dateSelecter.textAlignment = .center
 
             
-            //toolbear
+            // Toolbear
             let toolbar = UIToolbar()
             toolbar.sizeToFit()
             
-            //bar button
+            // Bar button
             let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
             toolbar.setItems([doneBtn], animated: true)
             
-            //assign toolbar to keyboard
+            // Assign toolbar to keyboard
             dateSelecter.inputAccessoryView = toolbar
             
             
-            //asign datepicker to textfield
+            // Assign datepicker to textfield
             dateSelecter.inputView = datePicker
             
             
-            //date picker mode
+            // Date picker mode
             datePicker.datePickerMode = .date
         }
       
-        
+        // When done button is pressed
         @objc func donePressed(){
             
-            //formatting
+            //Formatting
             let formatter = DateFormatter()
             formatter.dateStyle = .medium
             formatter.timeStyle = .none
@@ -96,6 +95,7 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             self.view.endEditing(true)
         }
         
+        // When the breakfast, lunch and dinner options are pressed
         override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
             breakfast.resignFirstResponder()
             lunch.resignFirstResponder()
@@ -103,7 +103,7 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
         
 
-        
+    // Action for when save button is pressed
     @IBAction func saveButton(_ sender: Any) {
         print("Saved")
     }
