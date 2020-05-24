@@ -7,6 +7,7 @@
 //
 
 import Foundation
+// This class converts the unit of pace which is used in the RunDataViewController and RunViewController
 
 class UnitConverterPace: UnitConverter {
   private let coefficient: Double

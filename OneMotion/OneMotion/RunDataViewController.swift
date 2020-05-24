@@ -24,7 +24,6 @@ class RunDataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
-        // Do any additional setup after loading the view.
     }
     
     private func configureView() {
@@ -44,6 +43,7 @@ class RunDataViewController: UIViewController {
 //        loadMap()
     }
     
+    // Displaying only a specific area around the locationt travelled when the map view is first opened.
     private func mapRegion() -> MKCoordinateRegion? {
       guard
         let locations = run.locations,
@@ -51,12 +51,14 @@ class RunDataViewController: UIViewController {
       else {
         return nil
       }
-        
+    
+        // Latitude
       let latitudes = locations.map { location -> Double in
         let location = location as! Location
         return location.latitude
       }
         
+        // Longitude
       let longitudes = locations.map { location -> Double in
         let location = location as! Location
         return location.longitude
@@ -67,6 +69,7 @@ class RunDataViewController: UIViewController {
       let maxLong = longitudes.max()!
       let minLong = longitudes.min()!
         
+        // Creating a radius for region view 
       let center = CLLocationCoordinate2D(latitude: (minLat + maxLat) / 2,
                                           longitude: (minLong + maxLong) / 2)
       let span = MKCoordinateSpan(latitudeDelta: (maxLat - minLat) * 1.3,
@@ -75,7 +78,7 @@ class RunDataViewController: UIViewController {
     }
 
 
-    
+    // Creating a line on the map view to show how far the user has travelled
     private func polyLine() -> MKPolyline {
       guard let locations = run.locations else {
         return MKPolyline()
@@ -88,6 +91,8 @@ class RunDataViewController: UIViewController {
       return MKPolyline(coordinates: coords, count: coords.count)
     }
     
+    
+    // Loading the map view 
     private func loadMap() {
       guard
         let locations = run.locations,

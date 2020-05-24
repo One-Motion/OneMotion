@@ -24,6 +24,7 @@ class RunViewController : UIViewController {
     private var distance = Measurement(value: 0, unit: UnitLength.meters)
     private var locationList: [CLLocation] = []
     
+    // This function implements all the variables for when the run begins
     private func startRun() {
            dataStackView.isHidden = false
            playButton.isHidden = true
@@ -37,6 +38,7 @@ class RunViewController : UIViewController {
            startLocationUpdates()
        }
        
+    // This function implements all the variables for when the run ends
     private func stopRun() {
         dataStackView.isHidden = true
         playButton.isHidden = false
@@ -48,21 +50,24 @@ class RunViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
+    // This function tells the timer and location tracker to stop when called
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         timer?.invalidate()
         locationManager.stopUpdatingLocation()
     }
     
+    // Timer function
     func eachSecond() {
         seconds += 1
         updateDisplay()
     }
 
+    // Updates the display according to the distance, time and pace
     private func updateDisplay() {
+        // Formatting
         let formattedDistance = FormatDisplay.distance(distance)
         let formattedTime = FormatDisplay.time(seconds)
         let formattedPace = FormatDisplay.pace(distance: distance, seconds: seconds, outputUnit: UnitSpeed.minutesPerMile)
@@ -72,6 +77,7 @@ class RunViewController : UIViewController {
         paceLabel.text = "Average Pace:  \(formattedPace)"
     }
 
+    // Updates the location
     private func startLocationUpdates() {
         locationManager.delegate = self
         locationManager.activityType = .fitness
@@ -79,6 +85,7 @@ class RunViewController : UIViewController {
         locationManager.startUpdatingLocation()
     }
    
+    // Saves the run
     private func saveRun() {
       let newRun = Run(context: CoreDataStack.context)
       newRun.distance = distance.value
@@ -97,10 +104,12 @@ class RunViewController : UIViewController {
       run = newRun
     }
     
+    // Action called when the play button is tapped 
     @IBAction func playTapped(_ sender: Any) {
         startRun()
     }
     
+    // Action called when the stop button is tapped
     @IBAction func stopTapped(_ sender: Any) {
         let alertController = UIAlertController(title: "End run?",
                                                 message: "Do you wish to end your run?",
