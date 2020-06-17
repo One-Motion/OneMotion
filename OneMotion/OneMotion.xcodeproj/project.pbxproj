@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		19292D9B2477A4650025D2BA /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19292D9A2477A4650025D2BA /* ProgressViewController.swift */; };
 		1938F7D124776EE200D79A02 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1938F7D024776EE200D79A02 /* GoalsViewController.swift */; };
+		197EA3022499E62600DA41DD /* animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 197EA3012499E62600DA41DD /* animation.gif */; };
+		197EA3042499EBAD00DA41DD /* GIFAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197EA3032499EBAD00DA41DD /* GIFAPI.swift */; };
 		198B206D2476345300D6BDC8 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206C2476345300D6BDC8 /* WorkoutViewController.swift */; };
 		198B206F24763A9600D6BDC8 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */; };
 		198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198CA5AF247558F200E4495A /* StepTrackerViewController.swift */; };
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		19292D9A2477A4650025D2BA /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		1938F7D024776EE200D79A02 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
+		197EA3012499E62600DA41DD /* animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animation.gif; sourceTree = "<group>"; };
+		197EA3032499EBAD00DA41DD /* GIFAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFAPI.swift; sourceTree = "<group>"; };
 		198B206C2476345300D6BDC8 /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		198B206E24763A9600D6BDC8 /* ChallengeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		198CA5AF247558F200E4495A /* StepTrackerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTrackerViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 				19292D9A2477A4650025D2BA /* ProgressViewController.swift */,
 				B5DE421C2499D1890085DDC4 /* LoginViewController.swift */,
 				737B73BD24754D0D001CC344 /* Main.storyboard */,
+				197EA3012499E62600DA41DD /* animation.gif */,
 				737B73C024754D0D001CC344 /* Assets.xcassets */,
 				737B73C224754D0D001CC344 /* LaunchScreen.storyboard */,
 				737B73C524754D0D001CC344 /* Info.plist */,
@@ -182,6 +187,7 @@
 				B54EDD782476296F00DAD0C1 /* UnitConverterPace.swift */,
 				B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */,
 				19B8FA0E2477B19B005C80A0 /* File.swift */,
+				197EA3032499EBAD00DA41DD /* GIFAPI.swift */,
 			);
 			path = OneMotion;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				737B73C424754D0D001CC344 /* LaunchScreen.storyboard in Resources */,
+				197EA3022499E62600DA41DD /* animation.gif in Resources */,
 				737B73C124754D0D001CC344 /* Assets.xcassets in Resources */,
 				737B73BF24754D0D001CC344 /* Main.storyboard in Resources */,
 			);
@@ -350,6 +357,7 @@
 				19292D9B2477A4650025D2BA /* ProgressViewController.swift in Sources */,
 				B5B62903247798030016EC05 /* FriendViewController.swift in Sources */,
 				198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */,
+				197EA3042499EBAD00DA41DD /* GIFAPI.swift in Sources */,
 				B5B62905247798220016EC05 /* FriendProfileController.swift in Sources */,
 				73BCC6A124756F0600206BAF /* EditProfileViewController.swift in Sources */,
 				B54EDD8224762DF200DAD0C1 /* RunViewController.swift in Sources */,
