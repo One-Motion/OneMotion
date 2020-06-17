@@ -70,7 +70,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 //        var Weight = weight.text?.trimmingCharacters(in:                      .whitespacesAndNewlines)
 //        var Height = height.text?.trimmingCharacters(in:                      .whitespacesAndNewlines)
 //        var Email = email.text?.trimmingCharacters(in:                        .whitespacesAndNewlines)
-        var imageData = profilePhoto.image!.jpegData(compressionQuality: 1)
+        let imageData = profilePhoto.image!.jpegData(compressionQuality: 1)
         
         //Storing all data into UserDefaults
         UserDefaults.standard.set(imageData, forKey: "profilePic")
