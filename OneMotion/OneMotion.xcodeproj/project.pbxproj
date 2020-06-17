@@ -42,6 +42,7 @@
 		B5992AA3247648E600904878 /* MyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5992AA2247648E600904878 /* MyDayViewController.swift */; };
 		B5B62903247798030016EC05 /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62902247798030016EC05 /* FriendViewController.swift */; };
 		B5B62905247798220016EC05 /* FriendProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B62904247798220016EC05 /* FriendProfileController.swift */; };
+		B5DE421D2499D1890085DDC4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE421C2499D1890085DDC4 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		B5992AA2247648E600904878 /* MyDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDayViewController.swift; sourceTree = "<group>"; };
 		B5B62902247798030016EC05 /* FriendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		B5B62904247798220016EC05 /* FriendProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileController.swift; sourceTree = "<group>"; };
+		B5DE421C2499D1890085DDC4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				B5B62902247798030016EC05 /* FriendViewController.swift */,
 				B5B62904247798220016EC05 /* FriendProfileController.swift */,
 				19292D9A2477A4650025D2BA /* ProgressViewController.swift */,
+				B5DE421C2499D1890085DDC4 /* LoginViewController.swift */,
 				737B73BD24754D0D001CC344 /* Main.storyboard */,
 				737B73C024754D0D001CC344 /* Assets.xcassets */,
 				737B73C224754D0D001CC344 /* LaunchScreen.storyboard */,
@@ -343,6 +346,7 @@
 				73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */,
 				B5992AA3247648E600904878 /* MyDayViewController.swift in Sources */,
 				B54EDD7D2476297E00DAD0C1 /* StoryboardSupport.swift in Sources */,
+				B5DE421D2499D1890085DDC4 /* LoginViewController.swift in Sources */,
 				19292D9B2477A4650025D2BA /* ProgressViewController.swift in Sources */,
 				B5B62903247798030016EC05 /* FriendViewController.swift in Sources */,
 				198CA5B0247558F200E4495A /* StepTrackerViewController.swift in Sources */,
