@@ -51,6 +51,3 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
     }
 }
-
-
-
