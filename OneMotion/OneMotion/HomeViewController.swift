@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     
     var db: OpaquePointer?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

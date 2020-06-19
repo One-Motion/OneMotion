@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class LoginViewController : UIViewController {
-    
+   
     @IBOutlet weak var imgImage: UIImageView!
     
     @IBOutlet weak var username: UITextField!
