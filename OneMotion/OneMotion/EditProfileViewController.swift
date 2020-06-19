@@ -1,4 +1,3 @@
-//
 //  EditProfileViewController.swift
 //  OneMotion
 //
@@ -24,13 +23,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     //For Database Purpose
     var db: OpaquePointer?
     
+    var profilePic: String = "?"
+    
     /// The Action Button for editing the Profile photo
     @IBAction func changePhotoButton(_ sender: Any) {
         
         let imagePicked = UIImagePickerController()
         imagePicked.delegate = self
         imagePicked.sourceType = .photoLibrary
-        
         self.present(imagePicked, animated: true, completion: nil)
     }
     
@@ -48,21 +48,13 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         //cleans the table
         delete()
         
-        //Creates table is it doesn't exist
-        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT);"
-        if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
-            print("Error creating table")
-            return
-        }
-        print("Successfully Connected2")
-        
-        insertProfile(fName: self.firstName.text ?? " ", lName: self.lastName.text ?? " ", DofB: self.DOB.text ?? " ", Weight: self.weight.text ?? " ", Height: self.height.text ?? " ", Email: self.email.text ?? " ")
-//        print("Update Successful!")
+        insertProfile(fName: self.firstName.text ?? " ", lName: self.lastName.text ?? " ", DofB: self.DOB.text ?? " ", Weight: self.weight.text ?? " ", Height: self.height.text ?? " ", Email: self.email.text ?? " ", profilePic: self.profilePic)
+        print("Update Successful!")
         }
     
-    func insertProfile(fName: String, lName: String, DofB: String, Weight: String, Height: String, Email: String) {
+    func insertProfile(fName: String, lName: String, DofB: String, Weight: String, Height: String, Email: String, profilePic: String) {
         var insertStmt: OpaquePointer?
-        let insertQuery = "INSERT INTO PROFILE (FNAME, LNAME, DOB, WEIGHT, HEIGHT, EMAIL) VALUES (?,?,?,?,?,?);"
+        let insertQuery = "INSERT INTO PROFILE(FNAME, LNAME, DOB, WEIGHT, HEIGHT, EMAIL, PROFILEPIC) VALUES (?,?,?,?,?,?,?);"
 
         if sqlite3_prepare_v2(db, insertQuery, -1, &insertStmt, nil) == SQLITE_OK {
                 
@@ -79,6 +71,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             sqlite3_bind_int(insertStmt, 4, weight)
             sqlite3_bind_int(insertStmt, 5, height)
             sqlite3_bind_text(insertStmt, 6, email.utf8String, -1, nil)
+            sqlite3_bind_text(insertStmt, 7, profilePic, -1, nil)
             
             if sqlite3_step(insertStmt) == SQLITE_DONE {
                 print("\nSuccessfully inserted row")
@@ -98,7 +91,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let profilePicture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-        profilePhoto.image = profilePicture
+        self.profilePhoto.image = profilePicture
+        var imageData: NSData
+        imageData = profilePhoto.image!.pngData()! as NSData
+        self.profilePic = imageData.base64EncodedString(options: .lineLength64Characters)
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -146,4 +142,3 @@ extension UIViewController: UITextFieldDelegate {
         return true
     }
 }
-
