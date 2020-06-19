@@ -64,6 +64,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             let weight: Int32 = (Weight as NSString).intValue
             let height: Int32 = (Height as NSString).intValue
             let email: NSString = Email as NSString
+            let ProfilePic: NSString = profilePic as NSString
             
             sqlite3_bind_text(insertStmt, 1, firstName.utf8String, -1, nil)
             sqlite3_bind_text(insertStmt, 2, lastName.utf8String, -1, nil)
@@ -71,7 +72,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             sqlite3_bind_int(insertStmt, 4, weight)
             sqlite3_bind_int(insertStmt, 5, height)
             sqlite3_bind_text(insertStmt, 6, email.utf8String, -1, nil)
-            sqlite3_bind_text(insertStmt, 7, profilePic, -1, nil)
+            sqlite3_bind_text(insertStmt, 7, ProfilePic.utf8String, -1, nil)
             
             if sqlite3_step(insertStmt) == SQLITE_DONE {
                 print("\nSuccessfully inserted row")
@@ -92,8 +93,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         let profilePicture = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         self.profilePhoto.image = profilePicture
-        var imageData: NSData
-        imageData = profilePhoto.image!.pngData()! as NSData
+        let imageData: NSData = profilePhoto.image!.pngData()! as NSData
         self.profilePic = imageData.base64EncodedString(options: .lineLength64Characters)
         self.dismiss(animated: true, completion: nil)
     }
