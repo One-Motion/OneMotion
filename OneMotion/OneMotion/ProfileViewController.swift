@@ -30,17 +30,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
             return
         }
         
-//        //Creates table iF it doesn't exist
-//        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT);"
-//        if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
-//            print("Error creating table")
-//            return
-//        }
-//        print("Successfully Connected3")
+        //Creates table iF it doesn't exist
+        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT, PROFILEPIC);"
+        if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
+        }
+        print("Successfully Connected3")
         
         
         //get data from the database
-        var queryStatement: OpaquePointer?
+        var queryStatement: OpaquePointer? = nil
         let selectQuery = "SELECT * FROM PROFILE"
         if sqlite3_prepare(db, selectQuery, -1, &queryStatement, nil) == SQLITE_OK{
             if sqlite3_step(queryStatement) == SQLITE_ROW {
@@ -49,34 +49,23 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 let weight = sqlite3_column_int(queryStatement, 5)
                 let height = sqlite3_column_int(queryStatement, 6)
                 // 4
-                guard let queryResultCol1 = sqlite3_column_text(queryStatement, 1) else {
-                  print("Query result is nil")
-                  return
-                }
-                guard let queryResultCol2 = sqlite3_column_text(queryStatement, 2) else {
-                    print("Query result is nil")
-                    return
-                }
-                guard let queryResultCol3 = sqlite3_column_text(queryStatement, 3) else {
-                    print("Query result is nil")
-                    return
-                }
                 
-                guard let queryResultCol7 = sqlite3_column_text(queryStatement, 7) else {
-                    print("Query result is nil")
-                    return
-                }
-                
-                let name1 = String(cString: queryResultCol1)
-                let name2 = String(cString: queryResultCol2)
-                let name3 = String(cString: queryResultCol3)
-                let name7 = String(cString: queryResultCol7)
+                let name1 = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                let name2 = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
+                let name3 = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
+                let name7 = String(describing: String(cString: sqlite3_column_text(queryStatement, 7)))
+//                let name8 = String(describing: String(cString: sqlite3_column_text(queryStatement, 9)))
                 // 5
                 
                 //Saves all the gathered Data into a variable
                 print("\nQuery Result:")
-                print("\n\(name1) | \(name2) | \(name3) | \(weight) | \(height) | \(name7)")
+                print("\n\(id) | \(name1) | \(name2) | \(name3) | \(weight) | \(height) | \(name7)")
                 self.profileData.text = "\(name1) \n\n \(name2) \n\n \(name3) \n\n \(weight) \n\n \(height) \n\n \(name7)"
+                
+//                let dataDecoded:NSData = NSData(base64Encoded: name8, options: NSData.Base64DecodingOptions(rawValue: 0))!
+//                let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
+//                self.profilePicture.image = decodedimage
+                
                 print("Successfully gathered Data!")
             } else {
                 print("\nQuery returned no results.")

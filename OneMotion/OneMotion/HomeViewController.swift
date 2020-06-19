@@ -47,7 +47,7 @@ class HomeViewController: UIViewController {
         }
         
         //Creates table is it doesn't exist
-        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, GENDER TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT);"
+        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, GENDER TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT, PROFILEPIC TEXT);"
         if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
             print("Error creating table")
             return
