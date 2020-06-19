@@ -7,6 +7,7 @@
 //  testing pull
 
 import UIKit
+import SQLite3
 
 class ProfileViewController: UIViewController, UITableViewDelegate {
     
@@ -14,32 +15,99 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var profileData: UITextView!
     @IBOutlet weak var editButton: UIButton!
-    var finalProfileData: String!
-
-    ///Gets all the Profile Information saved in the UserDefaults
-    var fName: String = UserDefaults.standard.string(forKey: "firstName") ?? " "
-    var lName: String = UserDefaults.standard.string(forKey: "lastName") ?? " "
-    var DofB: String = UserDefaults.standard.string(forKey: "DOB") ?? " "
-    var weight: String = UserDefaults.standard.string(forKey: "weight") ?? " "
-    var height: String = UserDefaults.standard.string(forKey: "height") ?? " "
-    var email: String = UserDefaults.standard.string(forKey: "email") ?? " "
+//    var finalProfileData: String!
+    var db: OpaquePointer?
     
     /// Refreshes the state of the current ViewController with possible updated text in the UserDefaults
     /// - Parameter animated: takes a Boolean parameter
     override func viewWillAppear(_ animated: Bool) {
-        let userDefaults = UserDefaults()
-        if let data = userDefaults.object(forKey: "profileInfo") {
-            if let message = data as? String {
-                self.profileData.text = message
-            }
+        
+        //OPENS THE CONNECTION
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
+
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("Error Opening database")
+            return
         }
         
-        if let pic = userDefaults.object(forKey: "profilePhoto") {
-            if let pict = pic as? UIImage {
-                self.profilePicture.image = pict
+//        //Creates table iF it doesn't exist
+//        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT);"
+//        if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
+//            print("Error creating table")
+//            return
+//        }
+//        print("Successfully Connected3")
+        
+        
+        //get data from the database
+        var queryStatement: OpaquePointer?
+        let selectQuery = "SELECT * FROM PROFILE"
+        if sqlite3_prepare(db, selectQuery, -1, &queryStatement, nil) == SQLITE_OK{
+            if sqlite3_step(queryStatement) == SQLITE_ROW {
+                // 3
+                let id = sqlite3_column_int(queryStatement, 0)
+                let weight = sqlite3_column_int(queryStatement, 5)
+                let height = sqlite3_column_int(queryStatement, 6)
+                // 4
+                guard let queryResultCol1 = sqlite3_column_text(queryStatement, 1) else {
+                  print("Query result is nil")
+                  return
+                }
+                guard let queryResultCol2 = sqlite3_column_text(queryStatement, 2) else {
+                    print("Query result is nil")
+                    return
+                }
+                guard let queryResultCol3 = sqlite3_column_text(queryStatement, 3) else {
+                    print("Query result is nil")
+                    return
+                }
+                
+                guard let queryResultCol7 = sqlite3_column_text(queryStatement, 7) else {
+                    print("Query result is nil")
+                    return
+                }
+                
+                let name1 = String(cString: queryResultCol1)
+                let name2 = String(cString: queryResultCol2)
+                let name3 = String(cString: queryResultCol3)
+                let name7 = String(cString: queryResultCol7)
+                // 5
+                
+                //Saves all the gathered Data into a variable
+                print("\nQuery Result:")
+                print("\n\(name1) | \(name2) | \(name3) | \(weight) | \(height) | \(name7)")
+                self.profileData.text = "\(name1) \n\n \(name2) \n\n \(name3) \n\n \(weight) \n\n \(height) \n\n \(name7)"
+                print("Successfully gathered Data!")
+            } else {
+                print("\nQuery returned no results.")
             }
-        }
+            } else {
+                // 6
+              let errorMessage = String(cString: sqlite3_errmsg(db))
+              print("\nQuery is not prepared \(errorMessage)")
+            }
+            // 7
+            sqlite3_finalize(queryStatement)
     }
+    
+    
+    func delete() {
+        let deleteStatementString = "DELETE FROM PROFILE WHERE Id = 1;"
+        var deleteStatement: OpaquePointer?
+          if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) ==
+              SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+              print("\nSuccessfully deleted row.")
+            } else {
+              print("\nCould not delete row.")
+            }
+          } else {
+            print("\nDELETE statement could not be prepared")
+          }
+          
+          sqlite3_finalize(deleteStatement)
+    }
+
     
     ///Main function for current viewController
     override func viewDidLoad() {
@@ -47,7 +115,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
         profileData.isEditable = false
         editButton.layer.cornerRadius = 10.0
-        self.profileData.text = finalProfileData
+//        self.profileData.text = finalProfileData
         
     }
 }

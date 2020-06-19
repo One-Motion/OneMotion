@@ -7,6 +7,7 @@
 // new me
 
 import UIKit
+import SQLite3
 
 class HomeViewController: UIViewController {
     
@@ -21,6 +22,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var stepTrackerButton: UIButton! //added this for the step track
     @IBOutlet weak var goalButton:  UIButton! //added this for the goals screen - GS
     
+    var db: OpaquePointer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +37,24 @@ class HomeViewController: UIViewController {
         HPButton(button: stepTrackerButton) //added this for the step track screen - GS
         HPButton(button: goalButton) //added this for the goals screen - GS
         
+        //Opens the Connection
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
+
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("Error Opening database")
+            return
+        }
+        
+        //Creates table is it doesn't exist
+        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, GENDER TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT);"
+        if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
+        }
+        print("Successfully Connected1")
     }
+    
+
     
     /// Adds displat features to the home page buttons
     /// - Parameter button: UIButton
