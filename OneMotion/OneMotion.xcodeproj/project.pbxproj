@@ -94,6 +94,7 @@
 		737B73D524754D0E001CC344 /* OneMotionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneMotionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73D924754D0E001CC344 /* OneMotionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneMotionUITests.swift; sourceTree = "<group>"; };
 		737B73DB24754D0E001CC344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73B9A1DC249B761800EBE76B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		73BCC69C2475647B00206BAF /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		73BCC69E2475652A00206BAF /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		73BCC6A024756F0600206BAF /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +144,7 @@
 				737B73CD24754D0E001CC344 /* OneMotionTests */,
 				737B73D824754D0E001CC344 /* OneMotionUITests */,
 				737B73B524754D0D001CC344 /* Products */,
+				73B9A1DB249B761800EBE76B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -216,6 +218,14 @@
 				737B73DB24754D0E001CC344 /* Info.plist */,
 			);
 			path = OneMotionUITests;
+			sourceTree = "<group>";
+		};
+		73B9A1DB249B761800EBE76B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73B9A1DC249B761800EBE76B /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

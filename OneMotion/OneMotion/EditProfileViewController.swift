@@ -23,14 +23,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     //For Database Purpose
     var db: OpaquePointer?
-    var ProfileList = [Profile]()
-    var fName = ""
-    var lName = ""
-    var DofB = ""
-    var Weight = ""
-    var Height = ""
-    var Email = ""
-
     
     /// The Action Button for editing the Profile photo
     @IBAction func changePhotoButton(_ sender: Any) {
@@ -42,130 +34,62 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.present(imagePicked, animated: true, completion: nil)
     }
     
-    /// Concatanates all the user input from the individual textFields
-    /// - Returns: String of the concatanation
-    func profileInfo() -> String {
-        let data1:String = firstName.text ?? "" 
-        let data2: String = lastName.text ?? ""
-        let data3: String = DOB.text ?? ""
-        let data4: String = weight.text ?? ""
-        let data5: String = height.text ?? ""
-        let data6: String = email.text ?? ""
-        let data7: String = data1 + "\n\n" + data2 + "\n\n" + data3 + "\n\n" + data4 + "\n\n" + data5 + "\n\n" + data6
-        
-        
-        return data7
-    }
-    
     /// Saves the state of Profile Information
     @IBAction func saveProfileButton(_ sender: Any) {
-        let userDefaults = UserDefaults()
-        userDefaults.set(profileInfo(), forKey: "profileInfo")
-        
-        ///For Database Purposes
-        let fName = firstName.text?.trimmingCharacters(in:                    .whitespacesAndNewlines)
-        let lName = lastName.text?.trimmingCharacters(in:                     .whitespacesAndNewlines)
-        var DofB = DOB.text?.trimmingCharacters(in:                           .whitespacesAndNewlines)
-        var Weight = weight.text?.trimmingCharacters(in:                      .whitespacesAndNewlines)
-        var Height = height.text?.trimmingCharacters(in:                      .whitespacesAndNewlines)
-        var Email = email.text?.trimmingCharacters(in:                        .whitespacesAndNewlines)
-        var imageData = profilePhoto.image!.jpegData(compressionQuality: 1)
-        
-        //Storing all data into UserDefaults
-//        UserDefaults.standard.set(imageData, forKey: "profilePic")
-//        UserDefaults.standard.set(firstName.text, forKey: "firstName")
-//        UserDefaults.standard.set(lastName.text, forKey: "lastName")
-//        UserDefaults.standard.set(DOB.text, forKey: "DOB")
-//        UserDefaults.standard.set(weight.text, forKey: "weight")
-//        UserDefaults.standard.set(height.text, forKey: "height")
-//        UserDefaults.standard.set(email.text, forKey: "email")
-//        UserDefaults.standard.synchronize()
-        
-        //Testing the data is saved
-//        print("Data Saved")
-        
-        //For Database Purposes
-            let ProfilePhoto = profilePhoto.animationImages
-            if (fName?.isEmpty)! {
-                print("First Name is Empty")
-                saveButton.isEnabled = false
-                return;
-            }
 
-            if (lName?.isEmpty)! {
-                print("Last Name is Empty")
-                saveButton.isEnabled = false
-                return;
-            }
+        //Opens the Connection
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
 
-            if (DofB?.isEmpty)! {
-                DofB = nil
-                saveButton.isEnabled = false
-                return;
-            }
-
-            if (Weight?.isEmpty)! {
-                Weight = nil
-                saveButton.isEnabled = false
-                return;
-            }
-
-            if (Height?.isEmpty)! {
-                Height = nil
-                saveButton.isEnabled = false
-                return;
-            }
-
-            if (Email?.isEmpty)! {
-                print("Email is Empty")
-                saveButton.isEnabled = false
-                return;
-            }
-            else {
-                self.saveButton.isEnabled = true
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("Error Opening database")
+            return
         }
-
-            var stmt: OpaquePointer?
-            let insertQuery = "INSERT INTO PROFILE (FNAME, LNAME, DOB, WEIGHT, HEIGHT, EMAIL) VALUES (?,?,?,?,?,?);"
-
-        if sqlite3_prepare(db, insertQuery, -1, &stmt, nil) != SQLITE_OK {
-                print("Error binding Query")
-            }
-
-        if sqlite3_bind_text(stmt, 1, self.fName, -1, nil) != SQLITE_OK {
-                print("Error binding FirstName")
-                return;
-            }
-
-        if sqlite3_bind_text(stmt, 2, self.lName, -1, nil) != SQLITE_OK {
-                print("Error binding lastName")
-                return;
-            }
-
-        if sqlite3_bind_text(stmt, 3, self.DofB, -1, nil) != SQLITE_OK {
-                print("Error binding Date of Birth")
-                return;
-            }
-
-            if sqlite3_bind_int(stmt, 4, (Weight! as NSString).intValue) != SQLITE_OK {
-                print("Error binding Weight")
-                return;
-            }
-
-        if sqlite3_bind_int(stmt, 5, (Height! as NSString).intValue) != SQLITE_OK {
-                print("Error binding Height")
-                return;
-            }
-
-        if sqlite3_bind_text(stmt, 6, self.Email, -1, nil) != SQLITE_OK {
-                print("Error binding Email")
-                return;
-            }
-
-            if sqlite3_step(stmt) != SQLITE_DONE {
-                print("Profile Saved Successfully")
-            }
+        
+        //cleans the table
+        delete()
+        
+        //Creates table is it doesn't exist
+        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT);"
+        if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
         }
+        print("Successfully Connected2")
+        
+        insertProfile(fName: self.firstName.text ?? " ", lName: self.lastName.text ?? " ", DofB: self.DOB.text ?? " ", Weight: self.weight.text ?? " ", Height: self.height.text ?? " ", Email: self.email.text ?? " ")
+//        print("Update Successful!")
+        }
+    
+    func insertProfile(fName: String, lName: String, DofB: String, Weight: String, Height: String, Email: String) {
+        var insertStmt: OpaquePointer?
+        let insertQuery = "INSERT INTO PROFILE (FNAME, LNAME, DOB, WEIGHT, HEIGHT, EMAIL) VALUES (?,?,?,?,?,?);"
+
+        if sqlite3_prepare_v2(db, insertQuery, -1, &insertStmt, nil) == SQLITE_OK {
+                
+            let firstName: NSString = fName as NSString
+            let lastName: NSString = lName as NSString
+            let DOB: NSString = DofB as NSString
+            let weight: Int32 = (Weight as NSString).intValue
+            let height: Int32 = (Height as NSString).intValue
+            let email: NSString = Email as NSString
+            
+            sqlite3_bind_text(insertStmt, 1, firstName.utf8String, -1, nil)
+            sqlite3_bind_text(insertStmt, 2, lastName.utf8String, -1, nil)
+            sqlite3_bind_text(insertStmt, 3, DOB.utf8String, -1, nil)
+            sqlite3_bind_int(insertStmt, 4, weight)
+            sqlite3_bind_int(insertStmt, 5, height)
+            sqlite3_bind_text(insertStmt, 6, email.utf8String, -1, nil)
+            
+            if sqlite3_step(insertStmt) == SQLITE_DONE {
+                print("\nSuccessfully inserted row")
+            } else {
+                print("\nCould not insert row")
+            }
+        } else {
+            print("\nInsert Statement not prepared")
+        }
+        sqlite3_finalize(insertStmt)
+    }
     
     /// creates a path for selecting a photo from the individuals library
     /// - Parameters:UIImagePickerController, Ararsy of UIImagePickerControllerInfoKey
@@ -178,74 +102,28 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.dismiss(animated: true, completion: nil)
     }
     
+    func delete() {
+        let deleteStatementString = "DELETE FROM PROFILE;"
+        var deleteStatement: OpaquePointer?
+          if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) ==
+              SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+              print("\nSuccessfully deleted row.")
+            } else {
+              print("\nCould not delete row.")
+            }
+          } else {
+            print("\nDELETE statement could not be prepared")
+          }
+          
+          sqlite3_finalize(deleteStatement)
+    }
+    
     /// Main Run function
     override func viewDidLoad() {
         super.viewDidLoad()
         saveButton.layer.cornerRadius = 10.0
-        
-//For Database Purposes
-        firstName.delegate = self
-        lastName.delegate = self
-        DOB.delegate = self
-        weight.delegate = self
-        height.delegate = self
-        email.delegate = self
-
-        //Opens the Connection
-        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
-
-        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
-            print("Error Opening database")
-            return
-        }
-        
-        //Creates table is it doesn't exist
-        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, GENDER TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT);"
-        if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
-            print("Error creating table")
-            return
-        }
     }
-    
-    class Profile {
-
-        var fName: String
-        var lName: String
-        var DOB: String
-        var gender: String
-        var weight: Int
-        var height: Int
-        var email: String
-
-        init(fName: String, lName: String, DOB: String, gender: String, weight: Int, height: Int, email: String) {
-            self.fName = fName
-            self.lName = lName
-            self.DOB = DOB
-            self.gender = gender
-            self.weight = weight
-            self.height = height
-            self.email = email
-
-        }
-    }
-    
-    enum SQLiteError: Error {
-      case OpenDatabase(message: String)
-      case Prepare(message: String)
-      case Step(message: String)
-      case Bind(message: String)
-    }
-
-    class SQLiteDatabase {
-      private let dbPointer: OpaquePointer?
-      private init(dbPointer: OpaquePointer?) {
-        self.dbPointer = dbPointer
-      }
-      deinit {
-        sqlite3_close(dbPointer)
-      }
-    }
-    
     
     /// Dismiss the keyboard when selecting away from the key board
     /// - Parameters:Set<UITouch>, UIEvent
@@ -259,17 +137,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         DOB.resignFirstResponder()
         email.resignFirstResponder()
     }
-    
-    /// Prepares the Segue for calling features from previous view Controllers
-    /// - Parameters:UIStoryBoardSegue, Optionals of any
-    ///   - segue: The links between ViewControllers on the StoryBoard
-    ///   - sender:
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ProfileViewController
-        vc.finalProfileData = profileInfo()
-    }
 }
-
 
 extension UIViewController: UITextFieldDelegate {
     
