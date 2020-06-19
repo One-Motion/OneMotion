@@ -54,7 +54,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 let name2 = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
                 let name3 = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
                 let name7 = String(describing: String(cString: sqlite3_column_text(queryStatement, 7)))
-//                let name8 = String(describing: String(cString: sqlite3_column_text(queryStatement, 9)))
+                let name8 = String(describing: String(cString: sqlite3_column_text(queryStatement, 8)))
                 // 5
                 
                 //Saves all the gathered Data into a variable
@@ -63,8 +63,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 self.profileData.text = "\(name1) \n\n \(name2) \n\n \(name3) \n\n \(weight) \n\n \(height) \n\n \(name7)"
                 
 //                let dataDecoded:NSData = NSData(base64Encoded: name8, options: NSData.Base64DecodingOptions(rawValue: 0))!
-//                let decodedimage:UIImage = UIImage(data: dataDecoded as Data)!
-//                self.profilePicture.image = decodedimage
+                let decodedData = Data(base64Encoded: name8, options: .ignoreUnknownCharacters)!
+                let decodedimage:UIImage = UIImage(data: decodedData)!
+                self.profilePicture.image = decodedimage
                 
                 print("Successfully gathered Data!")
             } else {
