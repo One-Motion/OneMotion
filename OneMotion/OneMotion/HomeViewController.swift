@@ -8,6 +8,7 @@
 
 import UIKit
 import SQLite3
+import UserNotifications
 
 class HomeViewController: UIViewController {
     
@@ -27,7 +28,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Calling the Home Page Button Display function
         startButton.layer.cornerRadius = startButton.frame.width / 2            
         HPButton(button: viewProfileButton)
@@ -40,7 +41,7 @@ class HomeViewController: UIViewController {
         
         //Opens the Connection
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
-
+        
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("Error Opening database")
             return
@@ -53,9 +54,35 @@ class HomeViewController: UIViewController {
             return
         }
         print("Successfully Connected1")
+        
+        
+        //application notifications
+        //Asking for permission
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound])
+        { granted, error in
+        }
+        //Create the notification content
+        let content = UNMutableNotificationContent()
+        content.title = "OneMotion misses you!"
+        content.body = "Check in today and add your stats!"
+        content.categoryIdentifier = "alarm"
+        content.userInfo = ["customData": "fizzbuzz"]
+        content.sound = .default
+        //Create the notification triggers
+        let date = Date().addingTimeInterval(10)
+        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        //Create the request
+        let uuidString = UUID().uuidString
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+        //Register the request
+        center.add(request) { (error) in
+            //check the error parameter and handle any errors
+        }
+        
     }
     
-
     
     /// Adds displat features to the home page buttons
     /// - Parameter button: UIButton
@@ -69,9 +96,6 @@ class HomeViewController: UIViewController {
         button.titleEdgeInsets.left = 20
         button.backgroundColor = UIColor.white
     }
-
     
-     
-
+    
 }
-
