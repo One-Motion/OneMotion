@@ -1402,6 +1402,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="challengeButton" destination="pym-CI-Uhk" id="s6b-DI-9lT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tHq-su-ftb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1516,7 +1519,7 @@
         <segue reference="4Cu-fy-ysu"/>
         <segue reference="26e-JV-pFs"/>
         <segue reference="ePq-4j-EgM"/>
-        <segue reference="LQB-hd-n2O"/>
+        <segue reference="nDB-ck-BFD"/>
         <segue reference="kFv-WB-S51"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.17101046442985535" green="0.70975774526596069" blue="0.7178533673286438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -10,4 +10,13 @@ import UIKit
 
 class FriendProfileController: UIViewController {
     
+    @IBOutlet weak var challengeButton: UIButton!
+    
+    override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            challengeButton.layer.cornerRadius = 10.0
+            
+        }
+
 }
