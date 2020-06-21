@@ -56,7 +56,7 @@ class HomeViewController: UIViewController {
         print("Successfully Connected1")
         
         
-        //application notifications
+        ///DailyNotificationController - GS
         //Asking for permission
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .badge, .sound])
@@ -64,22 +64,45 @@ class HomeViewController: UIViewController {
         }
         //Create the notification content
         let content = UNMutableNotificationContent()
-        content.title = "OneMotion misses you!"
+        content.title = "OneMotion Daily Reminder"
         content.body = "Check in today and add your stats!"
         content.categoryIdentifier = "alarm"
         content.userInfo = ["customData": "fizzbuzz"]
         content.sound = .default
         //Create the notification triggers
-        let date = Date().addingTimeInterval(10)
-        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+//        let date = Date().addingTimeInterval(10)
+//        let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        //Creating the notification trigger for daily notifications
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        dateComponents.weekday = 2  // Monday
+        dateComponents.hour = 9 //12:00 hours
+        dateComponents.minute = 3 //minute of the hour
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         //Create the request
         let uuidString = UUID().uuidString
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         //Register the request
-        center.add(request) { (error) in
-            //check the error parameter and handle any errors
-        }
+        center.add(request) { (error) in }
+        
+        ///InstantNotificationCOntroller - GS
+        //Asking for permission
+        //Create the notification content
+        let contentInstant = UNMutableNotificationContent()
+        contentInstant.title = "OneMotion Misses You!"
+        contentInstant.body = "Have you logged your stats today?"
+        contentInstant.categoryIdentifier = "alarm"
+        contentInstant.userInfo = ["customData": "fizzbuzz"]
+        contentInstant.sound = .default
+        //Create the notification triggers
+        let dateInstant = Date().addingTimeInterval(10)
+        let dateComponentsInstant = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateInstant)
+        let triggerInstant = UNCalendarNotificationTrigger(dateMatching: dateComponentsInstant, repeats: true)
+        //Create the request
+        let uuidStringInstant = UUID().uuidString
+        let requestInstant = UNNotificationRequest(identifier: uuidStringInstant, content: contentInstant, trigger: triggerInstant)
+        //Register the request
+        center.add(requestInstant) { (error) in }
         
     }
     
