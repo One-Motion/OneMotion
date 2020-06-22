@@ -36,8 +36,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
             print("Error creating table")
             return
         }
-        print("Successfully Connected3")
         
+        print("Successfully Connected to the Profile table")
         
         //get data from the database
         var queryStatement: OpaquePointer? = nil
@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 print("\n\(id) | \(name1) | \(name2) | \(name3) | \(weight) | \(height) | \(name7)")
                 self.profileData.text = "\(name1) \n\n \(name2) \n\n \(name3) \n\n \(weight) \n\n \(height) \n\n \(name7)"
                 
-//                let dataDecoded:NSData = NSData(base64Encoded: name8, options: NSData.Base64DecodingOptions(rawValue: 0))!
+//              let dataDecoded:NSData = NSData(base64Encoded: name8, options: NSData.Base64DecodingOptions(rawValue: 0))!
                 let decodedData = Data(base64Encoded: name8, options: .ignoreUnknownCharacters)!
                 let decodedimage:UIImage = UIImage(data: decodedData)!
                 self.profilePicture.image = decodedimage
@@ -79,7 +79,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
             // 7
             sqlite3_finalize(queryStatement)
     }
-    
     
     func delete() {
         let deleteStatementString = "DELETE FROM PROFILE WHERE Id = 1;"

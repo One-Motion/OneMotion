@@ -46,13 +46,14 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         //cleans the table
-        delete()
+        self.delete()
         
-        insertProfile(fName: self.firstName.text ?? " ", lName: self.lastName.text ?? " ", DofB: self.DOB.text ?? " ", Weight: self.weight.text ?? " ", Height: self.height.text ?? " ", Email: self.email.text ?? " ", profilePic: self.profilePic)
+        self.insertProfile(fName: self.firstName.text ?? " ", lName: self.lastName.text ?? " ", DofB: self.DOB.text ?? " ", Weight: self.weight.text ?? " ", Height: self.height.text ?? " ", Email: self.email.text ?? " ", profilePic: self.profilePic)
         print("Update Successful!")
         }
     
     func insertProfile(fName: String, lName: String, DofB: String, Weight: String, Height: String, Email: String, profilePic: String) {
+        
         var insertStmt: OpaquePointer?
         let insertQuery = "INSERT INTO PROFILE(FNAME, LNAME, DOB, WEIGHT, HEIGHT, EMAIL, PROFILEPIC) VALUES (?,?,?,?,?,?,?);"
 
@@ -79,7 +80,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             } else {
                 print("\nCould not insert row")
             }
-        } else {
+        }
+        else {
             print("\nInsert Statement not prepared")
         }
         sqlite3_finalize(insertStmt)

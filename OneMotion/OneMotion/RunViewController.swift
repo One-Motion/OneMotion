@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import SQLite3
 
 class RunViewController : UIViewController {
 
@@ -22,6 +23,7 @@ class RunViewController : UIViewController {
     private var seconds = 0
     private var timer: Timer?
     private var distance = Measurement(value: 0, unit: UnitLength.meters)
+    var db: OpaquePointer?
     private var locationList: [CLLocation] = []
     
     // This function implements all the variables for when the run begins
@@ -67,6 +69,7 @@ class RunViewController : UIViewController {
 
     // Updates the display according to the distance, time and pace
     private func updateDisplay() {
+        
         // Formatting
         let formattedDistance = FormatDisplay.distance(distance)
         let formattedTime = FormatDisplay.time(seconds)
@@ -75,8 +78,65 @@ class RunViewController : UIViewController {
         distanceLabel.text = "Distance:  \(formattedDistance)"
         timeLabel.text = "Time:  \(formattedTime)"
         paceLabel.text = "Average Pace:  \(formattedPace)"
+        
+        self.insertRun(distance: formattedDistance, time: formattedTime, pace: formattedPace)
     }
 
+    func delete() {
+        let deleteStatementString = "DELETE FROM PROFILE;"
+        var deleteStatement: OpaquePointer?
+          if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) ==
+              SQLITE_OK {
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+              print("\nSuccessfully deleted row.")
+            } else {
+              print("\nCould not delete row.")
+            }
+          } else {
+            print("\nDELETE statement could not be prepared")
+          }
+          
+          sqlite3_finalize(deleteStatement)
+    }
+    
+    func insertRun(distance: String, time: String, pace: String) {
+        
+        //Opens the Connection
+        let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
+
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            print("Error Opening database")
+            return
+        }
+        
+        self.delete()
+        
+        var insertStmt: OpaquePointer?
+        let insertQuery = "INSERT INTO RUN(DISTANCE, TIME, PACE) VALUES (?,?,?)"
+        
+        if sqlite3_prepare_v2(db, insertQuery, -1, &insertStmt, nil) == SQLITE_OK {
+                
+            let distance: Int32 = (distance as NSString).intValue
+            let time: Int32 = (time as NSString).intValue
+            let pace: Int32 = (pace as NSString).intValue
+            
+            sqlite3_bind_int(insertStmt, 1, distance)
+            sqlite3_bind_int(insertStmt, 2, time)
+            sqlite3_bind_int(insertStmt, 3, pace)
+            
+            if sqlite3_step(insertStmt) == SQLITE_DONE {
+                print("\nSuccessfully inserted row")
+            } else {
+                print("\nCould not insert row")
+            }
+        }
+        else {
+            print("\nInsert Statement not prepared")
+        }
+        sqlite3_finalize(insertStmt)
+        
+    }
+    
     // Updates the location
     private func startLocationUpdates() {
         locationManager.delegate = self
@@ -92,6 +152,10 @@ class RunViewController : UIViewController {
       newRun.duration = Int16(seconds)
       newRun.timestamp = Date()
 
+        print(newRun.distance)
+        print(newRun.duration)
+        print(newRun.timestamp)
+        
       for location in locationList {
         let locationObject = Location(context: CoreDataStack.context)
         locationObject.timestamp = location.timestamp

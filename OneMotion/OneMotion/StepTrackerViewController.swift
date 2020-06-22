@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import SQLite3
 
 //Some of the code for the Step Tracker is commented out due to Xcode lack of capability for step movement simulation.
 //They are instead replaced with code marked by "code for demo" to check that the values are passing through all classes as they should be. In Sprint 2 we will be testing the code on an actual device, and then the greyed out code will be used instead of the code for demo.
@@ -22,6 +23,9 @@ class StepTrackerViewController: UIViewController {
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var avgPaceLabel: UILabel!
     @IBOutlet weak var startButton: UIButton! //declaration of start button for layout
+    
+    
+    var db: OpaquePointer?
     
     //constant colour values for the activateButton after activation
     let STOP_COLOR = UIColor(red: 204/255, green: 0/255, blue: 0/255, alpha: 1.0)
@@ -96,6 +100,7 @@ class StepTrackerViewController: UIViewController {
         }
         else //when the step tracker is turned off
         {
+            
             //step tracker stops collecting data
             pedometer.stopUpdates()
             //the timer stopping functoin is called
@@ -105,7 +110,43 @@ class StepTrackerViewController: UIViewController {
             //activate button shows Start option and changes to green
             sender.backgroundColor = START_COLOR
             sender.setTitle("Start", for: .normal)
+            
+            //Opens the Connection
+            let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
+
+            if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+                print("Error Opening database")
+                return
+            }
+            
+            self.insertStep(steps: String(self.numberOfSteps), distance: String(self.distance))
         }
+    }
+    
+    func insertStep(steps: String, distance: String){
+        var insertStmt: OpaquePointer?
+        let insertQuery = "INSERT INTO STEPS(STEPS, DISTANCE) VALUES (?,?);"
+        
+    if sqlite3_prepare_v2(db, insertQuery, -1, &insertStmt, nil) == SQLITE_OK {
+            
+        let Steps: NSString = steps as NSString
+        let Distance: NSString = distance as NSString
+        
+        sqlite3_bind_text(insertStmt, 1, Steps.utf8String, -1, nil)
+        sqlite3_bind_text(insertStmt, 2, Distance.utf8String, -1, nil)
+        
+        if sqlite3_step(insertStmt) == SQLITE_DONE {
+            print("\nSuccessfully inserted row")
+        } else {
+            print("\nCould not insert row")
+        }
+    }
+    else {
+        print("\nInsert Statement not prepared")
+    }
+    sqlite3_finalize(insertStmt)
+        
+        
     }
     
     //timer function starts timing from when the user clicks the activation button
