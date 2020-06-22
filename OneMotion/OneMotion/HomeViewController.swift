@@ -1,4 +1,3 @@
-//
 //  HomeViewController.swift
 //  OneMotion
 //
@@ -16,14 +15,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var viewProfileButton: UIButton!
     @IBOutlet weak var addWorkoutButton: UIButton!
-    @IBOutlet weak var createChallengeButton: UIButton!
-    @IBOutlet weak var viewProgressButton: UIButton!
+    @IBOutlet weak var CreateChallengeButton: UIButton!
+    @IBOutlet weak var ViewProgressButton: UIButton!
     @IBOutlet weak var myDayButton: UIButton!
-    @IBOutlet weak var stepTrackerButton: UIButton! //added this for the step track
-    @IBOutlet weak var goalButton:  UIButton! //added this for the goals screen - GS
+    @IBOutlet weak var StepTrackerButton: UIButton! //added this for the step track
+    @IBOutlet weak var GoalButton:  UIButton! //added this for the goals screen - GS
     
     var db: OpaquePointer?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +30,11 @@ class HomeViewController: UIViewController {
         startButton.layer.cornerRadius = startButton.frame.width / 2            
         HPButton(button: viewProfileButton)
         HPButton(button: addWorkoutButton)
-        HPButton(button: createChallengeButton)
-        HPButton(button: viewProgressButton)
+        HPButton(button: CreateChallengeButton)
+        HPButton(button: ViewProgressButton)
         HPButton(button: myDayButton)
-        HPButton(button: stepTrackerButton) //added this for the step track screen - GS
-        HPButton(button: goalButton) //added this for the goals screen - GS
+        HPButton(button: StepTrackerButton) //added this for the step track screen - GS
+        HPButton(button: GoalButton) //added this for the goals screen - GS
         
         //Opens the Connection
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
@@ -47,15 +45,32 @@ class HomeViewController: UIViewController {
         }
         
         //Creates table is it doesn't exist
-        let CreateTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, GENDER TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT, PROFILEPIC TEXT);"
-        if sqlite3_exec(db, CreateTableQueuery, nil, nil, nil) != SQLITE_OK {
+        let createTableQueuery = "CREATE TABLE IF NOT EXISTS PROFILE(ID INTEGER PRIMARY KEY AUTOINCREMENT, FNAME TEXT, LNAME TEXT, DOB TEXT, GENDER TEXT, WEIGHT INTEGER, HEIGHT INTEGER, EMAIL TEXT, PROFILEPIC TEXT);"
+        if sqlite3_exec(db, createTableQueuery, nil, nil, nil) != SQLITE_OK {
             print("Error creating table")
             return
         }
-        print("Successfully Connected1")
+        print("Successfully Created/Connected to Profile Table")
+        
+        let createWorkoutTableQuery = "CREATE TABLE IF NOT EXISTS WORKOUT(TITLE TEXT PRIMARY KEY, DATE TEXT, TYPEOFWORKOUT TEXT, REPS INTEGER, SETS INTEGER, TIMETAKEN INTEGER);"
+        
+        if sqlite3_exec(db, createWorkoutTableQuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
+        }
+        
+        print("Successfully Created/Connect to Workout table.")
     }
     
-
+        let createStepTableQuery = "CREATE TABLE IF NOT EXISTS WORKOUT(TITLE TEXT PRIMARY KEY, DATE TEXT, TYPEOFWORKOUT TEXT, REPS INTEGER, SETS INTEGER, TIMETAKEN INTEGER);"
+        
+        if sqlite3_exec(db, createStepTableQuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
+        }
+        
+        print("Successfully Created/Connect to Workout table.")
+    }
     
     /// Adds displat features to the home page buttons
     /// - Parameter button: UIButton
@@ -69,9 +84,4 @@ class HomeViewController: UIViewController {
         button.titleEdgeInsets.left = 20
         button.backgroundColor = UIColor.white
     }
-
-    
-     
-
 }
-

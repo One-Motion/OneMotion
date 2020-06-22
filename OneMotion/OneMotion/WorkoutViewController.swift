@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SQLite3
 
 class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
     
@@ -15,13 +16,16 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     var delegate: WorkoutProtocol? = nil
     
     //this is the set up of all the variables that the user would input into the text fields.
+
     @IBOutlet weak var repNumber: UITextField!
-    
     @IBOutlet weak var setNumber: UITextField!
     @IBOutlet weak var date: UITextField!
-    
     @IBOutlet weak var timetaken: UITextField!
-    @IBOutlet weak var workout: UITextField!
+    @IBOutlet weak var workoutTitle: UITextField!
+    @IBOutlet weak var titleText: UITextField!
+    
+    //For the DataBase
+    var db: OpaquePointer?
     
     //creating a list of workouts that the user can select from
     let workouts = ["Sit-Up", "Push-Up", "Squats", "Pull-Ups"]
@@ -34,8 +38,8 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         pickerView.delegate = self
         pickerView.dataSource = self
-        workout.inputView = pickerView
-        workout.textAlignment = .center
+        workoutTitle.inputView = pickerView
+        workoutTitle.textAlignment = .center
         
         repNumber.delegate = self
         setNumber.delegate = self
@@ -48,6 +52,23 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return 1
     }
     
+    
+    func workoutInfo(title: String, workoutDate: String, typeOfWorkout: String, reps: Int, sets: Int, workoutTime: Int) {
+        
+        let createTableQuery = "CREATE TABLE IF NOT EXISTS WORKOUT(TITLE TEXT PRIMARY KEY, DATE TEXT, TYPEOFWORKOUT TEXT, #REPS INTEGER, #SETS INTEGER, TIMETAKEN INTEGER);"
+        
+        if sqlite3_exec(db, createTableQuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
+        }
+        print("Successfully Connected to Workout table.")
+        
+        //get data from the database
+//        var queryStatement: OpaquePointer? = nil
+//        let selectQuery = "SELECT * FROM WORKOUT"
+//        
+        
+    }
 
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return workouts.count
@@ -58,8 +79,8 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     // this function hides the picker view when the user clicks outside of the picker view or the user selects whcich workout they have completed
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        workout.text = workouts[row]
-        workout.resignFirstResponder()
+        workoutTitle.text = workouts[row]
+        workoutTitle.resignFirstResponder()
     }
 
     // this function creates and formatts the date picker which allows the user to select what date they have completed their workout
@@ -84,7 +105,6 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         //asign datepicker to textfield
         date.inputView = datePicker
         
-        
         //date picker mode
         datePicker.datePickerMode = .date
     }
@@ -101,7 +121,6 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.view.endEditing(true)
     }
     
-    
     // this function hides the keyboard once the user clicks outside of the popup keyboard that they input their workout information in
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         repNumber.resignFirstResponder()
@@ -111,13 +130,13 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     // this button saves their workout information into the tableview and calls upon the get data function which is part of another function that allows the system to send text field user input from one navifation controller to another.
     @IBAction func Save(_ sender: Any) {
+        
         print("done")
         self.dismiss(animated: true, completion: nil)
         self.delegate?.getData(data: titleText.text!)
         
+        
+        
     }
-    @IBOutlet weak var titleText: UITextField!
 }
-
-
 

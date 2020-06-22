@@ -274,7 +274,7 @@
             <objects>
                 <viewController storyboardIdentifier="ProgressViewController" id="cyV-hv-3NS" customClass="ProgressViewController" customModule="OneMotion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OuR-9q-4ba">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pgb-B9-u3p">
@@ -907,8 +907,8 @@
                         <outlet property="repNumber" destination="rx1-EB-tAB" id="cf2-R0-KKS"/>
                         <outlet property="setNumber" destination="IL8-WJ-Ste" id="D2r-OZ-9jS"/>
                         <outlet property="timetaken" destination="0nC-yb-mMw" id="QGC-VY-lOL"/>
-                        <outlet property="titleText" destination="sqW-Ra-qQk" id="lHW-B2-Yef"/>
-                        <outlet property="workout" destination="bok-Me-NBk" id="Aru-pV-ffo"/>
+                        <outlet property="titleText" destination="sqW-Ra-qQk" id="C4R-9V-hNC"/>
+                        <outlet property="workoutTitle" destination="sqW-Ra-qQk" id="a4G-IJ-RJ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="onI-MK-fak" sceneMemberID="firstResponder"/>
@@ -1500,7 +1500,7 @@
         <segue reference="wDy-KH-bHi"/>
         <segue reference="ePq-4j-EgM"/>
         <segue reference="LQB-hd-n2O"/>
-        <segue reference="JQA-Xy-Bp0"/>
+        <segue reference="kFv-WB-S51"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.17101046442985535" green="0.70975774526596069" blue="0.7178533673286438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>

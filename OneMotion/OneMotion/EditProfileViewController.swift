@@ -53,6 +53,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
     
     func insertProfile(fName: String, lName: String, DofB: String, Weight: String, Height: String, Email: String, profilePic: String) {
+        
         var insertStmt: OpaquePointer?
         let insertQuery = "INSERT INTO PROFILE(FNAME, LNAME, DOB, WEIGHT, HEIGHT, EMAIL, PROFILEPIC) VALUES (?,?,?,?,?,?,?);"
 
