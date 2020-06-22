@@ -7,6 +7,7 @@
 
 import UIKit
 import SQLite3
+import UserNotifications
 
 class HomeViewController: UIViewController {
     
@@ -25,7 +26,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         //Calling the Home Page Button Display function
         startButton.layer.cornerRadius = startButton.frame.width / 2            
         HPButton(button: viewProfileButton)
@@ -38,7 +39,7 @@ class HomeViewController: UIViewController {
         
         //Opens the Connection
         let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
-
+        
         if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
             print("Error Opening database")
             return
@@ -110,4 +111,5 @@ class HomeViewController: UIViewController {
         button.titleEdgeInsets.left = 20
         button.backgroundColor = UIColor.white
     }
+
 }

@@ -32,18 +32,18 @@ class StepTrackerViewController: UIViewController {
     let START_COLOR = UIColor(red: 0/255, green: 153/255, blue: 0/255, alpha: 1.0)
     
     //initialisation of step tracker data variables
-    //    var numberOfSteps:Int! = nil
-    //    var distance:Double! = nil
-    //    var pace:Double! = nil
-    //    var averagePace:Double! = nil
+    var numberOfSteps:Int! = nil
+    var distance:Double! = nil
+    var pace:Double! = nil
+    var averagePace:Double! = nil
     
-    //code for demo - initialisation of step tracker data variables
-    //this is due to Xcode being unable to simulate individual step movement
-    var numberOfSteps:Int! = 0
-    var distance:Double! = 0.0
-    var pace:Double! = 0.0
-    var averagePace:Double! = 0.0
-    var demoSteps:Int! = 0
+    //    //code for demo - initialisation of step tracker data variables
+    //    //this is due to Xcode being unable to simulate individual step movement
+    //    var numberOfSteps:Int! = 0
+    //    var distance:Double! = 0.0
+    //    var pace:Double! = 0.0
+    //    var averagePace:Double! = 0.0
+    //    var demoSteps:Int! = 0
     
     //initialisation of pedometer object
     var pedometer = CMPedometer()
@@ -70,33 +70,33 @@ class StepTrackerViewController: UIViewController {
             sender.backgroundColor = STOP_COLOR
             
             //retrieves updated data from pedomter object when tracker is running
-//                        pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
-//                            if let pedData = pedometerData{
-//                                self.numberOfSteps = Int(pedData.numberOfSteps)
-//
-//                                if let distance = pedData.distance{
-//                                    self.distance = Double(distance)
-//                                }
-//                                if let averageActivePace = pedData.averageActivePace {
-//                                    self.averagePace = Double(averageActivePace)
-//                                }
-//                                if let currentPace = pedData.currentPace {
-//                                    self.pace = Double(currentPace)
-//                                }
-//                            } else {
-//                                self.numberOfSteps = nil
-//                            }
-//                        })
+            pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
+                if let pedData = pedometerData{
+                    self.numberOfSteps = Int(truncating: pedData.numberOfSteps)
+                    
+                    if let distance = pedData.distance{
+                        self.distance = Double(truncating: distance)
+                    }
+                    if let averageActivePace = pedData.averageActivePace {
+                        self.averagePace = Double(truncating: averageActivePace)
+                    }
+                    if let currentPace = pedData.currentPace {
+                        self.pace = Double(truncating: currentPace)
+                    }
+                } else {
+                    self.numberOfSteps = nil
+                }
+            })
             
-            //code for demo - set variables to show information is passing through classes correctly
-            //this is due to Xcode being unable to simulate individual step movement
-            if timerInterval >= 1.0
-            {
-                self.numberOfSteps = 0
-                self.distance = 1.3
-                self.pace = 0.2
-                self.averagePace = 0.1
-            }
+            //            //code for demo - set variables to show information is passing through classes correctly
+            //            //this is due to Xcode being unable to simulate individual step movement
+            //            if timerInterval >= 1.0
+            //            {
+            //                self.numberOfSteps = 0
+            //                self.distance = 1.3
+            //                self.pace = 0.2
+            //                self.averagePace = 0.1
+            //            }
         }
         else //when the step tracker is turned off
         {
@@ -180,14 +180,14 @@ class StepTrackerViewController: UIViewController {
         
         
         //displays the number of steps the user has taken
-        self.numberOfSteps += 1 //code for demo
+        //self.numberOfSteps += 1 //code for demo
         if let NUMBER_OF_STEPS = self.numberOfSteps
         {
             stepsLabel.text = String(format:"Steps: %i",NUMBER_OF_STEPS)
         }
         
         //displays the distance the user has travelled
-        self.distance += 0.12 //code for demo
+        //self.distance += 0.12 //code for demo
         if let DISTANCE = self.distance
         {
             distanceLabel.text = String(format:"Distance: %02.02f meters \n %02.02f mi",DISTANCE,miles(meters: DISTANCE))
@@ -199,7 +199,7 @@ class StepTrackerViewController: UIViewController {
         
         
         //displays the users pace
-        self.pace += 0.04 //code for demo
+        //self.pace += 0.04 //code for demo
         if let PACE = self.pace
         {
             //print(pace)
@@ -213,7 +213,7 @@ class StepTrackerViewController: UIViewController {
         
         
         //displays the users average pace
-        self.averagePace += 0.03 //code for demo
+        //self.averagePace += 0.03 //code for demo
         if let AVERAGE_PACE = self.averagePace
         {
             avgPaceLabel.text = paceString(title: "Avg Pace", pace: AVERAGE_PACE)
