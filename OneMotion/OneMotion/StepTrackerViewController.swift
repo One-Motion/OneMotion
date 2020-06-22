@@ -10,10 +10,6 @@ import UIKit
 import CoreMotion
 import SQLite3
 
-// IT WORKSSSSSS
-//Some of the code for the Step Tracker is commented out due to Xcode lack of capability for step movement simulation.
-//They are instead replaced with code marked by "code for demo" to check that the values are passing through all classes as they should be. In Sprint 2 we will be testing the code on an actual device, and then the greyed out code will be used instead of the code for demo.
-
 class StepTrackerViewController: UIViewController {
     
     //connections to the storyboard interface buttons
@@ -24,8 +20,7 @@ class StepTrackerViewController: UIViewController {
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var avgPaceLabel: UILabel!
     @IBOutlet weak var startButton: UIButton! //declaration of start button for layout
-    
-    
+
     var db: OpaquePointer?
     
     //constant colour values for the activateButton after activation
@@ -37,15 +32,7 @@ class StepTrackerViewController: UIViewController {
     var distance:Double! = nil
     var pace:Double! = nil
     var averagePace:Double! = nil
-    
-    //    //code for demo - initialisation of step tracker data variables
-    //    //this is due to Xcode being unable to simulate individual step movement
-    //    var numberOfSteps:Int! = 0
-    //    var distance:Double! = 0.0
-    //    var pace:Double! = 0.0
-    //    var averagePace:Double! = 0.0
-    //    var demoSteps:Int! = 0
-    
+
     //initialisation of pedometer object
     var pedometer = CMPedometer()
     
@@ -88,16 +75,6 @@ class StepTrackerViewController: UIViewController {
                     self.numberOfSteps = nil
                 }
             })
-            
-            //            //code for demo - set variables to show information is passing through classes correctly
-            //            //this is due to Xcode being unable to simulate individual step movement
-            //            if timerInterval >= 1.0
-            //            {
-            //                self.numberOfSteps = 0
-            //                self.distance = 1.3
-            //                self.pace = 0.2
-            //                self.averagePace = 0.1
-            //            }
         }
         else //when the step tracker is turned off
         {
@@ -181,14 +158,12 @@ class StepTrackerViewController: UIViewController {
         
         
         //displays the number of steps the user has taken
-        //self.numberOfSteps += 1 //code for demo
         if let NUMBER_OF_STEPS = self.numberOfSteps
         {
             stepsLabel.text = String(format:"Steps: %i",NUMBER_OF_STEPS)
         }
         
         //displays the distance the user has travelled
-        //self.distance += 0.12 //code for demo
         if let DISTANCE = self.distance
         {
             distanceLabel.text = String(format:"Distance: %02.02f meters \n %02.02f mi",DISTANCE,miles(meters: DISTANCE))
@@ -200,7 +175,6 @@ class StepTrackerViewController: UIViewController {
         
         
         //displays the users pace
-        //self.pace += 0.04 //code for demo
         if let PACE = self.pace
         {
             //print(pace)
@@ -214,7 +188,6 @@ class StepTrackerViewController: UIViewController {
         
         
         //displays the users average pace
-        //self.averagePace += 0.03 //code for demo
         if let AVERAGE_PACE = self.averagePace
         {
             avgPaceLabel.text = paceString(title: "Avg Pace", pace: AVERAGE_PACE)
