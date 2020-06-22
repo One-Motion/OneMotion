@@ -10,6 +10,7 @@ import UIKit
 import CoreMotion
 import SQLite3
 
+// IT WORKSSSSSS
 //Some of the code for the Step Tracker is commented out due to Xcode lack of capability for step movement simulation.
 //They are instead replaced with code marked by "code for demo" to check that the values are passing through all classes as they should be. In Sprint 2 we will be testing the code on an actual device, and then the greyed out code will be used instead of the code for demo.
 
