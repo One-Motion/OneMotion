@@ -97,6 +97,8 @@ class HomeViewController: UIViewController {
         
         print("Successfully Connected to MyDay table.")
         
+        self.notificationController()
+        
     }
     
     /// Adds displat features to the home page buttons
@@ -111,5 +113,58 @@ class HomeViewController: UIViewController {
         button.titleEdgeInsets.left = 20
         button.backgroundColor = UIColor.white
     }
-
+    
+    //controls the notifications feature of the application
+    func notificationController()
+    {
+        
+        //Asking notification center for permission
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound])
+        { granted, error in
+        }
+        
+        ///DailyNotificationController - GS
+        //Creates the notification content
+        let contentDaily = UNMutableNotificationContent()
+        contentDaily.title = "OneMotion Daily Reminder"
+        contentDaily.body = "Check in today and add your stats!"
+        contentDaily.categoryIdentifier = "alarm"
+        contentDaily.userInfo = ["customData": "fizzbuzz"]
+        contentDaily.sound = .default
+        
+        //Creating the notification trigger for daily notifications
+        var dateComponentsDaily = DateComponents()
+        dateComponentsDaily.calendar = Calendar.current
+        dateComponentsDaily.hour = 12 //12:00 hours
+        //dateComponentsDaily.minute = 3 //minute of the hour
+        
+        let triggerDaily = UNCalendarNotificationTrigger(dateMatching: dateComponentsDaily, repeats: true)
+        //Create the request
+        let uuidStringDaily = UUID().uuidString
+        let requestDaily = UNNotificationRequest(identifier: uuidStringDaily, content: contentDaily, trigger: triggerDaily)
+        //Register the request
+        center.add(requestDaily) { (error) in
+            //check the error parameter and handle any errors
+        }
+        
+        ///InstantNotificationController - GS
+        //Create the notification content
+        let contentInstant = UNMutableNotificationContent()
+        contentInstant.title = "OneMotion Misses You!"
+        contentInstant.body = "Have you logged your stats today?"
+        contentInstant.categoryIdentifier = "alarm"
+        contentInstant.userInfo = ["customData": "fizzbuzz"]
+        contentInstant.sound = .default
+        //Create the notification triggers
+        let dateInstant = Date().addingTimeInterval(10)
+        let dateComponentsInstant = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateInstant)
+        let triggerInstant = UNCalendarNotificationTrigger(dateMatching: dateComponentsInstant, repeats: true)
+        //Create the request
+        let uuidStringInstant = UUID().uuidString
+        let requestInstant = UNNotificationRequest(identifier: uuidStringInstant, content: contentInstant, trigger: triggerInstant)
+        //Register the request
+        center.add(requestInstant) { (error) in }
+    }
 }
+
