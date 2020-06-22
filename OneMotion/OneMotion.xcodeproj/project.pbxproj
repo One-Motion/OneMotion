@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		190FE92E249E328B00859DB0 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190FE92D249E328B00859DB0 /* NotificationController.swift */; };
 		19292D9B2477A4650025D2BA /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19292D9A2477A4650025D2BA /* ProgressViewController.swift */; };
+		1931B4F024A0C8A30052D5A6 /* activateButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4EF24A0C8A30052D5A6 /* activateButtonTest.swift */; };
+		1931B4F224A0C8CE0052D5A6 /* getDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4F124A0C8CE0052D5A6 /* getDataTest.swift */; };
+		1931B4F424A0C8F00052D5A6 /* GPButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4F324A0C8F00052D5A6 /* GPButtonTest.swift */; };
+		1931B4F624A0C90F0052D5A6 /* insertRunTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4F524A0C90F0052D5A6 /* insertRunTest.swift */; };
+		1931B4F824A0C92D0052D5A6 /* insertStepTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4F724A0C92D0052D5A6 /* insertStepTest.swift */; };
+		1931B4FA24A0C9560052D5A6 /* notificationsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4F924A0C9560052D5A6 /* notificationsTest.swift */; };
+		1931B4FC24A0C9730052D5A6 /* pickerViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4FB24A0C9730052D5A6 /* pickerViewTest.swift */; };
+		1931B4FE24A0C98A0052D5A6 /* workoutInfoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4FD24A0C98A0052D5A6 /* workoutInfoTest.swift */; };
 		1938F7D124776EE200D79A02 /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1938F7D024776EE200D79A02 /* GoalsViewController.swift */; };
 		197EA3022499E62600DA41DD /* animation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 197EA3012499E62600DA41DD /* animation.gif */; };
 		197EA3042499EBAD00DA41DD /* GIFAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197EA3032499EBAD00DA41DD /* GIFAPI.swift */; };
@@ -69,6 +77,14 @@
 /* Begin PBXFileReference section */
 		190FE92D249E328B00859DB0 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		19292D9A2477A4650025D2BA /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		1931B4EF24A0C8A30052D5A6 /* activateButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activateButtonTest.swift; sourceTree = "<group>"; };
+		1931B4F124A0C8CE0052D5A6 /* getDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDataTest.swift; sourceTree = "<group>"; };
+		1931B4F324A0C8F00052D5A6 /* GPButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPButtonTest.swift; sourceTree = "<group>"; };
+		1931B4F524A0C90F0052D5A6 /* insertRunTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insertRunTest.swift; sourceTree = "<group>"; };
+		1931B4F724A0C92D0052D5A6 /* insertStepTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = insertStepTest.swift; sourceTree = "<group>"; };
+		1931B4F924A0C9560052D5A6 /* notificationsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notificationsTest.swift; sourceTree = "<group>"; };
+		1931B4FB24A0C9730052D5A6 /* pickerViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pickerViewTest.swift; sourceTree = "<group>"; };
+		1931B4FD24A0C98A0052D5A6 /* workoutInfoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workoutInfoTest.swift; sourceTree = "<group>"; };
 		1938F7D024776EE200D79A02 /* GoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		197EA3012499E62600DA41DD /* animation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animation.gif; sourceTree = "<group>"; };
 		197EA3032499EBAD00DA41DD /* GIFAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFAPI.swift; sourceTree = "<group>"; };
@@ -203,6 +219,14 @@
 		737B73CD24754D0E001CC344 /* OneMotionTests */ = {
 			isa = PBXGroup;
 			children = (
+				1931B4FD24A0C98A0052D5A6 /* workoutInfoTest.swift */,
+				1931B4FB24A0C9730052D5A6 /* pickerViewTest.swift */,
+				1931B4F924A0C9560052D5A6 /* notificationsTest.swift */,
+				1931B4F724A0C92D0052D5A6 /* insertStepTest.swift */,
+				1931B4F524A0C90F0052D5A6 /* insertRunTest.swift */,
+				1931B4F324A0C8F00052D5A6 /* GPButtonTest.swift */,
+				1931B4F124A0C8CE0052D5A6 /* getDataTest.swift */,
+				1931B4EF24A0C8A30052D5A6 /* activateButtonTest.swift */,
 				19BCCAD92479568C002D95E9 /* createDatePickerTest.swift */,
 				19BCCADF2479568C002D95E9 /* donePressedTest.swift */,
 				19BCCAE02479568C002D95E9 /* mapRegionTest.swift */,
@@ -399,15 +423,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1931B4F424A0C8F00052D5A6 /* GPButtonTest.swift in Sources */,
 				19BCCAE52479568C002D95E9 /* viewDidLoadTest.swift in Sources */,
+				1931B4F224A0C8CE0052D5A6 /* getDataTest.swift in Sources */,
 				19BCCAE32479568C002D95E9 /* startRunTest.swift in Sources */,
+				1931B4F824A0C92D0052D5A6 /* insertStepTest.swift in Sources */,
 				19BCCAE22479568C002D95E9 /* viewWillAppearTest.swift in Sources */,
 				19BCCAE62479568C002D95E9 /* touchesBeganTest.swift in Sources */,
+				1931B4F024A0C8A30052D5A6 /* activateButtonTest.swift in Sources */,
+				1931B4FC24A0C9730052D5A6 /* pickerViewTest.swift in Sources */,
+				1931B4F624A0C90F0052D5A6 /* insertRunTest.swift in Sources */,
 				19BCCAE72479568C002D95E9 /* donePressedTest.swift in Sources */,
 				737B73CF24754D0E001CC344 /* OneMotionTests.swift in Sources */,
 				19BCCAE12479568C002D95E9 /* createDatePickerTest.swift in Sources */,
 				19BCCAE82479568C002D95E9 /* mapRegionTest.swift in Sources */,
+				1931B4FE24A0C98A0052D5A6 /* workoutInfoTest.swift in Sources */,
 				19BCCAE42479568C002D95E9 /* paceStringTest.swift in Sources */,
+				1931B4FA24A0C9560052D5A6 /* notificationsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
