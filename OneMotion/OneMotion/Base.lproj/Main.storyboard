@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CMw-gy-Yva">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CMw-gy-Yva">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -368,7 +368,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hdk-gC-fEw">
-                                <rect key="frame" x="129" y="135.5" width="156" height="170.5"/>
+                                <rect key="frame" x="119.5" y="135.5" width="175.5" height="170.5"/>
                                 <color key="tintColor" red="0.19841344869999999" green="0.2935937045" blue="0.46750079309999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="150"/>
                             </imageView>
@@ -378,24 +378,25 @@
                             <constraint firstItem="vkY-Pn-cEf" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="20" id="0Rq-TT-TFb"/>
                             <constraint firstItem="WvU-um-67P" firstAttribute="trailing" secondItem="EJw-2v-Nee" secondAttribute="trailing" constant="107" id="10Z-j7-uuq"/>
                             <constraint firstItem="EJw-2v-Nee" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="107" id="1RD-Wp-0cs"/>
-                            <constraint firstItem="hdk-gC-fEw" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="129" id="1yw-Cf-2IK"/>
                             <constraint firstItem="EJw-2v-Nee" firstAttribute="top" secondItem="k3m-Oh-5IG" secondAttribute="bottom" constant="80" id="355-EH-IGE"/>
+                            <constraint firstItem="hdk-gC-fEw" firstAttribute="top" secondItem="WvU-um-67P" secondAttribute="top" constant="42" id="63c-hZ-yLq"/>
+                            <constraint firstItem="k3m-Oh-5IG" firstAttribute="top" secondItem="hdk-gC-fEw" secondAttribute="bottom" constant="73" id="99o-oH-Mbg"/>
                             <constraint firstItem="FjZ-19-Ufg" firstAttribute="top" secondItem="WvU-um-67P" secondAttribute="top" constant="301" id="F5D-CT-wIe"/>
                             <constraint firstItem="xUw-TY-ChB" firstAttribute="top" secondItem="vkY-Pn-cEf" secondAttribute="bottom" constant="20" id="JMl-7m-7Eq"/>
                             <constraint firstItem="2YH-hq-xhB" firstAttribute="top" secondItem="Ns8-WR-n8c" secondAttribute="bottom" constant="20" id="OFe-j9-xH7"/>
-                            <constraint firstItem="k3m-Oh-5IG" firstAttribute="top" secondItem="prs-n2-UWL" secondAttribute="top" constant="382" id="PaH-Sp-FIP"/>
                             <constraint firstItem="HiQ-Gs-Za3" firstAttribute="top" secondItem="2YH-hq-xhB" secondAttribute="bottom" constant="20" id="S3e-sj-cYA"/>
+                            <constraint firstItem="hdk-gC-fEw" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="119.5" id="Sq3-Yx-M0g"/>
+                            <constraint firstItem="hdk-gC-fEw" firstAttribute="centerY" secondItem="prs-n2-UWL" secondAttribute="centerY" constant="-228.5" id="Vu9-LV-HhB"/>
                             <constraint firstItem="vkY-Pn-cEf" firstAttribute="top" secondItem="FjZ-19-Ufg" secondAttribute="bottom" constant="20" id="cpB-tU-inb"/>
                             <constraint firstItem="xUw-TY-ChB" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="20" id="dmq-U7-xnt"/>
                             <constraint firstItem="Ns8-WR-n8c" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="20" id="eKA-9c-97j"/>
                             <constraint firstItem="HiQ-Gs-Za3" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="20" id="fb3-qt-8ar"/>
                             <constraint firstItem="2YH-hq-xhB" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="20" id="fxB-iq-b7b"/>
-                            <constraint firstItem="hdk-gC-fEw" firstAttribute="centerX" secondItem="k3m-Oh-5IG" secondAttribute="centerX" id="ih4-2G-2nW"/>
                             <constraint firstItem="FjZ-19-Ufg" firstAttribute="leading" secondItem="WvU-um-67P" secondAttribute="leading" constant="20" id="j3O-0B-MSr"/>
                             <constraint firstItem="Ns8-WR-n8c" firstAttribute="top" secondItem="xUw-TY-ChB" secondAttribute="bottom" constant="20" id="kyk-wO-hNe"/>
                             <constraint firstItem="WvU-um-67P" firstAttribute="trailing" secondItem="k3m-Oh-5IG" secondAttribute="trailing" id="lNF-0O-YcO"/>
-                            <constraint firstItem="hdk-gC-fEw" firstAttribute="top" secondItem="WvU-um-67P" secondAttribute="top" constant="42" id="qNm-UY-Oa1"/>
-                            <constraint firstItem="k3m-Oh-5IG" firstAttribute="centerX" secondItem="EJw-2v-Nee" secondAttribute="centerX" id="tFh-qp-RAH"/>
+                            <constraint firstItem="k3m-Oh-5IG" firstAttribute="centerX" secondItem="EJw-2v-Nee" secondAttribute="centerX" id="s1y-rC-FQ8"/>
+                            <constraint firstItem="WvU-um-67P" firstAttribute="trailing" secondItem="hdk-gC-fEw" secondAttribute="trailing" constant="119" id="yfG-gu-5w7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WvU-um-67P"/>
                     </view>
@@ -1575,26 +1576,26 @@
             <point key="canvasLocation" x="-1054" y="-1846"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image-1" width="466" height="416"/>
+        <image name="Screen Shot 2020-06-22 at 9.35.16 PM" width="197" height="162"/>
+        <image name="bolt.circle" catalog="system" width="64" height="60"/>
+        <image name="calendar" catalog="system" width="64" height="52"/>
+        <image name="chart.bar.fill" catalog="system" width="64" height="44"/>
+        <image name="chevron.right" catalog="system" width="48" height="64"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="person.2.fill" catalog="system" width="64" height="40"/>
+        <image name="person.3.fill" catalog="system" width="71" height="34"/>
+        <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+        <image name="person.crop.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="64" height="50"/>
+        <image name="play.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="stop.circle.fill" catalog="system" width="64" height="60"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1FM-49-2Ya"/>
         <segue reference="26e-JV-pFs"/>
         <segue reference="nDB-ck-BFD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.17101046442985535" green="0.70975774526596069" blue="0.7178533673286438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-    <resources>
-        <image name="Image-1" width="466" height="416"/>
-        <image name="Screen Shot 2020-06-22 at 9.35.16 PM" width="197" height="162"/>
-        <image name="bolt.circle" catalog="system" width="128" height="121"/>
-        <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="chart.bar.fill" catalog="system" width="128" height="89"/>
-        <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="person.2.fill" catalog="system" width="128" height="80"/>
-        <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
-        <image name="person.crop.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="101"/>
-        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
-    </resources>
 </document>
