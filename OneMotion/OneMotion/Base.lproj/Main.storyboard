@@ -51,6 +51,9 @@
                                 <state key="normal" title="View Progress">
                                     <color key="titleColor" red="0.32444608211517334" green="0.41527998447418213" blue="0.63070005178451538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="kLL-PU-UE4" kind="showDetail" id="pCW-uQ-XDc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roY-mY-9UK">
                                 <rect key="frame" x="0.0" y="684" width="414" height="34"/>
@@ -1593,8 +1596,9 @@
         <image name="stop.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="pCW-uQ-XDc"/>
         <segue reference="1FM-49-2Ya"/>
-        <segue reference="26e-JV-pFs"/>
+        <segue reference="wDy-KH-bHi"/>
         <segue reference="nDB-ck-BFD"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.17101046442985535" green="0.70975774526596069" blue="0.7178533673286438" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
