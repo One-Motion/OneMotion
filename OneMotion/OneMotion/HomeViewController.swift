@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
             print("Error creating table")
             return
         }
-        print("Successfully Created/Connected to Profile Table")
+        print("Successfully Connected to Profile Table")
         
         let createWorkoutTableQuery = "CREATE TABLE IF NOT EXISTS WORKOUT(TITLE TEXT PRIMARY KEY, DATE TEXT, TYPEOFWORKOUT TEXT, REPS INTEGER, SETS INTEGER, TIMETAKEN INTEGER);"
         
@@ -60,16 +60,42 @@ class HomeViewController: UIViewController {
         }
         
         print("Successfully Created/Connect to Workout table.")
-    }
-    
-        let createStepTableQuery = "CREATE TABLE IF NOT EXISTS WORKOUT(TITLE TEXT PRIMARY KEY, DATE TEXT, TYPEOFWORKOUT TEXT, REPS INTEGER, SETS INTEGER, TIMETAKEN INTEGER);"
+        
+        let createStepTableQuery = "CREATE TABLE IF NOT EXISTS STEPS(STEPS INTEGER, DISTANCE INTEGER);"
         
         if sqlite3_exec(db, createStepTableQuery, nil, nil, nil) != SQLITE_OK {
             print("Error creating table")
             return
         }
+
+        print("Successfully Connected to steps table.")
         
-        print("Successfully Created/Connect to Workout table.")
+        let createChallengeTableQuery = "CREATE TABLE IF NOT EXISTS CHALLENGE(TITLE TEXT PRIMARY KEY, DATE TEXT, TYPEOFWORKOUT TEXT, REPS INTEGER, SETS INTEGER, TIMETAKEN INTEGER);"
+        
+        if sqlite3_exec(db, createChallengeTableQuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
+        }
+        print("Successfully Connected to challenge table.")
+        
+        let createRunTableQuery = "CREATE TABLE IF NOT EXISTS RUN(DISTANCE INTEGER, TIME INTEGER, PACE INTEGER);"
+        
+        if sqlite3_exec(db, createRunTableQuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
+        }
+        
+        print("Successfully Connected to run table.")
+        
+        let createMyDayTableQuery = "CREATE TABLE IF NOT EXISTS MYDAY(DATE INTEGER, BREAKFAST INTEGER, LUNCH INTEGER, DINNER INTEGER, MOOD TEXT);"
+        
+        if sqlite3_exec(db, createMyDayTableQuery, nil, nil, nil) != SQLITE_OK {
+            print("Error creating table")
+            return
+        }
+        
+        print("Successfully Connected to MyDay table.")
+        
     }
     
     /// Adds displat features to the home page buttons

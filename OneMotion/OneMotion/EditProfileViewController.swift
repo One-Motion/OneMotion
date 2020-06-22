@@ -46,9 +46,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         }
         
         //cleans the table
-        delete()
+        self.delete()
         
-        insertProfile(fName: self.firstName.text ?? " ", lName: self.lastName.text ?? " ", DofB: self.DOB.text ?? " ", Weight: self.weight.text ?? " ", Height: self.height.text ?? " ", Email: self.email.text ?? " ", profilePic: self.profilePic)
+        self.insertProfile(fName: self.firstName.text ?? " ", lName: self.lastName.text ?? " ", DofB: self.DOB.text ?? " ", Weight: self.weight.text ?? " ", Height: self.height.text ?? " ", Email: self.email.text ?? " ", profilePic: self.profilePic)
         print("Update Successful!")
         }
     
@@ -80,7 +80,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             } else {
                 print("\nCould not insert row")
             }
-        } else {
+        }
+        else {
             print("\nInsert Statement not prepared")
         }
         sqlite3_finalize(insertStmt)
