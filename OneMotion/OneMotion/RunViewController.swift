@@ -83,7 +83,7 @@ class RunViewController : UIViewController {
     }
 
     func delete() {
-        let deleteStatementString = "DELETE FROM PROFILE;"
+        let deleteStatementString = "DELETE FROM RUN;"
         var deleteStatement: OpaquePointer?
           if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) ==
               SQLITE_OK {
@@ -116,16 +116,18 @@ class RunViewController : UIViewController {
         
         if sqlite3_prepare_v2(db, insertQuery, -1, &insertStmt, nil) == SQLITE_OK {
                 
-            let distance: Int32 = (distance as NSString).intValue
-            let time: Int32 = (time as NSString).intValue
-            let pace: Int32 = (pace as NSString).intValue
+            let distance: Double = (distance as NSString).doubleValue
+            let time: Double = (time as NSString).doubleValue
+            let pace: Double = (pace as NSString).doubleValue
             
-            sqlite3_bind_int(insertStmt, 1, distance)
-            sqlite3_bind_int(insertStmt, 2, time)
-            sqlite3_bind_int(insertStmt, 3, pace)
+            print("\n\(distance) | \(time) | \(pace)")
+            
+            sqlite3_bind_double(insertStmt, -1, distance)
+            sqlite3_bind_double(insertStmt, -1, time)
+            sqlite3_bind_double(insertStmt, -1, pace)
             
             if sqlite3_step(insertStmt) == SQLITE_DONE {
-                print("\nSuccessfully inserted row")
+                print("Successfully inserted row\n")
             } else {
                 print("\nCould not insert row")
             }

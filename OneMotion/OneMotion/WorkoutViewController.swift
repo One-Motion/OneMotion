@@ -48,7 +48,7 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
 
     func delete() {
-        let deleteStatementString = "DELETE FROM PROFILE;"
+        let deleteStatementString = "DELETE FROM WORKOUT;"
         var deleteStatement: OpaquePointer?
           if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) ==
               SQLITE_OK {
@@ -69,7 +69,7 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     
-    func workoutInfo(title: String, workoutDate: String, typeOfWorkout: String, reps: String, sets: String, workoutTime: String) {
+    func workoutInfo(title: String, workoutDate: String, typeOfWorkout: String, reps: String, sets: String, TimeTaken: String) {
    
         var insertStmt: OpaquePointer?
         let insertQuery = "INSERT INTO WORKOUT(TITLE, DATE, TYPEOFWORKOUT, REPS, SETS, TIMETAKEN) VALUES (?,?,?,?,?,?);"
@@ -81,14 +81,14 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             let typeofWorkout: NSString = typeOfWorkout as NSString
             let Reps: Int32 = (reps as NSString).intValue
             let Sets: Int32 = (sets as NSString).intValue
-            let workOutTime: Int32 = (workoutTime as NSString).intValue
+            let timeTaken: Int32 = (TimeTaken as NSString).intValue
             
             sqlite3_bind_text(insertStmt, 1, Title.utf8String, -1, nil)
             sqlite3_bind_text(insertStmt, 2, workOutDate.utf8String, -1, nil)
             sqlite3_bind_text(insertStmt, 3, typeofWorkout.utf8String, -1, nil)
             sqlite3_bind_int(insertStmt, 4, Reps)
             sqlite3_bind_int(insertStmt, 5, Sets)
-            sqlite3_bind_int(insertStmt, 6, workOutTime)
+            sqlite3_bind_int(insertStmt, 6, timeTaken)
             
             print("Successfully Connected to Workout table.")
 
@@ -174,9 +174,8 @@ class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             return
         }
         
-        self.delete()
-        
-        self.workoutInfo(title: self.titleText.text ?? " ", workoutDate: self.date.text ?? " ", typeOfWorkout: self.workoutType.text ?? " ", reps: self.repNumber.text ?? " ", sets: self.setNumber.text ?? " ", workoutTime: self.workoutType.text ?? " ")
+       // self.delete()
+        self.workoutInfo(title: self.titleText.text ?? " ", workoutDate: self.date.text ?? " ", typeOfWorkout: self.workoutType.text ?? " ", reps: self.repNumber.text ?? " ", sets: self.setNumber.text ?? " ", TimeTaken: self.timetaken.text ?? " error")
         
         print("update Successful")
         

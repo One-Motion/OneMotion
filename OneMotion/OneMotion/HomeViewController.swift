@@ -79,7 +79,7 @@ class HomeViewController: UIViewController {
         }
         print("Successfully Connected to challenge table.")
         
-        let createRunTableQuery = "CREATE TABLE IF NOT EXISTS RUN(DISTANCE INTEGER, TIME INTEGER, PACE INTEGER);"
+        let createRunTableQuery = "CREATE TABLE IF NOT EXISTS RUN(DISTANCE FLOAT, TIME FLOAT, PACE FLOAT);"
         
         if sqlite3_exec(db, createRunTableQuery, nil, nil, nil) != SQLITE_OK {
             print("Error creating table")
