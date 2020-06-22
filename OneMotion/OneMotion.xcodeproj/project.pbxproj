@@ -25,6 +25,7 @@
 		19BCCAE72479568C002D95E9 /* donePressedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCADF2479568C002D95E9 /* donePressedTest.swift */; };
 		19BCCAE82479568C002D95E9 /* mapRegionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BCCAE02479568C002D95E9 /* mapRegionTest.swift */; };
 		7315B3FB24A09052004B18BA /* DisplayRunController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7315B3FA24A09052004B18BA /* DisplayRunController.swift */; };
+		733BE97324A0C30B0041A311 /* DisplayMyDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BE97224A0C30B0041A311 /* DisplayMyDay.swift */; };
 		737B73B824754D0D001CC344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B724754D0D001CC344 /* AppDelegate.swift */; };
 		737B73BA24754D0D001CC344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737B73B924754D0D001CC344 /* SceneDelegate.swift */; };
 		737B73BF24754D0D001CC344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737B73BD24754D0D001CC344 /* Main.storyboard */; };
@@ -85,6 +86,7 @@
 		19BCCADF2479568C002D95E9 /* donePressedTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donePressedTest.swift; sourceTree = "<group>"; };
 		19BCCAE02479568C002D95E9 /* mapRegionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapRegionTest.swift; sourceTree = "<group>"; };
 		7315B3FA24A09052004B18BA /* DisplayRunController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayRunController.swift; sourceTree = "<group>"; };
+		733BE97224A0C30B0041A311 /* DisplayMyDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayMyDay.swift; sourceTree = "<group>"; };
 		737B73B424754D0D001CC344 /* OneMotion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneMotion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737B73B724754D0D001CC344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737B73B924754D0D001CC344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				197EA3032499EBAD00DA41DD /* GIFAPI.swift */,
 				190FE92D249E328B00859DB0 /* NotificationController.swift */,
 				7315B3FA24A09052004B18BA /* DisplayRunController.swift */,
+				733BE97224A0C30B0041A311 /* DisplayMyDay.swift */,
 			);
 			path = OneMotion;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */,
 				B5992AA3247648E600904878 /* MyDayViewController.swift in Sources */,
 				B54EDD7D2476297E00DAD0C1 /* StoryboardSupport.swift in Sources */,
+				733BE97324A0C30B0041A311 /* DisplayMyDay.swift in Sources */,
 				B5DE421D2499D1890085DDC4 /* LoginViewController.swift in Sources */,
 				19292D9B2477A4650025D2BA /* ProgressViewController.swift in Sources */,
 				B5B62903247798030016EC05 /* FriendViewController.swift in Sources */,

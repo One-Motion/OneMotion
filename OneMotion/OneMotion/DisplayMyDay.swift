@@ -10,10 +10,10 @@ import Foundation
 import UIKit
 import SQLite3
 
-class DisplayRunController : UIViewController{
+class DisplayMyDayController : UIViewController{
     
-    @IBOutlet weak var textField: UITextView!
-    var db: OpaquePointer?    
+    @IBOutlet weak var myDayText: UITextView!
+    var db: OpaquePointer?
     override func viewWillAppear(_ animated: Bool) {
            
            //OPENS THE CONNECTION
@@ -24,18 +24,20 @@ class DisplayRunController : UIViewController{
                return
            }
             var queryStatement: OpaquePointer? = nil
-            let selectQuery = "SELECT * FROM RUN"
+            let selectQuery = "SELECT * FROM MYDAY"
             if sqlite3_prepare(db, selectQuery, -1, &queryStatement, nil) == SQLITE_OK{
         
                 if sqlite3_step(queryStatement) == SQLITE_ROW{
-                    let distance = sqlite3_column_double(queryStatement, 1)
-                    let time = sqlite3_column_double(queryStatement,2)
-                    let pace = sqlite3_column_double(queryStatement,3)
-                
+                    let date = String(describing: String(cString: sqlite3_column_text(queryStatement, 0)))
+                    let breakfast = sqlite3_column_int(queryStatement, 1)
+                    let lunch = sqlite3_column_int(queryStatement, 2)
+                    let dinner = sqlite3_column_int(queryStatement, 3)
+                let mood = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
+                    
                     print("\nQuery Result: ")
-                    print("\n\(distance) | \(time) | \(pace)")
+                    print("\n\(date) | \(breakfast) | \(lunch) | \(dinner) | \(mood)")
 
-                    self.textField.text = "\(distance) \n\n \(time) \n\n \(pace)"
+                    self.myDayText.text = "\(date) \n\n \(breakfast) \n\n \(lunch) \n\n \(dinner) \n\n \(mood)"
                     print("Successfully gathered Data!")
                 } else{
                     print("\nQuery returned no results.")
@@ -50,6 +52,6 @@ class DisplayRunController : UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.textField.isEditable = false;
+        self.myDayText.isEditable = false;
     }
 }
