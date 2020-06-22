@@ -53,11 +53,13 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             let Dinner: Int32 = (dinner as NSString).intValue
             let Mood: NSString = mood as NSString
             
+            print("\(RecordedDate  ) | \(Breakfast) | \(Lunch) | \(Dinner) | \(Mood)")
+            
             sqlite3_bind_text(insertStmt, 1, RecordedDate.utf8String, -1, nil)
             sqlite3_bind_int(insertStmt, 2, Breakfast)
             sqlite3_bind_int(insertStmt, 3, Lunch)
             sqlite3_bind_int(insertStmt, 4, Dinner)
-            sqlite3_bind_text(insertStmt, 2, Mood.utf8String, -1, nil)
+            sqlite3_bind_text(insertStmt, 5, Mood.utf8String, -1, nil)
             
             
             if sqlite3_step(insertStmt) == SQLITE_DONE {
@@ -74,7 +76,7 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func delete() {
-        let deleteStatementString = "DELETE FROM PROFILE;"
+        let deleteStatementString = "DELETE FROM MYDAY;"
         var deleteStatement: OpaquePointer?
           if sqlite3_prepare_v2(db, deleteStatementString, -1, &deleteStatement, nil) ==
               SQLITE_OK {
@@ -171,8 +173,6 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         self.insertMyDay(recordedDate: self.dateSelecter.text ?? " ", breakfast: self.breakfast.text ?? " ", lunch: self.lunch.text ?? " ", dinner: self.dinner.text ?? " ", mood: self.mood.text ?? " ")
         print("Saved")
     }
-    
-        
     }
 
 
