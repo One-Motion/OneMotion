@@ -76,7 +76,8 @@ class StepTrackerViewController: UIViewController {
                 }
             })
         }
-        else //when the step tracker is turned off
+        //when the step tracker is turned off
+        else if sender.titleLabel?.text == "Stop"
         {
             
             //step tracker stops collecting data
@@ -97,7 +98,7 @@ class StepTrackerViewController: UIViewController {
                 return
             }
             
-            self.insertStep(steps: String(self.numberOfSteps), distance: String(self.distance))
+            self.insertStep(steps: String(!(self.numberOfSteps != nil)), distance: String(!(self.distance != nil)))
         }
     }
     
