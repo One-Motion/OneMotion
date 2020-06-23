@@ -4,7 +4,6 @@
 //
 //  Created by Grace Subianto on 21/05/20.
 //  Copyright © 2020 Jason Vainikolo. All rights reserved.
-// new comment
 
 import UIKit
 import CoreMotion
@@ -20,7 +19,7 @@ class StepTrackerViewController: UIViewController {
     @IBOutlet weak var paceLabel: UILabel!
     @IBOutlet weak var avgPaceLabel: UILabel!
     @IBOutlet weak var startButton: UIButton! //declaration of start button for layout
-
+    
     var db: OpaquePointer?
     
     //constant colour values for the activateButton after activation
@@ -32,7 +31,7 @@ class StepTrackerViewController: UIViewController {
     var distance:Double! = nil
     var pace:Double! = nil
     var averagePace:Double! = nil
-
+    
     //initialisation of pedometer object
     var pedometer = CMPedometer()
     
@@ -41,7 +40,8 @@ class StepTrackerViewController: UIViewController {
     var timerInterval = 1.0
     var timeElapsed:TimeInterval = 1.0
     
-    //connection of the activate button to the storyboard UI
+    //a function that allows connection of the activate button to the storyboard UI
+    //and contains commands for the database when button is clicked
     @IBAction func activateButton(_ sender: UIButton)
     {
         //when the step tracker is turned on
@@ -49,7 +49,7 @@ class StepTrackerViewController: UIViewController {
         {
             //calls pedometer object
             pedometer = CMPedometer()
-            //the timer starting functoin is called
+            //the timer starting function is called
             startTimer()
             //status label is updated to show the pedometer is on
             statusTitle.text = "Step Tracker Is On"
@@ -76,10 +76,9 @@ class StepTrackerViewController: UIViewController {
                 }
             })
         }
-        //when the step tracker is turned off
+            //when the step tracker is turned off
         else if sender.titleLabel?.text == "Stop"
         {
-            
             //step tracker stops collecting data
             pedometer.stopUpdates()
             //the timer stopping functoin is called
@@ -90,9 +89,9 @@ class StepTrackerViewController: UIViewController {
             sender.backgroundColor = START_COLOR
             sender.setTitle("Start", for: .normal)
             
-            //Opens the Connection
+            //opens the connection to the database table
             let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("OneMotion.sqlite")
-
+            
             if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
                 print("Error Opening database")
                 return
@@ -102,30 +101,29 @@ class StepTrackerViewController: UIViewController {
         }
     }
     
+    //a function that takes the numberOfSteps and distance values and inserts them into the database
     func insertStep(steps: String, distance: String){
         var insertStmt: OpaquePointer?
         let insertQuery = "INSERT INTO STEPS(STEPS, DISTANCE) VALUES (?,?);"
         
-    if sqlite3_prepare_v2(db, insertQuery, -1, &insertStmt, nil) == SQLITE_OK {
+        if sqlite3_prepare_v2(db, insertQuery, -1, &insertStmt, nil) == SQLITE_OK {
             
-        let Steps: NSString = steps as NSString
-        let Distance: NSString = distance as NSString
-        
-        sqlite3_bind_text(insertStmt, 1, Steps.utf8String, -1, nil)
-        sqlite3_bind_text(insertStmt, 2, Distance.utf8String, -1, nil)
-        
-        if sqlite3_step(insertStmt) == SQLITE_DONE {
-            print("\nSuccessfully inserted row")
-        } else {
-            print("\nCould not insert row")
+            let Steps: NSString = steps as NSString
+            let Distance: NSString = distance as NSString
+            
+            sqlite3_bind_text(insertStmt, 1, Steps.utf8String, -1, nil)
+            sqlite3_bind_text(insertStmt, 2, Distance.utf8String, -1, nil)
+            
+            if sqlite3_step(insertStmt) == SQLITE_DONE {
+                print("\nSuccessfully inserted row")
+            } else {
+                print("\nCould not insert row")
+            }
         }
-    }
-    else {
-        print("\nInsert Statement not prepared")
-    }
-    sqlite3_finalize(insertStmt)
-        
-        
+        else {
+            print("\nInsert Statement not prepared")
+        }
+        sqlite3_finalize(insertStmt)
     }
     
     //timer function starts timing from when the user clicks the activation button
@@ -157,7 +155,6 @@ class StepTrackerViewController: UIViewController {
         timeElapsed += 1.0
         timerLabel.text = "Timer: " + timeIntervalFormat(interval: timeElapsed)
         
-        
         //displays the number of steps the user has taken
         if let NUMBER_OF_STEPS = self.numberOfSteps
         {
@@ -174,7 +171,6 @@ class StepTrackerViewController: UIViewController {
             distanceLabel.text = "Distance: Unavailable"
         }
         
-        
         //displays the users pace
         if let PACE = self.pace
         {
@@ -187,7 +183,6 @@ class StepTrackerViewController: UIViewController {
             paceLabel.text =  paceString(title: "Pace", pace: calculateAveragePace())
         }
         
-        
         //displays the users average pace
         if let AVERAGE_PACE = self.averagePace
         {
@@ -199,7 +194,7 @@ class StepTrackerViewController: UIViewController {
         }
     }
     
-    //converts the seconds of the timer into hh:mm:ss format as a string
+    //function that converts the seconds of the timer into hh:mm:ss format as a string
     func timeIntervalFormat(interval:TimeInterval)-> String
     {
         var seconds = Int(interval + 0.5) //round up seconds
@@ -209,7 +204,7 @@ class StepTrackerViewController: UIViewController {
         return String(format:"%02i:%02i:%02i",HOURS,MINUTES,seconds)
     }
     
-    //converts the pace of the user in meters per second to string formatting
+    //function that converts the pace of the user in meters per second to string formatting
     func paceString(title:String,pace:Double) -> String
     {
         var minPerMile = 0.0
@@ -223,7 +218,7 @@ class StepTrackerViewController: UIViewController {
         return String(format: "%@: %02.2f m/s \n\t\t %02i:%02i min/mi",title,pace,MINUTES,SECONDS)
     }
     
-    //calculates the avergae pace of the user
+    //function that calculates the avergae pace of the user
     func calculateAveragePace()-> Double
     {
         if let DISTANCE = self.distance
@@ -237,7 +232,7 @@ class StepTrackerViewController: UIViewController {
         }
     }
     
-    //converts miles to meters
+    //function that converts miles to meters
     func miles(meters:Double)-> Double
     {
         let MILE = 0.000621371192
@@ -250,5 +245,4 @@ class StepTrackerViewController: UIViewController {
         startButton.layer.cornerRadius = 10 //rounds the corners of the activate button
         
     }
-    
 }

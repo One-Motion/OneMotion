@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		190FE92E249E328B00859DB0 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190FE92D249E328B00859DB0 /* NotificationController.swift */; };
 		19292D9B2477A4650025D2BA /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19292D9A2477A4650025D2BA /* ProgressViewController.swift */; };
 		1931B4F024A0C8A30052D5A6 /* activateButtonTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4EF24A0C8A30052D5A6 /* activateButtonTest.swift */; };
 		1931B4F224A0C8CE0052D5A6 /* getDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1931B4F124A0C8CE0052D5A6 /* getDataTest.swift */; };
@@ -76,7 +75,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		190FE92D249E328B00859DB0 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		19292D9A2477A4650025D2BA /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		1931B4EF24A0C8A30052D5A6 /* activateButtonTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activateButtonTest.swift; sourceTree = "<group>"; };
 		1931B4F124A0C8CE0052D5A6 /* getDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getDataTest.swift; sourceTree = "<group>"; };
@@ -212,7 +210,6 @@
 				B54EDD7E24762A1000DAD0C1 /* myRun.xcdatamodeld */,
 				19B8FA0E2477B19B005C80A0 /* File.swift */,
 				197EA3032499EBAD00DA41DD /* GIFAPI.swift */,
-				190FE92D249E328B00859DB0 /* NotificationController.swift */,
 				7315B3FA24A09052004B18BA /* DisplayRunController.swift */,
 				733BE97224A0C30B0041A311 /* DisplayMyDay.swift */,
 			);
@@ -393,7 +390,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				190FE92E249E328B00859DB0 /* NotificationController.swift in Sources */,
 				73BCC69D2475647B00206BAF /* HomeViewController.swift in Sources */,
 				B5992AA3247648E600904878 /* MyDayViewController.swift in Sources */,
 				B54EDD7D2476297E00DAD0C1 /* StoryboardSupport.swift in Sources */,
