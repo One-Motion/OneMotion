@@ -1,5 +1,7 @@
 # OneMotion
 
+![OneMotion Logo](https://github.com/One-Motion/OneMotion/blob/master/OneMotion/OneMotion/Assets.xcassets/OM-Logo.imageset/OM-Logo.png)
+
 ## App Description:
 One Motion is an ALL-IN-ONE health & fitness app that allows you to keep track of your workouts, run
 times and best averages along with your friends! Being able to keep track of your diet & workout
