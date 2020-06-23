@@ -3,7 +3,6 @@
 //
 //  Created by Jason Vainikolo on 12/05/20.
 //  Copyright © 2020 Jason Vainikolo. All rights reserved.
-// new me
 
 import UIKit
 import SQLite3
@@ -68,7 +67,7 @@ class HomeViewController: UIViewController {
             print("Error creating table")
             return
         }
-
+        
         print("Successfully Connected to steps table.")
         
         let createChallengeTableQuery = "CREATE TABLE IF NOT EXISTS CHALLENGE(TITLE TEXT PRIMARY KEY, DATE TEXT, TYPEOFWORKOUT TEXT, REPS INTEGER, SETS INTEGER, TIMETAKEN INTEGER);"
@@ -97,6 +96,7 @@ class HomeViewController: UIViewController {
         
         print("Successfully Connected to MyDay table.")
         
+        //calls the function responsible for scheduling and prompting notifications - GS
         self.notificationController()
         
     }
@@ -114,18 +114,18 @@ class HomeViewController: UIViewController {
         button.backgroundColor = UIColor.white
     }
     
-    //controls the notifications feature of the application
+    //a function that controls the notifications feature of the application - GS
     func notificationController()
     {
         
-        //Asking notification center for permission
+        //Asking phone notification center for permission
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .badge, .sound])
         { granted, error in
         }
         
-        ///DailyNotificationController - GS
-        //Creates the notification content
+        ///DailyNotificationController
+        //Creates the notification content for daily notifications
         let contentDaily = UNMutableNotificationContent()
         contentDaily.title = "OneMotion Daily Reminder"
         contentDaily.body = "Check in today and add your stats!"
@@ -136,34 +136,38 @@ class HomeViewController: UIViewController {
         //Creating the notification trigger for daily notifications
         var dateComponentsDaily = DateComponents()
         dateComponentsDaily.calendar = Calendar.current
-        dateComponentsDaily.hour = 12 //12:00 hours
-        //dateComponentsDaily.minute = 3 //minute of the hour
+        dateComponentsDaily.hour = 12 //12:00pm every day
         
         let triggerDaily = UNCalendarNotificationTrigger(dateMatching: dateComponentsDaily, repeats: true)
-        //Create the request
+        
+        //Create the unique request
         let uuidStringDaily = UUID().uuidString
         let requestDaily = UNNotificationRequest(identifier: uuidStringDaily, content: contentDaily, trigger: triggerDaily)
-        //Register the request
+        
+        //Registers the request in the notification center
         center.add(requestDaily) { (error) in
             //check the error parameter and handle any errors
         }
         
-        ///InstantNotificationController - GS
-        //Create the notification content
+        ///InstantNotificationController
+        //Creates the notification content for right when you close the application
         let contentInstant = UNMutableNotificationContent()
         contentInstant.title = "OneMotion Misses You!"
         contentInstant.body = "Have you logged your stats today?"
         contentInstant.categoryIdentifier = "alarm"
         contentInstant.userInfo = ["customData": "fizzbuzz"]
         contentInstant.sound = .default
-        //Create the notification triggers
+        
+        //Creates the notification triggers
         let dateInstant = Date().addingTimeInterval(10)
         let dateComponentsInstant = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: dateInstant)
         let triggerInstant = UNCalendarNotificationTrigger(dateMatching: dateComponentsInstant, repeats: true)
-        //Create the request
+        
+        //Creates the unique request
         let uuidStringInstant = UUID().uuidString
         let requestInstant = UNNotificationRequest(identifier: uuidStringInstant, content: contentInstant, trigger: triggerInstant)
-        //Register the request
+        
+        //Registers the request in the notifcation center
         center.add(requestInstant) { (error) in }
     }
 }
