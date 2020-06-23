@@ -1,6 +1,6 @@
 # OneMotion
 
-## Proposed App Description:
+## App Description:
 One Motion is an ALL-IN-ONE health & fitness app that allows you to keep track of your workouts, run
 times and best averages along with your friends! Being able to keep track of your diet & workout
 regime in one single app makes life easier and allows you to have competitions with your mates.
