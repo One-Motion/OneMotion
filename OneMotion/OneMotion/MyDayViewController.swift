@@ -40,6 +40,8 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                             
         }
 
+    
+    // Inserting into MyDay table
     func insertMyDay(recordedDate: String, breakfast: String, lunch: String, dinner: String, mood: String) {
         
         var insertStmt: OpaquePointer?
@@ -75,6 +77,7 @@ class MyDayViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
     }
     
+    // Deleting from MyDay table
     func delete() {
         let deleteStatementString = "DELETE FROM MYDAY;"
         var deleteStatement: OpaquePointer?

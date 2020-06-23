@@ -23,25 +23,8 @@ class RunDataViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
     }
     
-    private func configureView() {
-//      let distance = Measurement(value: run.distance, unit: UnitLength.meters)
-//      let seconds = Int(run.duration)
-//      let formattedDistance = FormatDisplay.distance(distance)
-//      let formattedDate = FormatDisplay.date(run.timestamp)
-//      let formattedTime = FormatDisplay.time(seconds)
-//      let formattedPace = FormatDisplay.pace(distance: distance,
-//                                             seconds: seconds,
-//                                             outputUnit: UnitSpeed.minutesPerMile)
-//
-//      distanceLabel.text = "Distance:  \(formattedDistance)"
-//      dateLabel.text = formattedDate
-//      timeLabel.text = "Time:  \(formattedTime)"
-//      paceLabel.text = "Pace:  \(formattedPace)"
-//        loadMap()
-    }
     
     // Displaying only a specific area around the locationt travelled when the map view is first opened.
     private func mapRegion() -> MKCoordinateRegion? {
