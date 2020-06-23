@@ -82,6 +82,7 @@ class RunViewController : UIViewController {
         self.insertRun(distance: formattedDistance, time: formattedTime, pace: formattedPace)
     }
 
+    // Deletes row in table
     func delete() {
         let deleteStatementString = "DELETE FROM RUN;"
         var deleteStatement: OpaquePointer?
@@ -99,6 +100,7 @@ class RunViewController : UIViewController {
           sqlite3_finalize(deleteStatement)
     }
     
+    // Inserts row in table and opens connection
     func insertRun(distance: String, time: String, pace: String) {
         
         //Opens the Connection
@@ -196,21 +198,6 @@ class RunViewController : UIViewController {
     }
     
 }
-
-//extension RunViewController: SegueHandlerType {
-//  enum SegueIdentifier: String {
-//    case details = "RunDataViewController"
-//  }
-//  
-//  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    switch segueIdentifier(for: segue) {
-//    case .details:
-//      let destination = segue.destination as! RunDataViewController
-//      destination.run = run
-//    }
-//  }
-//}
-
 
 extension RunViewController: CLLocationManagerDelegate {
 
